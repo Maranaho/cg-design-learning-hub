@@ -1,5 +1,5 @@
 import { auth } from '../utils/firebase'
-import logout from '../assets/logout.svg'
+import logout from '../assets/icons/logout.svg'
 
 const SignOut = ()=>{
   return (

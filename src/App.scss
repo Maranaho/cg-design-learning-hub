@@ -5,6 +5,73 @@ body {
   font-family: 'Roboto';
   font-weight: 400;
   font-size: 14px;
-  color: $dark;
-  overflow: hidden;
+  color: #333;
+}
+button {cursor: pointer}
+
+.TopBar {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left:50px;
+  right:50px;
+  background: #fff;
+  z-index: 2;
+  padding: 20px 0;
+  .logo{padding: 20px 0}
+}
+.TopBar 
+.User,
+.TopBar article{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.User {
+  margin-right: 10px;
+  img {
+    border-radius: 50px;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+}
+
+.Routes {padding-top: 100px}
+
+.Loading,.AddEdit {
+  position: fixed;
+  top:0;
+  left: 0;
+  z-index: 2;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+.Loading {
+  align-items: center;
+}
+.AddEdit {
+  background: rgba(0,0,0,.7);
+  padding-top: 5vh;
+  section {
+    width: 1000px;
+    padding: 50px;
+    background: #fff;
+    box-sizing: border-box;
+    border-radius: 15px;
+    height: 90vh;
+    position: relative;
+
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: none;
+      border: none;
+    }
+  }
 }

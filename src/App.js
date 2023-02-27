@@ -5,11 +5,13 @@ import './App.css'
 
 import SignIn from './components/SignIn'
 import NonIntuitUser from './components/NonIntuitUser'
+import Hub from './components/Hub'
+
 
 const App = ()=>{
 
     const {
-      state: { isIntuitEmployee,org,msg },
+      state: { isIntuitEmployee,org },
       dispatch
     } = useGalleryState()
 
@@ -25,16 +27,14 @@ const App = ()=>{
     } else dispatch({type:'IS_FAM',payload:false})
   }
 
-  const cancelDrag = e => e.preventDefault()
-
-useEffect(getUser,[user])
+  useEffect(getUser,[user])
 
   return (
-        <main lassName="hub">
-          {user&&!isIntuitEmployee&&<NonIntuitUser/>}
-          {user&&isIntuitEmployee&&<p>Yooo</p>}
-          {!user&&<SignIn/>}
-        </main>
+    <>
+      {user&&!isIntuitEmployee&&<NonIntuitUser/>}
+      {user&&isIntuitEmployee&&<Hub/>}
+      {!user&&<SignIn/>}
+    </>
   )
 }
 

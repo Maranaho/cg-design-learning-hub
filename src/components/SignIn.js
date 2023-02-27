@@ -4,11 +4,8 @@ const SignIn = ()=>{
 
   const signInWithGoogle=()=>{
     signInWithPopup(auth, provider)
-      .then(res => {
-        const credential = GoogleAuthProvider.credentialFromResult(res)
-        const token = credential.accessToken
-        const user = res.user
-      }).catch(err => console.log(err))
+      .then(res => GoogleAuthProvider.credentialFromResult(res))
+      .catch(err => console.log(err))
   }
   return (
     <main className="SignIn">

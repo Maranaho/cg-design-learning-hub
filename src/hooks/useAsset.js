@@ -4,8 +4,7 @@ import { db,doc,getDoc } from '../utils/firebase'
 const useAsset = assetID =>{
 
   const [asset,setAsset] = useState(null)
-
-
+  
   useEffect(()=>{
     const getAssetFromFB = async()=> {
 

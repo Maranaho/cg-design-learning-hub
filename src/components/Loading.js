@@ -1,7 +1,8 @@
+import loading from '../assets/icons/loading.gif'
 const Loading = ()=>(
-  <main className="Loading">
-    Loading...
-  </main>
+  <div className="Loading">
+    <div><img width="50" src={loading}/></div>
+  </div>
 )
 
 export default Loading
