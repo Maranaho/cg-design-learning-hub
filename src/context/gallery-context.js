@@ -8,7 +8,21 @@ let initialGalleryState = {
   user:null,
   msg:null,
   searchValue:'',
-  filters:[]
+  filters:[],
+  previewVideoData:{
+    preview:true,
+    title:"",
+    description:null,
+    poster:"",
+    url:"",
+    views:0,
+    likes:[],
+    createdAt:"",
+    helpful:[],
+    notHelpful:[],
+    uploader:"",
+    tags:[]
+  }
 }
 
 const GalleryContext = React.createContext()
@@ -16,6 +30,32 @@ const GalleryContext = React.createContext()
 function galleryReducer(state, action) {
   switch (action.type) {
 
+
+    case 'RESET_DEFAULT_VIDEO': {
+      let RESET_DEFAULT_VIDEO = {...state}
+      RESET_DEFAULT_VIDEO.previewVideoData = {
+        title:"",
+        poster:"",
+        url:"",
+        views:0,
+        likes:[],
+        createdAt:"",
+        helpful:[],
+        notHelpful:[],
+        uploader:"",
+        tags:[]
+      }
+      return RESET_DEFAULT_VIDEO
+    }
+
+
+
+    case 'SET_PREVIEW': {
+      let SET_PREVIEW = {...state}
+      const { key,val } = action.payload
+      SET_PREVIEW.previewVideoData[key] = val 
+      return SET_PREVIEW
+    }
 
     case 'EDIT_VIDEO': {
       let EDIT_VIDEO = {...state}

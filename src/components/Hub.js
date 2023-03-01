@@ -8,12 +8,8 @@ import TopBar from './TopBar'
 import Detail from './Detail'
 import TrainingList from './TrainingList'
 import Admin from './Admin'
-import AddEdit from './AddEdit'
-import { useGalleryState } from '../context/gallery-context'
 
 const Hub = ()=>{
-
-  const { state: { addVideo,editedVideo} } = useGalleryState()
 
   return (
     <main className="DesignHub">
@@ -29,7 +25,7 @@ const Hub = ()=>{
           </Routes>
         </div>
        
-        {(addVideo || editedVideo) && <AddEdit/>}
+        
       </Router>
     </main>
   )

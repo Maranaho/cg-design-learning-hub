@@ -1,35 +1,25 @@
 import useVideos from '../hooks/useVideos'
 import Loading from './Loading'
 import { useGalleryState } from '../context/gallery-context'
-import { useNavigate } from 'react-router-dom'
+import AddEdit from './AddEdit'
+import EditVideo from './EditVideo'
+
 
 
 const Admin = ()=>{
-  
   const videos = useVideos()
-  const { dispatch } = useGalleryState()
-  const navigate = useNavigate()
-  const handleEdit = videoID => {
-    dispatch({type:"EDIT_VIDEO",payload:videoID})
-    navigate(`/edit/${videoID}`)
-  }
-
-
+  const { state: { addVideo,editedVideo},dispatch } = useGalleryState()
 
   if(!videos||!Object.keys(videos).length)return <Loading/>
   return (
     <section className="Admin">
       <button onClick={()=>dispatch({type:"ADD_VIDEO",payload:true})}>Add video</button>
       <nav>
-        <ul>
-          {Object.keys(videos).map(videoID=>(
-            <li key={videoID} onClick={()=>handleEdit(videoID)}>
-              {videos[videoID].title}
-            </li>
-          ))}
-        </ul>
+        {Object.keys(videos).map(videoID=><EditVideo key={videoID} videoID={videoID} />)}
       </nav>
+      {(addVideo || editedVideo) && <AddEdit/>}
     </section>
   )
 }
 export default Admin
+//7O9bEmL0KGtieiMrLRsK
