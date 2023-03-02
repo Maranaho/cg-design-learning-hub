@@ -15,6 +15,40 @@ button {
   cursor: pointer;
 }
 
+label:not(.btn) {
+  display: block;
+  font-weight: 700;
+  font-size: 1.3em;
+  margin: 20px 0 10px;
+}
+
+input[type=text] {
+  padding: 7px 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  min-width: 200px;
+}
+input.search {
+  outline: none;
+  border: none;
+  width: 0;
+  transition: 0.5s width;
+  min-width: inherit;
+}
+input.search:focus {
+  width: 150px;
+}
+
+.btn {
+  background: #eee;
+  border: 1px solid #ddd;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-block;
+}
+
 .TopBar {
   display: flex;
   justify-content: space-between;
@@ -107,4 +141,123 @@ button {
 .EditVideo {
   padding: 20px;
   cursor: pointer;
+}
+
+.VideoUploader {
+  margin: 30px 0;
+}
+.VideoUploader input[type=file] {
+  visibility: hidden;
+  position: absolute;
+}
+.VideoUploader video, .VideoUploader .VideoPlaceholder {
+  height: 200px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+.VideoUploader .VideoPlaceholder {
+  background: rgba(229, 239, 247, 0.2);
+  width: 300px;
+  cursor: pointer;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 0.9em;
+  border: 2px dashed rgba(161, 213, 255, 0.4);
+}
+.VideoUploader .VideoPlaceholder:hover {
+  background: rgba(229, 239, 247, 0.35);
+}
+
+.AddTags {
+  width: 400px;
+}
+.AddTags .tagList {
+  position: relative;
+  padding: 7px 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  transition: 0.5s border;
+}
+.AddTags .tagList.focus {
+  border: 1px solid #5294ff;
+}
+.AddTags .tagList.focus .recent {
+  z-index: 1;
+  opacity: 1;
+  transform: translateY(10px);
+}
+.AddTags .recent {
+  transform: translateY(0);
+  padding: 10px 0;
+  position: absolute;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+  z-index: -1;
+  opacity: 0;
+  transition: 0.7s ease;
+}
+.AddTags article {
+  background: #eee;
+  display: inline-block;
+  margin: 3px;
+  cursor: pointer;
+  font-weight: 400;
+  padding: 4px 15px;
+  border-radius: 30px;
+  font-size: 0.9em;
+}
+.AddTags article.red {
+  background: rgba(249, 123, 108, 0.1);
+  color: #f5230a;
+}
+.AddTags article.red:hover {
+  background: rgba(249, 123, 108, 0.3);
+}
+.AddTags article.green {
+  background: rgba(86, 222, 126, 0.1);
+  color: #22ac4a;
+}
+.AddTags article.green:hover {
+  background: rgba(86, 222, 126, 0.3);
+}
+.AddTags article.purple {
+  background: rgba(96, 115, 251, 0.1);
+  color: #0623ef;
+}
+.AddTags article.purple:hover {
+  background: rgba(96, 115, 251, 0.3);
+}
+.AddTags article.blue {
+  background: rgba(57, 199, 242, 0.1);
+  color: #0c91b9;
+}
+.AddTags article.blue:hover {
+  background: rgba(57, 199, 242, 0.3);
+}
+.AddTags article.yellow {
+  background: rgba(249, 218, 59, 0.1);
+  color: #c8a806;
+}
+.AddTags article.yellow:hover {
+  background: rgba(249, 218, 59, 0.3);
+}
+.AddTags article.pink {
+  background: rgba(255, 130, 160, 0.1);
+  color: #ff1c52;
+}
+.AddTags article.pink:hover {
+  background: rgba(255, 130, 160, 0.3);
+}
+
+.videoNTags {
+  display: flex;
+  justify-content: space-between;
 }/*# sourceMappingURL=App.css.map */

@@ -22,4 +22,3 @@ const Admin = ()=>{
   )
 }
 export default Admin
-//7O9bEmL0KGtieiMrLRsK

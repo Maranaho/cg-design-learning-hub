@@ -4,6 +4,8 @@ import { useNavigate } from 'react-router-dom'
 import { useEffect,useState } from 'react'
 import { db,doc,updateDoc,onSnapshot } from '../utils/firebase'
 import Wisiwyg from './Wisiwyg'
+import VideoUploader from './VideoUploader'
+import AddTags from './AddTags'
 
 
 const AddEdit = ()=>{
@@ -46,6 +48,7 @@ const AddEdit = ()=>{
   return (
    <div className="AddEdit">
     <section>
+
       <button
         className="close"
         onClick={handleClose}>
@@ -57,11 +60,18 @@ const AddEdit = ()=>{
         <label htmlFor="title">Title</label>
         <input
           id="title"
+          type="text"
           value={editedVideo&&DBVideo?DBVideo.title:previewVideoData.title}
           onChange={e=>handleUpdateData("title",e.target.value)}/>
       </div>
 
+      <div className="videoNTags">
+        <VideoUploader/>
+        <AddTags/>
+      </div>
       <Wisiwyg/>
+      
+      
     
 
     </section>

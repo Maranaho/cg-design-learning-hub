@@ -22,14 +22,12 @@ const Wisiwyg = ()=>{
 
 
   useEffect(()=>{
-
     const unsub = onSnapshot(doc(db, `hub/data/videos/${editedVideo}`), video => {
       setDBVideo(video.data()||previewVideoData)
     })
-
     return unsub
-
   },[])
+
 
 
   return (

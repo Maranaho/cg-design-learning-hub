@@ -9,6 +9,39 @@ body {
 }
 button {cursor: pointer}
 
+label:not(.btn){
+  display: block;
+  font-weight: 700;
+  font-size: 1.3em;
+  margin: 20px 0 10px;
+}
+
+input{
+  &[type="text"] {
+    padding: 7px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    min-width: 200px;
+  }
+  &.search {
+    outline: none;
+    border: none;
+    width: 0;
+    transition: .5s width;
+    min-width:inherit;
+    &:focus {width: 150px;}
+  }
+}
+.btn {
+  background: #eee;
+  border: 1px solid #ddd;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-block;
+}
+
 .TopBar {
   display: flex;
   justify-content: space-between;
@@ -96,4 +129,109 @@ button {cursor: pointer}
 .EditVideo {
   padding: 20px;
   cursor: pointer;
+}
+
+.VideoUploader {
+  margin: 30px 0;
+  input[type="file"]{
+    visibility: hidden;
+    position: absolute;
+  }
+  video,.VideoPlaceholder {
+    height: 200px;
+    border-radius: 10px;
+    margin-top: 20px;
+  }
+  .VideoPlaceholder{
+    background: rgba(229, 239, 247,.2);
+    width: 300px;
+    cursor: pointer;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: .9em;
+    border: 2px dashed rgba(161, 213, 255,.4);
+    &:hover{background: rgba(229, 239, 247,.35);}
+  }
+}
+
+.AddTags{
+  width: 400px;
+  .tagList {
+    position: relative;
+    padding: 7px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: .5s border;
+    &.focus{
+      border: 1px solid #5294ff;
+      .recent {
+        z-index: 1;
+        opacity: 1;
+        transform: translateY(10px);
+      }
+    }
+  }
+  .recent {
+    transform: translateY(0);
+    padding: 10px 0;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    z-index: -1;
+    opacity: 0;
+    transition: .7s ease;
+  }
+  article {
+    background: #eee;
+    display: inline-block;
+    margin: 3px;
+    cursor: pointer;
+    font-weight: 400;
+    padding: 4px 15px;
+    border-radius: 30px;
+    font-size: .9em;
+    &.red{
+      background: rgba(249, 123, 108,.1);
+      color: darken(rgba(249, 123, 108,1),20%);
+      &:hover{background: rgba(249, 123, 108,.3)}
+    }
+    &.green{
+      background: rgba(86, 222, 126,.1);
+      color: darken(rgba(86, 222, 126,1),20%);
+      &:hover{background: rgba(86, 222, 126,.3)}
+    }
+    &.purple{
+      background: rgba(96, 115, 251,.1);
+      color: darken(rgba(96, 115, 251,1),20%);
+      &:hover{background: rgba(96, 115, 251,.3) }
+    }
+    &.blue{
+      background: rgba(57, 199, 242,.1);
+      color: darken(rgba(57, 199, 242,1),20%);
+      &:hover{background: rgba(57, 199, 242,.3)}
+    }
+    &.yellow{
+      background: rgba(249, 218, 59,.1);
+      color: darken(rgba(249, 218, 59,1),20%);
+      &:hover{background: rgba(249, 218, 59,.3)}
+    }
+    &.pink{
+      background: rgba(255, 130, 160,.1);
+      color: darken(rgba(255, 130, 160,1),20%);
+      &:hover{background: rgba(255, 130, 160,.3)}
+    }
+  }
+}
+
+.videoNTags {
+  display: flex;
+  justify-content: space-between;
 }
