@@ -11,7 +11,7 @@ const TopBar = ()=> (
 
       <User/>
       <Link className="btn primary uploadBtn" to="/admin">
-        <span>Admin</span>
+        <span>Dashboard</span>
       </Link>
     </article>
   </main>

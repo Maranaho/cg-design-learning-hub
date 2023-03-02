@@ -56,18 +56,22 @@ const AddEdit = ()=>{
       </button>
 
     
-      <div>
-        <label htmlFor="title">Title</label>
-        <input
-          id="title"
-          type="text"
-          value={editedVideo&&DBVideo?DBVideo.title:previewVideoData.title}
-          onChange={e=>handleUpdateData("title",e.target.value)}/>
-      </div>
+      
 
       <div className="videoNTags">
+        <div>
+        <div>
+          <label htmlFor="title">Title</label>
+          <input
+            id="title"
+            type="text"
+            value={editedVideo&&DBVideo?DBVideo.title:previewVideoData.title}
+            onChange={e=>handleUpdateData("title",e.target.value)}/>
+        </div>
         <VideoUploader/>
+        </div>
         <AddTags/>
+        
       </div>
       <Wisiwyg/>
       

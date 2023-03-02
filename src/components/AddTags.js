@@ -1,7 +1,7 @@
 import { useGalleryState } from '../context/gallery-context'
-import { useEffect,useState } from 'react'
+import { useEffect,useState,useRef } from 'react'
 import { db,doc,addDoc,getDoc,updateDoc,onSnapshot,query,collection } from '../utils/firebase'
-
+import Loading from './Loading'
 
 
 const AddTags = ()=>{
@@ -12,6 +12,9 @@ const AddTags = ()=>{
   const [tagFilter,setTagFilter] = useState("") 
   const [focus,setFocus] = useState("") 
   const [recentHover,setRecentHover] = useState(false) 
+  const [tagsHeight,setTagsHeight] = useState(0) 
+  const [loaded,setLoaded] = useState(false) 
+  const tagsHeightRef = useRef(null)
 
   const { state:{ editedVideo,previewVideoData },dispatch } = useGalleryState()
 
@@ -69,7 +72,7 @@ const AddTags = ()=>{
   }
 
   const filteredRecentTags = recentTags?recentTags
-  .filter(tagKey=>editedVideo ? !DBVideo.tags.includes(tagKey) : true)
+  .filter(tagKey=>editedVideo ? !DBVideo.tags.includes(tagKey) : !previewVideoData.tags.includes(tagKey))
   .filter(tagKey=>tags[tagKey].label.toLocaleLowerCase().includes(tagFilter.toLocaleLowerCase())):[]
 
   const createNewTag = async()=>{
@@ -87,10 +90,18 @@ const AddTags = ()=>{
     
     const newTagRef = await addDoc(collection(db, `hub/data/tags/`), newTag)
     const newTagKey = newTagRef.id
-    const oldVideoRef = doc(db, `hub/data/videos/${editedVideo}`)
-    const newTags = [...DBVideo.tags]
-    newTags.push(newTagKey)
-    await updateDoc(oldVideoRef, { tags: newTags})
+
+    if(editedVideo){
+      const oldVideoRef = doc(db, `hub/data/videos/${editedVideo}`)
+      const newTags = [...DBVideo.tags]
+      newTags.push(newTagKey)
+      await updateDoc(oldVideoRef, { tags: newTags})
+    } else {
+      const tempTags = [...previewVideoData.tags]
+      tempTags.push(newTagKey)
+      dispatch({type:"SET_PREVIEW",payload:{key:"tags",val:tempTags}})
+    }
+
     const newRecent = [...recentTags]
     newRecent.unshift(newTagKey)
     updateRecent(newRecent)
@@ -119,12 +130,43 @@ const AddTags = ()=>{
 
   useEffect(saveContent,[tags])
 
+  useEffect(()=>{
+    if(tagsHeightRef) setTagsHeight(tagsHeightRef.current.getBoundingClientRect().height)
+  },[tagsHeightRef,recentTags])
+
+  useEffect(()=>{
+    if(tagsHeightRef && !loaded){
+      setTimeout(()=>{
+        setLoaded(true)
+      },700)
+    }
+  },[tagsHeightRef])
+
 
   return (
    <div className="AddTags">
       <label>Tags</label>
-
-      <div className={`tagList ${focus}`}>
+      {!loaded&&<Loading/>}
+      <div
+        style={{height:`${tagsHeight + 60}px`}}
+        className={`tagList ${focus} ${loaded?"loaded":""}`}>
+        
+        <div ref={tagsHeightRef}>
+          {DBVideo&&tags&&DBVideo.tags.map(tagKey=>(
+            <Tag
+              key={tagKey}
+              tagKey={tagKey}
+              cb={handleRemove}
+              tags={tags}/>
+          ))}
+          {!editedVideo&&tags&&previewVideoData.tags.map(tagKey=>(
+            <Tag
+              key={tagKey}
+              tagKey={tagKey}
+              cb={handleRemove}
+              tags={tags}/>
+          ))}
+        </div>
         <input
           className="search"
           onFocus={()=>setFocus("focus")}
@@ -132,29 +174,19 @@ const AddTags = ()=>{
             if(!recentHover)setFocus("")
           }}
           value={tagFilter}
+          placeholder={`${focus?"Type":"Click"} to pick or create tag...`}
           onChange={e=>setTagFilter(e.target.value)}
           type="text"/>
-        {DBVideo&&tags&&DBVideo.tags.map(tagKey=>(
-          <Tag
-            key={tagKey}
-            tagKey={tagKey}
-            cb={handleRemove}
-            tags={tags}/>
-        ))}
-        {!editedVideo&&tags&&previewVideoData.tags.map(tagKey=>(
-          <Tag
-            key={tagKey}
-            tagKey={tagKey}
-            cb={handleRemove}
-            tags={tags}/>
-        ))}
+          
         <div
+          style={{top:`${tagsHeight + 70}px`}}
+          className={`recent ${DBVideo&&DBVideo.tags.length === 0 ? "short":""}`}
           onMouseEnter={()=>setRecentHover(true)}
           onMouseLeave={()=>{
             setRecentHover(false)
             if(focus)setFocus(false)
-          }}
-          className="recent">
+          }}>
+          <label>Most used</label>
           {recentTags&&filteredRecentTags.length === 0 && (
             <button
               className="btn"
