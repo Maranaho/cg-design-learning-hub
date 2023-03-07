@@ -10,6 +10,7 @@ let initialGalleryState = {
   publishConfirmed:false,
   org:'@intuit.com',
   editedVideo:null,//"7O9bEmL0KGtieiMrLRsK"
+  newKey:null,
   user:null,
   msg:null,
   searchValue:'',
@@ -35,6 +36,13 @@ const GalleryContext = React.createContext()
 
 function galleryReducer(state, action) {
   switch (action.type) {
+
+
+    case 'NEWKEY': {
+      let NEWKEY = {...state}
+      NEWKEY.newKey = action.payload
+      return NEWKEY
+    }
 
 
     case 'PROGRESS': {

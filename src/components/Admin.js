@@ -15,7 +15,7 @@ import Heads from './Heads'
 
 const Admin = ()=>{
   const videos = useVideos()
-  const { state: { addVideo,editedVideo,publishConfirmed},dispatch } = useGalleryState()
+  const { state: { addVideo,editedVideo} } = useGalleryState()
   const [dbTags,setTags] = useState(null)
 
 
@@ -36,7 +36,6 @@ const Admin = ()=>{
   if(!videos||!Object.keys(videos).length || !dbTags)return <Loading/>
   return (
     <section className="Dashboard">
-      {publishConfirmed && <Msg msg="The video was successfully uploaded"/>}
       {(addVideo || editedVideo) && <AddEdit/>}
       <div className="Admin">
         <div>

@@ -44,13 +44,35 @@ input{
     padding: 10px 0;
   }
 }
+
+.link {
+  color: #1185f1;
+}
 .btn {
-  background: #eee;
+  background: #1185f1;
   border: 1px solid #ddd;
-  padding: 5px 10px;
-  border-radius: 5px;
-  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 1.1em;
   display: inline-block;
+  text-decoration: none;
+  border: 1px solid #1185f1;
+  cursor: pointer;
+  &.mini{
+    padding: 5px 10px;
+    font-size: .8em;
+  }
+  &.ghost{
+    color:#1185f1;
+    background: none;
+  }
+  &.success{
+    color:#11f194;
+    border: 1px solid #11f194;
+    background: none;
+  }
+  &:disabled{cursor: not-allowed}
 }
 
 .TopBar {
@@ -107,6 +129,7 @@ input{
 
 
 .AddEdit {
+  overflow: hidden;
   position: fixed;
   display: block;
   right: 0;
@@ -122,6 +145,9 @@ input{
   transition: .4s ease;
   transform: translateX(2vw);
   opacity: 0;
+  .uploadForm.loading {
+    visibility: hidden;
+  }
   &.show{
     transform: translateX(-3vw);
     opacity: 1;
@@ -264,7 +290,16 @@ input{
 
 .VideoUploader {
   margin: 30px 0;
-  .btnCtn{text-align: center;}
+  .btnCtn{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    label{
+      min-width: 200px;
+      margin: 5px 0;
+      text-align: center;
+    }
+  }
   &.error{
     label {color:#f21c4b}
     .VideoPlaceholder {border-color:#f21c4b}
@@ -438,6 +473,19 @@ input{
   padding-top: 200px;
   h1 {margin-bottom: 10px}
   .addNew{margin-top: 60px}
+  .btn {
+    min-width: 200px;
+    position: relative;
+    .prog{
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 3px;
+      border-radius: 5px;
+      background: #77c3ff;
+      display: block;
+    }
+  }
 }
 
 .Admin {
@@ -460,5 +508,72 @@ input{
   border-bottom: 1px solid #e7e7e7;
   position: sticky;
       top:0;
+}
+
+.Progress{
+  width: 60%;
+  margin: 0 auto;
+}
+.Progress,.Success {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 40px;
+  .linkss {
+    margin-top: 80px;
+    .btn{margin-right: 20px;}
+  }
+  h1 {
+    margin: 20px 0 10px;
+  }
+  .txt{
+    text-align: center;
+    p{margin: 4px 0}
+    button{margin-top: 30px;}
+  }
+  .btnCtn{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    button{
+      margin-top: 20px;
+      min-width: 200px;
+    }
+  }
+  .progressBar{
+    height: 2px;
+    background: #cfe6f050;
+    width: 100%;
+    border-radius: 20px;
+    margin: 20px;
+    > div {
+      height: 2px;
+      background:#3edd8b;
+      border-radius: 10px;
+      transition: 2s ease;
+    }
+  }
+}
+
+.Dog {
+  width: 100%;
+  height: 74px;
+  position: relative;
+  transform: translateY(22px);
+  img,.long{
+    position: absolute;
+    transition: 2s cubic-bezier(0.78, 0.01, 0, 1.01);
+  }
+  .dogBack {
+    left:0;
+    bottom:0;
+  }
+  .long{
+    width: 2px;
+    height: 40px;
+    background: url("./assets/images/dog/long.svg");
+    bottom:0;
+    left: 73px
+  }
 }
 

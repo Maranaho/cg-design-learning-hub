@@ -49,13 +49,37 @@ input.search {
   padding: 10px 0;
 }
 
+.link {
+  color: #1185f1;
+}
+
 .btn {
-  background: #eee;
+  background: #1185f1;
   border: 1px solid #ddd;
-  padding: 5px 10px;
-  border-radius: 5px;
-  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 1.1em;
   display: inline-block;
+  text-decoration: none;
+  border: 1px solid #1185f1;
+  cursor: pointer;
+}
+.btn.mini {
+  padding: 5px 10px;
+  font-size: 0.8em;
+}
+.btn.ghost {
+  color: #1185f1;
+  background: none;
+}
+.btn.success {
+  color: #11f194;
+  border: 1px solid #11f194;
+  background: none;
+}
+.btn:disabled {
+  cursor: not-allowed;
 }
 
 .TopBar {
@@ -114,6 +138,7 @@ input.search {
 }
 
 .AddEdit {
+  overflow: hidden;
   position: fixed;
   display: block;
   right: 0;
@@ -129,6 +154,9 @@ input.search {
   transition: 0.4s ease;
   transform: translateX(2vw);
   opacity: 0;
+}
+.AddEdit .uploadForm.loading {
+  visibility: hidden;
 }
 .AddEdit.show {
   transform: translateX(-3vw);
@@ -289,6 +317,13 @@ input.search {
   margin: 30px 0;
 }
 .VideoUploader .btnCtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.VideoUploader .btnCtn label {
+  min-width: 200px;
+  margin: 5px 0;
   text-align: center;
 }
 .VideoUploader.error label {
@@ -495,6 +530,19 @@ input.search {
 .Stats .addNew {
   margin-top: 60px;
 }
+.Stats .btn {
+  min-width: 200px;
+  position: relative;
+}
+.Stats .btn .prog {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 3px;
+  border-radius: 5px;
+  background: #77c3ff;
+  display: block;
+}
 
 .Admin {
   display: flex;
@@ -518,4 +566,78 @@ input.search {
   border-bottom: 1px solid #e7e7e7;
   position: sticky;
   top: 0;
+}
+
+.Progress {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.Progress, .Success {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 40px;
+}
+.Progress .linkss, .Success .linkss {
+  margin-top: 80px;
+}
+.Progress .linkss .btn, .Success .linkss .btn {
+  margin-right: 20px;
+}
+.Progress h1, .Success h1 {
+  margin: 20px 0 10px;
+}
+.Progress .txt, .Success .txt {
+  text-align: center;
+}
+.Progress .txt p, .Success .txt p {
+  margin: 4px 0;
+}
+.Progress .txt button, .Success .txt button {
+  margin-top: 30px;
+}
+.Progress .btnCtn, .Success .btnCtn {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.Progress .btnCtn button, .Success .btnCtn button {
+  margin-top: 20px;
+  min-width: 200px;
+}
+.Progress .progressBar, .Success .progressBar {
+  height: 2px;
+  background: rgba(207, 230, 240, 0.3137254902);
+  width: 100%;
+  border-radius: 20px;
+  margin: 20px;
+}
+.Progress .progressBar > div, .Success .progressBar > div {
+  height: 2px;
+  background: #3edd8b;
+  border-radius: 10px;
+  transition: 2s ease;
+}
+
+.Dog {
+  width: 100%;
+  height: 74px;
+  position: relative;
+  transform: translateY(22px);
+}
+.Dog img, .Dog .long {
+  position: absolute;
+  transition: 2s cubic-bezier(0.78, 0.01, 0, 1.01);
+}
+.Dog .dogBack {
+  left: 0;
+  bottom: 0;
+}
+.Dog .long {
+  width: 2px;
+  height: 40px;
+  background: url("./assets/images/dog/long.svg");
+  bottom: 0;
+  left: 73px;
 }/*# sourceMappingURL=App.css.map */

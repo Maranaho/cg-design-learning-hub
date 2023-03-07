@@ -51,9 +51,20 @@ const VideoUploader = ()=>{
     
   }
 
+  const checkUpload = file => {
+    const { size, name } = file
+    const extension = name.split('.').pop()
+    let fileSize = " > 1 GB"
+    if(size < 1000000) fileSize = (size / 1000).toFixed(2) + " kb"
+    if(size >= 1000000 && size < 1000000000 ) fileSize = (size / 1000000).toFixed(2) + " mb"
+    if(size >= 1000000000 && size < 1000000000000 ) fileSize = (size / 1000000000).toFixed(2) + " gb"
+    console.log({ size, name, extension,fileSize })
+  }
+
   const handleFileChange = async(e,key) => {
 
     const file = e.target.files[0]
+    checkUpload(file)
     const notAnImageOrVideo = file.type && (!file.type.startsWith('video/') && (!file.type.startsWith('image/')))
     const wrongFormat = (key === "url" && file.type.startsWith('image/')) || (key === "thumbnail" && file.type.startsWith('video/'))
     if (notAnImageOrVideo || wrongFormat) {
@@ -68,6 +79,8 @@ const VideoUploader = ()=>{
     if(editedVideo)upload(file)
     
    }
+
+
 
   useEffect(()=>{
     const unsub = onSnapshot(doc(db, `hub/data/videos/${editedVideo}`), video => {
@@ -87,7 +100,7 @@ const VideoUploader = ()=>{
   return (
    <div className={`VideoUploader ${(incompleteForm && formChecked || wrongFormat) && ((editedVideo && !DBVideo.url) || (!editedVideo && !previewVideoData.url))?"error":""}`}>
 
-
+    
     <label>Video *</label>
    
     <div className="videoCtn">
@@ -105,18 +118,20 @@ const VideoUploader = ()=>{
       )}
       <div className="btnCtn">
         {videoSrc&&<label className="btn ghost" htmlFor="video">{videoSrc?"Change video" : "Select a video"}</label>}
-        <label className="btn ghost" htmlFor="thumbnail">{thumbnail?"Change thumbnail" : "Select a thumbnail"}</label>
+        <label className="btn" htmlFor="thumbnail">{thumbnail?"Change thumbnail" : "Select a thumbnail"}</label>
       </div>
     </div>
 
-    <input
-      id="thumbnail"
-      type="file"
-      onChange={e=>handleFileChange(e,"thumbnail")}/>
-    <input
-      id="video"
-      type="file"
-      onChange={e=>handleFileChange(e,"url")}/>
+    <form encType="multipart/form-data">
+      <input
+        id="thumbnail"
+        type="file"
+        onChange={e=>handleFileChange(e,"thumbnail")}/>
+      <input
+        id="video"
+        type="file"
+        onChange={e=>handleFileChange(e,"url")}/>
+    </form>
    </div>
   )
 }

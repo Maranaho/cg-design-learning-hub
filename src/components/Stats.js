@@ -1,12 +1,10 @@
-import { useParams } from 'react-router-dom'
 import { useGalleryState } from '../context/gallery-context'
-import Loading from './Loading'
 import { useNavigate } from 'react-router-dom'
 
 
 
 const Stats = ()=>{
-  const { dispatch } = useGalleryState()
+  const { state:{stateProgress},dispatch } = useGalleryState()
   const navigate = useNavigate()
   const handleAddNew = ()=>{
     dispatch({type:"ADD_VIDEO",payload:true})
@@ -18,7 +16,13 @@ const Stats = ()=>{
     <section className="Stats SignIn">
       <h1>Stats</h1>
       <h2>Data about the perfomance of the videos</h2>
-      <button className="addNew btn" onClick={handleAddNew}>Upload new video</button>
+      <button
+        disabled={stateProgress > 0}
+        className="addNew btn"
+        onClick={handleAddNew}>
+          <span>{stateProgress > 0? "Uploading...":"Upload new video"}</span>
+        { stateProgress > 0 &&<span className="prog" style={{width:stateProgress+"%"}}/>}
+      </button>
     </section>
   )
 }

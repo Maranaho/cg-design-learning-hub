@@ -20,15 +20,18 @@ import {
 
 
 
-const Publish = ({handleClose})=>{
+const Publish = ()=>{
 
   const urls = {}
   const user = useAuth()
   const [ DBVideo,setDBVideo ] = useState(null)
   const [ disable,setDisable ] = useState(false)
-  const { state:{ editedVideo,previewVideoData,stateProgress }, dispatch } = useGalleryState()
+  const { state:{ editedVideo,previewVideoData }, dispatch } = useGalleryState()
 
   const handlePublish =()=>{
+
+    // deleteFile('recap.mov')
+    //   return
 
     if(!editedVideo && (!previewVideoData.videoFile || !previewVideoData.thumbnailFile)){
       dispatch({type:"INCOMPLETE_FORM",payload:true})
@@ -58,8 +61,7 @@ const Publish = ({handleClose})=>{
       const uploadTask = uploadBytesResumable(storageRef, file)
       const handleProgress = snap => {
         const progress = (snap.bytesTransferred / snap.totalBytes) * 100
-        console.log(progress);
-        dispatch({type:"PROGRESS",payload:progress})
+        if(type === "url")dispatch({type:"PROGRESS",payload:Math.round(progress)})
       }
 
       const handleError = err => console.error(err)
@@ -70,7 +72,6 @@ const Publish = ({handleClose})=>{
       })
 
       uploadTask.on('state_changed', 
-        ()=>
           handleProgress,
           handleError, 
           handleSuccess
@@ -79,25 +80,24 @@ const Publish = ({handleClose})=>{
   }
 
   const urlToDB = async() =>{
-      const videoData = {...previewVideoData,...urls}
-      videoData.createdAt= Timestamp.now()
-      videoData.uploader = user.email
-      
-      delete videoData.thumbnailFile
-      delete videoData.videoFile
-      
-      // deleteFile('figma.png')
-      // deleteFile('peter.mp4')
-      // return
-      addDoc(collection(db, `hub/data/videos/`), videoData)
-      confirmPublish()
+    
+    const videoData = {...previewVideoData,...urls}
+    videoData.createdAt= Timestamp.now()
+    videoData.uploader = user.email
+    
+    delete videoData.thumbnailFile
+    delete videoData.videoFile
+    
+    const newKey = await addDoc(collection(db, `hub/data/videos/`), videoData)
+    dispatch({type:"NEWKEY",payload:newKey.id})
+    confirmPublish()
   }
 
   const confirmPublish = ()=>{
     dispatch({type:"CONFIRM_PUBLISH",payload:true})
-    setTimeout(() => dispatch({type:"CONFIRM_PUBLISH",payload:false}), 3000)
     setDisable(true)
-    handleClose()
+    //handleClose()
+    setTimeout(()=>dispatch({type:"PROGRESS",payload:0}),500)
   }
 
 
@@ -119,7 +119,6 @@ const Publish = ({handleClose})=>{
   
   return (
     <div className="Publish">
-      {stateProgress!==0&&<span>{stateProgress}</span>}
       <button disabled={disable} onClick={handlePublish} className="btn">{editedVideo?"Update":"Publish"} video</button>
     </div>
   )
