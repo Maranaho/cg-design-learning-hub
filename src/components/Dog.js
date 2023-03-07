@@ -10,7 +10,7 @@ import weiner from '../assets/images/weiner.svg'
 import { useRef,useEffect, useState } from 'react'
 
 const Dog = ()=>{
-  const cutoff = 23
+  const cutoff = 1
   const { state:{ stateProgress } } = useGalleryState()
   const dogRef = useRef(null)
   const [width,setWidth] = useState(0)
@@ -21,7 +21,6 @@ const Dog = ()=>{
     }
   },[dogRef])
   if(!dogRef) return <img className="weiner" src={weiner}/>
-  
   return (
 
     <div className="Dog" ref={dogRef}>
@@ -29,8 +28,8 @@ const Dog = ()=>{
       <img style={{transform: `translateX(${getLeft(76,.7) + "px)"}`}} className="bird1" src={bird2}/>
       <img style={{transform: `translateX(${getLeft(20,.2) + "px)"}`}} className="sun" src={sun}/>
       <img style={{transform: `translateX(${getLeft(120,.8) + "px)"}`}} className="cloud" src={cloud}/>
-      {stateProgress >= cutoff&&<div style={{width: (getLeft(55,.97) + 4) + "px"}} className="long"/>}
-      <img style={{transform: `translateX(${getLeft(73,.97) + "px)"}`}} className="dogFront" src={stateProgress < cutoff?full:front}/>
+      <div style={{width: (getLeft(0,.97) + 4) + "px"}} className="long"/>
+      <img style={{transform: `translateX(${getLeft(76,.97) + "px)"}`}} className="dogFront" src={front}/>
       {stateProgress >= cutoff&&<img className="dogBack" src={back}/>}
     </div>
   )

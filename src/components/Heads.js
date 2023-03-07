@@ -29,6 +29,12 @@ const Admin = ()=>{
           </div>
         </th>
         <th>
+          <div onClick={()=>handleSort("tags")}>
+            <span>Tags</span>
+            <img className={`sortChevron ${sortKey === "tags" ? "active" : ""}`} src={chevron}/>
+          </div>
+        </th>
+        <th>
           <div onClick={()=>handleSort("views")}>
             <span>Views</span>
             <img className={`sortChevron ${sortKey === "views" ? "active" : ""}`} src={chevron}/>

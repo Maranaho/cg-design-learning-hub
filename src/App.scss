@@ -27,14 +27,14 @@ h2 {
   margin: 0;
 }
 
-input{
-  &[type="text"] {
+input {
     padding: 7px 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-sizing: border-box;
     min-width: 200px;
-  }
+    outline: none;
+    &:focus{border: 1px solid #5294ff}
   &.search {
     outline: none;
     border: none;
@@ -58,6 +58,7 @@ input{
   display: inline-block;
   text-decoration: none;
   border: 1px solid #1185f1;
+  &:hover{background: #0d71cf}
   cursor: pointer;
   &.mini{
     padding: 5px 10px;
@@ -66,13 +67,17 @@ input{
   &.ghost{
     color:#1185f1;
     background: none;
+    &:hover{background: #eaf5ff}
   }
   &.success{
     color:#11f194;
     border: 1px solid #11f194;
     background: none;
   }
-  &:disabled{cursor: not-allowed}
+  &:disabled{
+    cursor: not-allowed;
+    opacity: .4;
+  }
 }
 
 .TopBar {
@@ -134,23 +139,21 @@ input{
   position: fixed;
   display: block;
   right: 0;
-  width:48vw;
-  height: calc(100vh - 120px);
+  width: 40vw;
+  height: calc(100vh - 100px);
   top: 80px;
   padding: 50px;
   border-radius: 20px;
-  box-shadow: 0 20px 40px 0px rgba(0,0,0,.1);
+  box-shadow: 0 40px 40px 0px rgba(0,0,0,.2);
   box-sizing: border-box;
   z-index: 3;
   background: #fff;
-  transition: .4s ease;
+  transition: .8s ease;
   transform: translateX(2vw);
   opacity: 0;
-  .uploadForm.loading {
-    visibility: hidden;
-  }
+  .uploadForm.loading {visibility: hidden}
   &.show{
-    transform: translateX(-3vw);
+    transform: translateX(-1.5vw);
     opacity: 1;
   }
     .close {
@@ -187,15 +190,23 @@ input{
 
 .EditVideo {
   cursor: pointer;
-  .tags > span {
-    background: #eeeeee50;
-  display: inline-block;
-  margin: 3px;
-  cursor: pointer;
-  font-weight: 400;
-  padding: 4px 10px;
-  border-radius: 5px;
-  font-size: .9em;
+  .tags {
+    >article{
+      background: none;
+      padding: 7px;
+      margin: 0;
+    }
+    > button {
+      background: #e2e2e270;
+      display: inline-block;
+      margin: 3px;
+      cursor: pointer;
+      font-weight: 400;
+      padding: 4px 10px;
+      border-radius: 5px;
+      font-size: .9em;
+      border: none;
+      }
   }
   .uploader{
     display: flex;
@@ -257,7 +268,7 @@ input{
     width: 100%;
     thead{
       position: sticky;
-      top: 77px;
+      top: 98px;
       background: #fff;
       tr:hover{background: none}
       th {
@@ -484,11 +495,12 @@ input{
   .btn {
     min-width: 200px;
     position: relative;
+    overflow: hidden;
     .prog{
       position: absolute;
       left: 0;
-      top: 0;
-      height: 3px;
+      top: -2px;
+      height: 4px;
       border-radius: 5px;
       background: #77c3ff;
       display: block;
@@ -499,8 +511,8 @@ input{
 .Admin {
   display: flex;
   max-height: 100vh;
-  > section,
-  > div { flex:1 }
+  > section{flex:.8}
+  > div { flex:1.2 }
   > div {
     height: calc(100vh - 98px);
     overflow-y: scroll;
@@ -511,16 +523,46 @@ input{
 }
 
 .SearchVideo {
-  padding: 30px 20px;
+  padding: 20px;
   background: #fff;
   border-bottom: 1px solid #e7e7e7;
   position: sticky;
-      top:0;
+  top:0;
+  display: flex;
+  > div{
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+  }
+  .btn {
+    border-radius: 5px;
+    margin-left: 10px;
+  }
+  label {
+    margin: 0 0 10px 0;
+    font-size: 1em;
+  }
+  input {
+    padding:  20px;
+    flex:1;
+    outline: none;
+    &:focus{border-color: #1185f1}
+  }
 }
 
 .Progress{
   width: 60%;
   margin: 0 auto;
+  .progressPercent {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    background: #3edd8b;
+    color: #fff;
+    font-weight: 700;
+    border-radius: 10px;
+    padding: 10px;
+  }
 }
 .Progress,.Success {
   display: flex;
@@ -573,7 +615,7 @@ input{
     transition: 2s cubic-bezier(0.78, 0.01, 0, 1.01);
   }
   .dogBack {
-    left:0;
+    left:-73px;
     bottom:0;
   }
   .long{
@@ -581,7 +623,12 @@ input{
     height: 40px;
     background: url("./assets/images/dog/long.svg");
     bottom:0;
-    left: 73px
+    left: 0;
   }
+}
+
+.NoMatch {
+  padding: 40px;
+  text-align: center;
 }
 

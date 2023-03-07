@@ -62,7 +62,7 @@ const VideoUploader = ()=>{
   }
 
   const handleFileChange = async(e,key) => {
-
+    if(!e.target.files.length)return
     const file = e.target.files[0]
     checkUpload(file)
     const notAnImageOrVideo = file.type && (!file.type.startsWith('video/') && (!file.type.startsWith('image/')))

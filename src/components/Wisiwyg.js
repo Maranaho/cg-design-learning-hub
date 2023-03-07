@@ -16,7 +16,7 @@ const Wisiwyg = ()=>{
       const videoRef = doc(db, `hub/data/videos/${editedVideo}`)
       await updateDoc(videoRef, videoToUpdate)
     }
-    dispatch({type:"SET_PREVIEW",payload:{key:"description",richText}})
+    dispatch({type:"SET_PREVIEW",payload:{key:"description",val:richText}})
   }
 
 

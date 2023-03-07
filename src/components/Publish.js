@@ -80,7 +80,6 @@ const Publish = ({handleClose})=>{
   }
 
   const urlToDB = async() =>{
-    
     const videoData = {...previewVideoData,...urls}
     videoData.createdAt= Timestamp.now()
     videoData.uploader = user.email

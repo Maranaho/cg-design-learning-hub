@@ -33,12 +33,16 @@ h2 {
   margin: 0;
 }
 
-input[type=text] {
+input {
   padding: 7px 15px;
   border: 1px solid #ccc;
   border-radius: 5px;
   box-sizing: border-box;
   min-width: 200px;
+  outline: none;
+}
+input:focus {
+  border: 1px solid #5294ff;
 }
 input.search {
   outline: none;
@@ -65,6 +69,9 @@ input.search {
   border: 1px solid #1185f1;
   cursor: pointer;
 }
+.btn:hover {
+  background: #0d71cf;
+}
 .btn.mini {
   padding: 5px 10px;
   font-size: 0.8em;
@@ -73,6 +80,9 @@ input.search {
   color: #1185f1;
   background: none;
 }
+.btn.ghost:hover {
+  background: #eaf5ff;
+}
 .btn.success {
   color: #11f194;
   border: 1px solid #11f194;
@@ -80,6 +90,7 @@ input.search {
 }
 .btn:disabled {
   cursor: not-allowed;
+  opacity: 0.4;
 }
 
 .TopBar {
@@ -143,16 +154,16 @@ input.search {
   position: fixed;
   display: block;
   right: 0;
-  width: 48vw;
-  height: calc(100vh - 120px);
+  width: 40vw;
+  height: calc(100vh - 100px);
   top: 80px;
   padding: 50px;
   border-radius: 20px;
-  box-shadow: 0 20px 40px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 40px 40px 0px rgba(0, 0, 0, 0.2);
   box-sizing: border-box;
   z-index: 3;
   background: #fff;
-  transition: 0.4s ease;
+  transition: 0.8s ease;
   transform: translateX(2vw);
   opacity: 0;
 }
@@ -160,7 +171,7 @@ input.search {
   visibility: hidden;
 }
 .AddEdit.show {
-  transform: translateX(-3vw);
+  transform: translateX(-1.5vw);
   opacity: 1;
 }
 .AddEdit .close {
@@ -198,8 +209,13 @@ input.search {
 .EditVideo {
   cursor: pointer;
 }
-.EditVideo .tags > span {
-  background: rgba(238, 238, 238, 0.3137254902);
+.EditVideo .tags > article {
+  background: none;
+  padding: 7px;
+  margin: 0;
+}
+.EditVideo .tags > button {
+  background: rgba(226, 226, 226, 0.4392156863);
   display: inline-block;
   margin: 3px;
   cursor: pointer;
@@ -207,6 +223,7 @@ input.search {
   padding: 4px 10px;
   border-radius: 5px;
   font-size: 0.9em;
+  border: none;
 }
 .EditVideo .uploader {
   display: flex;
@@ -274,7 +291,7 @@ input.search {
 }
 .videosToEdit table thead {
   position: sticky;
-  top: 77px;
+  top: 98px;
   background: #fff;
 }
 .videosToEdit table thead tr:hover {
@@ -542,12 +559,13 @@ input.search {
 .Stats .btn {
   min-width: 200px;
   position: relative;
+  overflow: hidden;
 }
 .Stats .btn .prog {
   position: absolute;
   left: 0;
-  top: 0;
-  height: 3px;
+  top: -2px;
+  height: 4px;
   border-radius: 5px;
   background: #77c3ff;
   display: block;
@@ -557,9 +575,11 @@ input.search {
   display: flex;
   max-height: 100vh;
 }
-.Admin > section,
+.Admin > section {
+  flex: 0.8;
+}
 .Admin > div {
-  flex: 1;
+  flex: 1.2;
 }
 .Admin > div {
   height: calc(100vh - 98px);
@@ -570,16 +590,48 @@ input.search {
 }
 
 .SearchVideo {
-  padding: 30px 20px;
+  padding: 20px;
   background: #fff;
   border-bottom: 1px solid #e7e7e7;
   position: sticky;
   top: 0;
+  display: flex;
+}
+.SearchVideo > div {
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+}
+.SearchVideo .btn {
+  border-radius: 5px;
+  margin-left: 10px;
+}
+.SearchVideo label {
+  margin: 0 0 10px 0;
+  font-size: 1em;
+}
+.SearchVideo input {
+  padding: 20px;
+  flex: 1;
+  outline: none;
+}
+.SearchVideo input:focus {
+  border-color: #1185f1;
 }
 
 .Progress {
   width: 60%;
   margin: 0 auto;
+}
+.Progress .progressPercent {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  background: #3edd8b;
+  color: #fff;
+  font-weight: 700;
+  border-radius: 10px;
+  padding: 10px;
 }
 
 .Progress, .Success {
@@ -640,7 +692,7 @@ input.search {
   transition: 2s cubic-bezier(0.78, 0.01, 0, 1.01);
 }
 .Dog .dogBack {
-  left: 0;
+  left: -73px;
   bottom: 0;
 }
 .Dog .long {
@@ -648,5 +700,10 @@ input.search {
   height: 40px;
   background: url("./assets/images/dog/long.svg");
   bottom: 0;
-  left: 73px;
+  left: 0;
+}
+
+.NoMatch {
+  padding: 40px;
+  text-align: center;
 }/*# sourceMappingURL=App.css.map */

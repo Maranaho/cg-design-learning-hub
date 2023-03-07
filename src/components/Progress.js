@@ -1,6 +1,5 @@
 import { useGalleryState } from '../context/gallery-context'
 import { useEffect, useState } from 'react'
-import hifive from '../assets/images/hifive.svg'
 import Dog from './Dog'
 
 const Progress = ({handleClose})=>{
@@ -13,7 +12,8 @@ const Progress = ({handleClose})=>{
   },[])
   return (
     <div className="Progress">
-      
+
+      <span className="progressPercent">{stateProgress}%</span>
       <Dog/>
       <div className="progressBar">
         <div style={{width:stateProgress + "%"}}/>
@@ -24,6 +24,8 @@ const Progress = ({handleClose})=>{
           <p>You don't have to wait until the end</p>
           <p>You can safely close this panel.</p>
           <p>The upload will still run in the background</p>
+          <br/>
+          <p>Or you you can stay and watch the weiner dog get longer!</p>
           <button className="btn" onClick={handleClose}>Close</button>
         </div>
       ):<p>Uploading...</p>}

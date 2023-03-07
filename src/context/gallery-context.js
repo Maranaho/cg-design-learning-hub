@@ -9,7 +9,7 @@ let initialGalleryState = {
   wrongFormat:false,
   publishConfirmed:false,
   org:'@intuit.com',
-  editedVideo:null,//"7O9bEmL0KGtieiMrLRsK"
+  editedVideo:null,
   newKey:null,
   user:null,
   msg:null,
@@ -37,6 +37,12 @@ const GalleryContext = React.createContext()
 function galleryReducer(state, action) {
   switch (action.type) {
 
+
+    case 'SEARCH': {
+      let SEARCH = {...state}
+      SEARCH.searchValue = action.payload
+      return SEARCH
+    }
 
     case 'NEWKEY': {
       let NEWKEY = {...state}
