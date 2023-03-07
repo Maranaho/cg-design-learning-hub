@@ -15,11 +15,22 @@ button {
   cursor: pointer;
 }
 
-label:not(.btn) {
+label:not(.btn, .VideoPlaceholder) {
   display: block;
   font-weight: 300;
   font-size: 1.3em;
   margin: 20px 0 10px;
+}
+
+h1 {
+  font-weight: 300;
+  font-size: 50px;
+}
+
+h2 {
+  font-weight: 400;
+  font-size: 20px;
+  margin: 0;
 }
 
 input[type=text] {
@@ -58,6 +69,7 @@ input.search {
   background: #fff;
   z-index: 2;
   padding: 20px 50px;
+  border-bottom: 1px solid #e7e7e7;
 }
 .TopBar .logo {
   padding: 20px 0;
@@ -80,10 +92,12 @@ input.search {
 }
 
 .Routes {
-  padding-top: 100px;
+  padding-top: 97px;
+  height: 100vh;
+  box-sizing: border-box;
 }
 
-.Loading, .AddEdit {
+.Loading {
   position: fixed;
   top: 0;
   left: 0;
@@ -100,19 +114,27 @@ input.search {
 }
 
 .AddEdit {
-  background: rgba(0, 0, 0, 0.7);
-  padding-top: 5vh;
-}
-.AddEdit section {
-  width: 1000px;
+  position: fixed;
+  display: block;
+  right: 0;
+  width: 48vw;
+  height: calc(100vh - 120px);
+  top: 80px;
   padding: 50px;
-  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px 0px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
-  border-radius: 15px;
-  height: 90vh;
-  position: relative;
+  z-index: 3;
+  background: #fff;
+  transition: 0.4s ease;
+  transform: translateX(2vw);
+  opacity: 0;
 }
-.AddEdit section .close {
+.AddEdit.show {
+  transform: translateX(-3vw);
+  opacity: 1;
+}
+.AddEdit .close {
   position: absolute;
   top: 20px;
   right: 20px;
@@ -137,25 +159,165 @@ input.search {
 }
 
 .EditVideo {
-  padding: 20px;
   cursor: pointer;
+}
+.EditVideo .tags > span {
+  background: rgba(238, 238, 238, 0.3137254902);
+  display: inline-block;
+  margin: 3px;
+  cursor: pointer;
+  font-weight: 400;
+  padding: 4px 10px;
+  border-radius: 5px;
+  font-size: 0.9em;
+}
+.EditVideo .uploader {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 0.8em;
+  padding-right: 20px;
+  text-align: right;
+}
+.EditVideo .uploader .photoCtn {
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 5px;
+  margin: 0 10px;
+}
+.EditVideo .uploader .photoCtn img {
+  width: 25px;
+}
+.EditVideo .ago {
+  font-size: 0.7em;
+}
+.EditVideo h3 {
+  font-weight: 400;
+  margin: 0;
+}
+.EditVideo .edit {
+  display: flex;
+  flex-direction: column;
+}
+.EditVideo .edit > div {
+  margin-top: 10px;
+}
+.EditVideo .thumb {
+  width: 150px;
+}
+.EditVideo .thumb > div {
+  padding: 15px;
+}
+.EditVideo .thumb > div > div {
+  height: 90px;
+  width: 150px;
+  border-radius: 10px;
+  background: #f7f7f7;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+.EditVideo .thumb > div > div > img {
+  height: 100%;
+}
+
+.views {
+  font-size: 0.8em;
+}
+.views img {
+  margin: 0 5px;
+}
+
+.videosToEdit table {
+  width: 100%;
+}
+.videosToEdit table thead {
+  position: sticky;
+  top: 77px;
+  background: #fff;
+}
+.videosToEdit table thead tr:hover {
+  background: none;
+}
+.videosToEdit table thead th {
+  padding: 27px 0;
+  font-weight: 300;
+  text-align: left;
+  border-bottom: 1px solid #e7e7e7;
+}
+.videosToEdit table thead th:last-child > div {
+  justify-content: flex-end;
+  padding-right: 20px;
+}
+.videosToEdit table thead th > div {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.videosToEdit table thead th > div img {
+  margin: 0 5px;
+}
+.videosToEdit tr {
+  transition: 0.2s ease;
+  border-radius: 10px;
+}
+.videosToEdit tr.selected:hover, .videosToEdit tr.selected {
+  background: #f7f7f7;
+}
+.videosToEdit tr:hover {
+  background: rgba(247, 247, 247, 0.4392156863);
+}
+
+.sortChevron {
+  display: block;
+  transform: rotate(0deg);
+  transition: 0.6s ease;
+}
+.sortChevron.active {
+  transform: rotate(180deg);
+}
+
+.sort {
+  padding-left: 20px;
 }
 
 .VideoUploader {
   margin: 30px 0;
+}
+.VideoUploader .btnCtn {
+  text-align: center;
+}
+.VideoUploader.error label {
+  color: #f21c4b;
+}
+.VideoUploader.error .VideoPlaceholder {
+  border-color: #f21c4b;
+}
+.VideoUploader .videoCtn {
+  display: flex;
+  justify-content: center;
+  background: rgba(245, 245, 245, 0.4392156863);
+  border-radius: 15px;
+  padding: 15px;
+  flex-direction: column;
+  align-items: center;
 }
 .VideoUploader input[type=file] {
   visibility: hidden;
   position: absolute;
 }
 .VideoUploader video, .VideoUploader .VideoPlaceholder {
-  height: 300px;
+  height: 200px;
   border-radius: 10px;
-  margin-top: 20px;
+  margin-bottom: 15px;
 }
 .VideoUploader .VideoPlaceholder {
   background: rgba(229, 239, 247, 0.2);
-  width: 300px;
+  width: calc(100% - 15px);
   cursor: pointer;
   color: #fff;
   display: flex;
@@ -171,7 +333,9 @@ input.search {
 }
 
 .AddTags {
-  width: 400px;
+  flex: 1;
+  box-sizing: border-box;
+  padding-left: 50px;
 }
 .AddTags .tagList {
   position: relative;
@@ -179,7 +343,7 @@ input.search {
   border: 1px solid #ccc;
   border-radius: 5px;
   box-sizing: border-box;
-  transition: 0.7s ease;
+  transition: 0.2s ease;
   opacity: 0;
 }
 .AddTags .tagList.loaded {
@@ -210,7 +374,8 @@ input.search {
 .AddTags .recent label {
   margin: 5px 0 15px;
 }
-.AddTags article {
+
+.Tag {
   background: #eee;
   display: inline-block;
   margin: 3px;
@@ -220,50 +385,137 @@ input.search {
   border-radius: 5px;
   font-size: 0.9em;
 }
-.AddTags article.red {
+.Tag.red {
   background: rgba(249, 123, 108, 0.1);
   color: #f5230a;
 }
-.AddTags article.red:hover {
+.Tag.red:hover {
   background: rgba(249, 123, 108, 0.3);
 }
-.AddTags article.green {
+.Tag.green {
   background: rgba(86, 222, 126, 0.1);
   color: #22ac4a;
 }
-.AddTags article.green:hover {
+.Tag.green:hover {
   background: rgba(86, 222, 126, 0.3);
 }
-.AddTags article.purple {
+.Tag.purple {
   background: rgba(96, 115, 251, 0.1);
   color: #0623ef;
 }
-.AddTags article.purple:hover {
+.Tag.purple:hover {
   background: rgba(96, 115, 251, 0.3);
 }
-.AddTags article.blue {
+.Tag.blue {
   background: rgba(57, 199, 242, 0.1);
   color: #0c91b9;
 }
-.AddTags article.blue:hover {
+.Tag.blue:hover {
   background: rgba(57, 199, 242, 0.3);
 }
-.AddTags article.yellow {
+.Tag.yellow {
   background: rgba(249, 218, 59, 0.1);
   color: #c8a806;
 }
-.AddTags article.yellow:hover {
+.Tag.yellow:hover {
   background: rgba(249, 218, 59, 0.3);
 }
-.AddTags article.pink {
+.Tag.pink {
   background: rgba(255, 130, 160, 0.1);
   color: #ff1c52;
 }
-.AddTags article.pink:hover {
+.Tag.pink:hover {
   background: rgba(255, 130, 160, 0.3);
 }
 
 .videoNTags {
   display: flex;
   justify-content: space-between;
+}
+
+.SignIn, .NonIntuitUser {
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.SignIn h1, .NonIntuitUser h1 {
+  margin-bottom: 40px;
+}
+
+.Publish {
+  padding: 20px;
+  text-align: right;
+}
+
+.Dashboard {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+}
+.Dashboard > div {
+  flex: 1;
+}
+
+.Msg {
+  position: absolute;
+  top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.Msg.error article {
+  background: #f21c4b;
+}
+.Msg > article {
+  background: #0dcb63;
+  padding: 10px 30px;
+  color: #fff;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.Title.error label {
+  color: #f21c4b;
+}
+.Title.error input[type=text] {
+  border-color: #f21c4b;
+}
+
+.Stats {
+  border-left: 1px solid #e7e7e7;
+  height: inherit;
+  justify-content: flex-start;
+  padding-top: 200px;
+}
+.Stats h1 {
+  margin-bottom: 10px;
+}
+.Stats .addNew {
+  margin-top: 60px;
+}
+
+.Admin {
+  display: flex;
+  max-height: 100vh;
+}
+.Admin > section,
+.Admin > div {
+  flex: 1;
+}
+.Admin > div {
+  height: calc(100vh - 98px);
+  overflow-y: scroll;
+}
+.Admin table > article {
+  padding: 20px;
+}
+
+.SearchVideo {
+  padding: 30px 20px;
+  background: #fff;
+  border-bottom: 1px solid #e7e7e7;
+  position: sticky;
+  top: 0;
 }/*# sourceMappingURL=App.css.map */

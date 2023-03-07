@@ -11,7 +11,10 @@ const TrainingList = ()=>{
 
 
   return (
-    <div> TrainingList</div>
+    <div className="SignIn">
+      <h1>Training Videos</h1>
+      <h2>Yay!!</h2>
+    </div>
   )
 }
 

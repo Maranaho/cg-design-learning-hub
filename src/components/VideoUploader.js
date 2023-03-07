@@ -1,7 +1,11 @@
 import { useGalleryState } from '../context/gallery-context'
 import { useEffect,useState } from 'react'
-import { db,doc,updateDoc,onSnapshot } from '../utils/firebase'
-import upload from '../assets/icons/upload_blue.svg'
+import { db,doc,updateDoc,onSnapshot,
+  getStorage,
+  ref,
+  uploadBytesResumable,
+  getDownloadURL } from '../utils/firebase'
+import uploadImg from '../assets/icons/upload_blue.svg'
 
 
 
@@ -9,35 +13,59 @@ const VideoUploader = ()=>{
   
   const [ DBVideo,setDBVideo ] = useState(null)
   const [ videoSrc,setVideoSrc ] = useState(null)
-  const [ poster,setPoster ] = useState(null)
-  const [ error,setError ] = useState(false)
-  const { state:{ editedVideo },dispatch } = useGalleryState()
-  const handleUpdateData = async(key,val) => {
-    if(!editedVideo) dispatch({type:"SET_PREVIEW",payload:{key,val:JSON.parse(val)}})
-    else {
-      const videoToUpdate = {...DBVideo}
-      videoToUpdate[key] = val
-      const videoRef = doc(db, `hub/data/videos/${editedVideo}`)
-      await updateDoc(videoRef, videoToUpdate)
-    }
+  const [ thumbnail,setThumbnail ] = useState(null)
+  const { state:{ editedVideo,incompleteForm, previewVideoData, formChecked, wrongFormat},dispatch } = useGalleryState()
+
+  const handleProgress = snap => {
+    const progress = (snap.bytesTransferred / snap.totalBytes) * 100
+    console.log(progress);
+    dispatch({type:"PROGRESS",payload:progress})
   }
 
-  const handleFileChange = (e,key) => {
+  const handleError = err => console.error(err)
+
+  const handleSuccess = (uploadTask,type) => getDownloadURL(uploadTask.snapshot.ref).then(async(url) => {
+    const videoRef = doc(db, `hub/data/videos/${editedVideo}`)
+    const fileToUpdate = {}
+    fileToUpdate[type] = url
+    await updateDoc(videoRef, fileToUpdate)
+    //celebrate success
+  })
+
+  const upload = file =>{
+
+    const type = file.type.startsWith('image/') ? "thumbnail" : "url"
+
+    const storage = getStorage()
+    const storageRef = ref(storage, `hub/${file.name.split(' ').join('-')}`)
+    const uploadTask = uploadBytesResumable(storageRef, file)
+
+
+
+    uploadTask.on('state_changed', 
+      ()=>
+        handleProgress,
+        handleError, 
+        ()=>handleSuccess(uploadTask,type)
+    )
+    
+  }
+
+  const handleFileChange = async(e,key) => {
+
     const file = e.target.files[0]
-    if (file.type && (!file.type.startsWith('video/') && !file.type.startsWith('image/'))) {
-      setError(true)
-      setTimeout(()=>setError(false),2000)
+    const notAnImageOrVideo = file.type && (!file.type.startsWith('video/') && (!file.type.startsWith('image/')))
+    const wrongFormat = (key === "url" && file.type.startsWith('image/')) || (key === "thumbnail" && file.type.startsWith('video/'))
+    if (notAnImageOrVideo || wrongFormat) {
+      dispatch({type:"WRONG_FORMAT",payload:true})
+      setTimeout(()=>dispatch({type:"WRONG_FORMAT",payload:false}),4000)
       return
     }
-    
-    const reader = new FileReader()
-    reader.readAsDataURL(file)
-    reader.onload = () => {
-     
-      if(key === "url")setVideoSrc(reader.result)
-      else setPoster(reader.result)
-      handleUpdateData(key,JSON.stringify(reader.result))
-    }
+    const blobURL = URL.createObjectURL(file)
+    if(key === "url")setVideoSrc(blobURL)
+    else setThumbnail(blobURL)
+    dispatch({type:"SET_PREVIEW",payload:{key:key === "url"?"videoFile":"thumbnailFile",val:file}})
+    if(editedVideo)upload(file)
     
    }
 
@@ -45,43 +73,46 @@ const VideoUploader = ()=>{
     const unsub = onSnapshot(doc(db, `hub/data/videos/${editedVideo}`), video => {
       setDBVideo(video.data())
       if(video.data()) {
-        setVideoSrc(JSON.parse(video.data().url))
-        setPoster(JSON.parse(video.data().poster))
+        setVideoSrc(video.data().url)
+        setThumbnail(video.data().thumbnail)
+      } else {
+        setVideoSrc(null)
+        setThumbnail(null)
       }
     })
     return unsub
-  },[])
+  },[editedVideo])
 
 
   return (
-   <div className="VideoUploader">
+   <div className={`VideoUploader ${(incompleteForm && formChecked || wrongFormat) && ((editedVideo && !DBVideo.url) || (!editedVideo && !previewVideoData.url))?"error":""}`}>
 
 
-    <label>Video</label>
-    <div>
-      <label className="btn ghost" htmlFor="video">{videoSrc?"Change video" : "Select a video"}</label>
-      <label className="btn ghost" htmlFor="poster">{poster?"Change poster" : "Select a poster"}</label>
+    <label>Video *</label>
+   
+    <div className="videoCtn">
+      {videoSrc?(
+        <video
+          controls
+          poster={thumbnail}
+          src={videoSrc}/>
+      ):(
+        <label
+          htmlFor="video"
+          className="VideoPlaceholder">
+            <img src={uploadImg}/>
+          </label>
+      )}
+      <div className="btnCtn">
+        {videoSrc&&<label className="btn ghost" htmlFor="video">{videoSrc?"Change video" : "Select a video"}</label>}
+        <label className="btn ghost" htmlFor="thumbnail">{thumbnail?"Change thumbnail" : "Select a thumbnail"}</label>
+      </div>
     </div>
-  
-    {videoSrc?(
-      <video
-        controls
-        poster={poster}
-        src={videoSrc}/>
-    ):(
-      <label
-        htmlFor="video"
-        className="VideoPlaceholder">
-          <img src={upload}/>
-        </label>
-    )}
-    
-    {error&&<p>Not an image or a video</p>}
 
     <input
-    id="poster"
-    type="file"
-    onChange={e=>handleFileChange(e,"poster")}/>
+      id="thumbnail"
+      type="file"
+      onChange={e=>handleFileChange(e,"thumbnail")}/>
     <input
       id="video"
       type="file"

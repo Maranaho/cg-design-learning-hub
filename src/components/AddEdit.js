@@ -1,20 +1,21 @@
 import close from '../assets/icons/close.svg'
+import { useState,useEffect } from 'react'
 import { useGalleryState } from '../context/gallery-context'
 import { useNavigate } from 'react-router-dom'
-import { useEffect,useState } from 'react'
-import { db,doc,updateDoc,onSnapshot } from '../utils/firebase'
 import Wisiwyg from './Wisiwyg'
 import VideoUploader from './VideoUploader'
 import AddTags from './AddTags'
+import Publish from './Publish'
+import Title from './Title'
+import Msg from './Msg'
 
 
 const AddEdit = ()=>{
   
-  const [ DBVideo,setDBVideo ] = useState(null)
-  const { state:{ editedVideo, previewVideoData },dispatch } = useGalleryState()
+  const [ show,setShow ] = useState("")
+  const { state:{ editedVideo,formChecked, incompleteForm, wrongFormat },dispatch } = useGalleryState()
   const navigate = useNavigate()
-  const handleClose = ()=>{
-    
+  const reallyClosing = ()=>{
     if(!editedVideo) {
       dispatch({type:"ADD_VIDEO",payload:false})
       dispatch({type:"RESET_DEFAULT_VIDEO"})
@@ -23,61 +24,31 @@ const AddEdit = ()=>{
       navigate('/admin')
     }
   }
-
-  const handleUpdateData = async(key,val) => {
-    if(!editedVideo) dispatch({type:"SET_PREVIEW",payload:{key,val}})
-    else {
-      const videoToUpdate = {...DBVideo}
-      videoToUpdate[key] = val
-      const videoRef = doc(db, `hub/data/videos/${editedVideo}`)
-      await updateDoc(videoRef, videoToUpdate)
-    }
+  const handleClose = ()=>{
+    setShow("")
+    setTimeout(reallyClosing,400)
   }
 
-  useEffect(()=>{
-
-    const unsub = onSnapshot(doc(db, `hub/data/videos/${editedVideo}`), video => {
-      setDBVideo(video.data())
-    })
-
-    return unsub
-
-  },[])
+  useEffect(()=>setShow("show"),[])
 
 
   return (
-   <div className="AddEdit">
+   <div className={`AddEdit ${show}`}>
+    {incompleteForm && formChecked && <Msg status="error" msg="Nope, you need at least a title a video and a thumbnail"/>}
+    {wrongFormat && <Msg status="error" msg="Wrong file type, thumbnail should be an image and video should be a video."/>}
     <section>
-
       <button
         className="close"
         onClick={handleClose}>
           <img src={close} alt="close"/>
       </button>
-
-    
-      
-
       <div className="videoNTags">
-        <div>
-        <div>
-          <label htmlFor="title">Title</label>
-          <input
-            id="title"
-            type="text"
-            value={editedVideo&&DBVideo?DBVideo.title:previewVideoData.title}
-            onChange={e=>handleUpdateData("title",e.target.value)}/>
-        </div>
-        <VideoUploader/>
-        </div>
+        <Title/>
         <AddTags/>
-        
       </div>
+      <VideoUploader/>
       <Wisiwyg/>
-      
-      
-    
-
+      <Publish handleClose={handleClose}/>
     </section>
    </div>
   )

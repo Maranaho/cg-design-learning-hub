@@ -9,6 +9,7 @@ const SignIn = ()=>{
   }
   return (
     <main className="SignIn">
+      <h1>Public facing page</h1>
       <button className="btn primary" onClick={signInWithGoogle}>Sign in</button>
     </main>
   )

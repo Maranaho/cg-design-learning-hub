@@ -1,8 +1,7 @@
 import { useGalleryState } from '../context/gallery-context'
 import { useEffect,useState,useRef } from 'react'
 import { db,doc,addDoc,getDoc,updateDoc,onSnapshot,query,collection } from '../utils/firebase'
-import Loading from './Loading'
-
+import Tag from './Tag'
 
 const AddTags = ()=>{
   
@@ -112,7 +111,7 @@ const AddTags = ()=>{
       setDBVideo(video.data()) 
     })
     return unsub
-  },[])
+  },[editedVideo])
 
   useEffect(()=>{
     
@@ -125,14 +124,14 @@ const AddTags = ()=>{
       setTags(tmpTags)
     })
     return unsub
-  },[])
+  },[editedVideo])
 
 
-  useEffect(saveContent,[tags])
+  useEffect(saveContent,[editedVideo,tags])
 
   useEffect(()=>{
     if(tagsHeightRef) setTagsHeight(tagsHeightRef.current.getBoundingClientRect().height)
-  },[tagsHeightRef,recentTags])
+  },[tagsHeightRef,recentTags,editedVideo])
 
   useEffect(()=>{
     if(tagsHeightRef && !loaded){
@@ -140,19 +139,18 @@ const AddTags = ()=>{
         setLoaded(true)
       },700)
     }
-  },[tagsHeightRef])
+  },[tagsHeightRef,editedVideo])
 
 
   return (
    <div className="AddTags">
       <label>Tags</label>
-      {!loaded&&<Loading/>}
       <div
         style={{height:`${tagsHeight + 60}px`}}
         className={`tagList ${focus} ${loaded?"loaded":""}`}>
         
         <div ref={tagsHeightRef}>
-          {DBVideo&&tags&&DBVideo.tags.map(tagKey=>(
+          {editedVideo&&DBVideo&&tags&&DBVideo.tags.map(tagKey=>(
             <Tag
               key={tagKey}
               tagKey={tagKey}
@@ -202,16 +200,6 @@ const AddTags = ()=>{
         </div>
       </div>
    </div>
-  )
-}
-
-const Tag =({tagKey,tags,cb})=>{
-  const { color,label } = tags[tagKey]
-  const colors = ["red","green","purple","blue","yellow","pink"]
-  return (
-    <article className={colors[color]} onClick={()=>cb(tagKey)}>
-      <span>#{label}</span>
-    </article>
   )
 }
 

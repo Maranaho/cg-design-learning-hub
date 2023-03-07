@@ -7,16 +7,16 @@ const Wisiwyg = ()=>{
   
   const { state:{ editedVideo, previewVideoData },dispatch } = useGalleryState()
   const [ DBVideo,setDBVideo ] = useState(null)
-
+  const [ hideWiz,setHideWiz ] = useState(false)
 
   const contentToDB = async(richText) => {
-    if(!editedVideo) dispatch({type:"SET_PREVIEW",payload:{key:"description",richText}})
-    else {
+    if(editedVideo) {
       const videoToUpdate = {...DBVideo}
       videoToUpdate.description = richText
       const videoRef = doc(db, `hub/data/videos/${editedVideo}`)
       await updateDoc(videoRef, videoToUpdate)
     }
+    dispatch({type:"SET_PREVIEW",payload:{key:"description",richText}})
   }
 
 
@@ -26,7 +26,12 @@ const Wisiwyg = ()=>{
       setDBVideo(video.data()||previewVideoData)
     })
     return unsub
-  },[])
+  },[editedVideo])
+
+  useEffect(()=>{
+    setHideWiz(true)
+    setTimeout(()=>setHideWiz(false),1)
+  },[editedVideo])
 
 
 
@@ -34,7 +39,7 @@ const Wisiwyg = ()=>{
    <div className="Wisiwyg">
 
     <label>Description</label>
-    {DBVideo&&<Draft
+    {DBVideo&&!hideWiz&&<Draft
         contentToDB={contentToDB}
         DBVideo={DBVideo}/>}
    </div>

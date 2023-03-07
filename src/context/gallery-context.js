@@ -3,6 +3,11 @@ import React from "react"
 let initialGalleryState = {
   isIntuitEmployee:false,
   addVideo:false,
+  formChecked:false,
+  stateProgress:0,
+  incompleteForm:true,
+  wrongFormat:false,
+  publishConfirmed:false,
   org:'@intuit.com',
   editedVideo:null,//"7O9bEmL0KGtieiMrLRsK"
   user:null,
@@ -10,11 +15,12 @@ let initialGalleryState = {
   searchValue:'',
   filters:[],
   previewVideoData:{
-    preview:true,
     title:"",
     description:null,
-    poster:null,
+    thumbnail:null,
     url:null,
+    videoFile:null,
+    thumbnailFile:null,
     views:0,
     likes:[],
     createdAt:"",
@@ -31,12 +37,44 @@ function galleryReducer(state, action) {
   switch (action.type) {
 
 
+    case 'PROGRESS': {
+      let PROGRESS = {...state}
+      PROGRESS.stateProgress = action.payload
+      return PROGRESS
+    }
+
+    case 'CONFIRM_PUBLISH': {
+      let CONFIRM_PUBLISH = {...state}
+      CONFIRM_PUBLISH.publishConfirmed = action.payload
+      return CONFIRM_PUBLISH
+    }
+
+    case 'WRONG_FORMAT': {
+      let WRONG_FORMAT = {...state}
+      WRONG_FORMAT.wrongFormat = action.payload
+      return WRONG_FORMAT
+    }
+
+    case 'CHECK_FORM': {
+      let CHECK_FORM = {...state}
+      CHECK_FORM.formChecked = action.payload
+      return CHECK_FORM
+    }
+
+    case 'INCOMPLETE_FORM': {
+      let INCOMPLETE_FORM = {...state}
+      INCOMPLETE_FORM.incompleteForm = action.payload
+      return INCOMPLETE_FORM
+    }
+
     case 'RESET_DEFAULT_VIDEO': {
       let RESET_DEFAULT_VIDEO = {...state}
       RESET_DEFAULT_VIDEO.previewVideoData = {
         title:"",
-        poster:"",
-        url:"",
+        thumbnail:null,
+        url:null,
+        videoFile:null,
+        thumbnailFile:null,
         views:0,
         likes:[],
         createdAt:"",
@@ -72,6 +110,7 @@ function galleryReducer(state, action) {
     case 'ADD_VIDEO': {
       let ADD_VIDEO = {...state}
       ADD_VIDEO.addVideo = action.payload
+      ADD_VIDEO.editedVideo = null
       return ADD_VIDEO
     }
 

@@ -12,6 +12,7 @@ import {
   addDoc,
   updateDoc,
   deleteDoc,
+  setDoc,
   Timestamp
 } from "firebase/firestore"
 import { getAuth, signInWithPopup, GoogleAuthProvider,onAuthStateChanged } from 'firebase/auth'
@@ -59,5 +60,6 @@ export {
   uploadBytesResumable,
   getDownloadURL,
   deleteObject,
+  setDoc,
   deleteDoc
 }

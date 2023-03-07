@@ -7,7 +7,9 @@
     font-size: 14px;
     padding: 25px;
   }
-  
+  .controls {
+    display: flex;
+  }
   .RichEditor-editor {
 
     cursor: text;
@@ -15,14 +17,9 @@
     margin-top: 10px;
   }
   
-  .RichEditor-editor .public-DraftEditorPlaceholder-root,
+ 
   .RichEditor-editor .public-DraftEditor-content {
-    margin: 0 -15px -15px;
-    padding: 15px;
-  }
-  
-  .RichEditor-editor .public-DraftEditor-content {
-    min-height: 100px;
+    min-height: 50px;
   }
   
   .RichEditor-hidePlaceholder .public-DraftEditorPlaceholder-root {
@@ -44,6 +41,8 @@
     font-size: 16px;
     padding: 20px;
   }
+
+  
   
   .RichEditor-controls {
     font-family: 'Helvetica', sans-serif;

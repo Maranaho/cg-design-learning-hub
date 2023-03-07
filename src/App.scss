@@ -9,11 +9,22 @@ body {
 }
 button {cursor: pointer}
 
-label:not(.btn){
+label:not(.btn,.VideoPlaceholder){
   display: block;
   font-weight: 300;
   font-size: 1.3em;
   margin: 20px 0 10px;
+}
+
+h1 {
+  font-weight: 300;
+  font-size: 50px;
+}
+
+h2 {
+  font-weight: 400;
+  font-size: 20px;
+  margin: 0;
 }
 
 input{
@@ -53,6 +64,7 @@ input{
   background: #fff;
   z-index: 2;
   padding: 20px 50px;
+  border-bottom: 1px solid #e7e7e7;
   .logo{padding: 20px 0}
 }
 .TopBar 
@@ -72,9 +84,13 @@ input{
   }
 }
 
-.Routes {padding-top: 100px}
+.Routes {
+  padding-top: 97px;
+  height: 100vh;
+  box-sizing: border-box;
+}
 
-.Loading,.AddEdit {
+.Loading {
   position: fixed;
   top:0;
   left: 0;
@@ -88,18 +104,28 @@ input{
 .Loading {
   align-items: center;
 }
-.AddEdit {
-  background: rgba(0,0,0,.7);
-  padding-top: 5vh;
-  section {
-    width: 1000px;
-    padding: 50px;
-    background: #fff;
-    box-sizing: border-box;
-    border-radius: 15px;
-    height: 90vh;
-    position: relative;
 
+
+.AddEdit {
+  position: fixed;
+  display: block;
+  right: 0;
+  width:48vw;
+  height: calc(100vh - 120px);
+  top: 80px;
+  padding: 50px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px 0px rgba(0,0,0,.1);
+  box-sizing: border-box;
+  z-index: 3;
+  background: #fff;
+  transition: .4s ease;
+  transform: translateX(2vw);
+  opacity: 0;
+  &.show{
+    transform: translateX(-3vw);
+    opacity: 1;
+  }
     .close {
       position: absolute;
       top: 20px;
@@ -107,7 +133,6 @@ input{
       background: none;
       border: none;
     }
-  }
 }
 
 .Wisiwyg {
@@ -127,24 +152,144 @@ input{
 }
 
 .EditVideo {
-  padding: 20px;
   cursor: pointer;
+  .tags > span {
+    background: #eeeeee50;
+  display: inline-block;
+  margin: 3px;
+  cursor: pointer;
+  font-weight: 400;
+  padding: 4px 10px;
+  border-radius: 5px;
+  font-size: .9em;
+  }
+  .uploader{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: .8em;
+    padding-right: 20px;
+    text-align: right;
+    .photoCtn{
+      width: 25px;
+      height: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border-radius: 5px;
+      margin: 0 10px;
+      img{ width: 25px }
+    }
+    
+  }
+
+  .ago {font-size: .7em}
+  h3 {
+    font-weight: 400;
+    margin: 0;
+  }
+  .edit {
+    display: flex;
+    flex-direction: column;
+    >div{margin-top: 10px}
+  }
+  .thumb {
+    width: 150px;
+    > div {
+      padding: 15px;
+      > div {
+        height: 90px;
+        width: 150px;
+        border-radius: 10px;
+        background: #f7f7f7;
+        display: flex;
+        justify-content: center;
+        overflow: hidden;
+        > img {height: 100%}
+      }
+    }
+  }
 }
+
+.views {
+  font-size: .8em;
+  img {margin: 0 5px}
+}
+
+.videosToEdit {
+  
+  table {
+    width: 100%;
+    thead{
+      position: sticky;
+      top: 77px;
+      background: #fff;
+      tr:hover{background: none}
+      th {
+        padding: 27px 0;
+        font-weight: 300;
+        text-align: left;
+        border-bottom: 1px solid #e7e7e7;
+        &:last-child > div{
+          justify-content: flex-end;
+          padding-right: 20px;
+        }
+        > div {
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+          img{margin: 0 5px}
+        }
+      }
+    }
+  }
+  tr{
+    transition: .2s ease;
+    border-radius: 10px;
+    &.selected:hover,
+    &.selected{background: #f7f7f7}
+    &:hover{background: #f7f7f770}
+  }
+}
+
+.sortChevron {
+  display: block;
+  transform: rotate(0deg);
+  transition: .6s ease;
+  &.active{transform: rotate(180deg)}
+}
+
+.sort {padding-left: 20px;}
 
 .VideoUploader {
   margin: 30px 0;
+  .btnCtn{text-align: center;}
+  &.error{
+    label {color:#f21c4b}
+    .VideoPlaceholder {border-color:#f21c4b}
+  }
+  .videoCtn {
+    display: flex;
+    justify-content: center;
+    background: #f5f5f570;
+    border-radius: 15px;
+    padding: 15px;
+    flex-direction: column;
+    align-items: center;
+  }
   input[type="file"]{
     visibility: hidden;
     position: absolute;
   }
   video,.VideoPlaceholder {
-    height: 300px;
+    height: 200px;
     border-radius: 10px;
-    margin-top: 20px;
+    margin-bottom: 15px;
   }
   .VideoPlaceholder{
     background: rgba(229, 239, 247,.2);
-    width: 300px;
+    width: calc(100% - 15px);
     cursor: pointer;
     color: #fff;
     display: flex;
@@ -159,14 +304,16 @@ input{
 }
 
 .AddTags{
-  width: 400px;
+  flex: 1;
+  box-sizing: border-box;
+  padding-left: 50px;
   .tagList {
     position: relative;
     padding: 7px 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-sizing: border-box;
-    transition: .7s ease;
+    transition: .2s ease;
     opacity: 0;
     &.loaded{opacity: 1}
     &.focus{
@@ -192,50 +339,126 @@ input{
     box-shadow: 0 20px 40px 0px rgba(0,0,0,.1);
     border-radius: 15px;
     label {margin: 5px 0 15px}
+  } 
+}
+.Tag {
+  background: #eee;
+  display: inline-block;
+  margin: 3px;
+  cursor: pointer;
+  font-weight: 400;
+  padding: 4px 15px;
+  border-radius: 5px;
+  font-size: .9em;
+  &.red{
+    background: rgba(249, 123, 108,.1);
+    color: darken(rgba(249, 123, 108,1),20%);
+    &:hover{background: rgba(249, 123, 108,.3)}
   }
-  article {
-    background: #eee;
-    display: inline-block;
-    margin: 3px;
-    cursor: pointer;
-    font-weight: 400;
-    padding: 4px 15px;
-    border-radius: 5px;
-    font-size: .9em;
-    &.red{
-      background: rgba(249, 123, 108,.1);
-      color: darken(rgba(249, 123, 108,1),20%);
-      &:hover{background: rgba(249, 123, 108,.3)}
-    }
-    &.green{
-      background: rgba(86, 222, 126,.1);
-      color: darken(rgba(86, 222, 126,1),20%);
-      &:hover{background: rgba(86, 222, 126,.3)}
-    }
-    &.purple{
-      background: rgba(96, 115, 251,.1);
-      color: darken(rgba(96, 115, 251,1),20%);
-      &:hover{background: rgba(96, 115, 251,.3) }
-    }
-    &.blue{
-      background: rgba(57, 199, 242,.1);
-      color: darken(rgba(57, 199, 242,1),20%);
-      &:hover{background: rgba(57, 199, 242,.3)}
-    }
-    &.yellow{
-      background: rgba(249, 218, 59,.1);
-      color: darken(rgba(249, 218, 59,1),20%);
-      &:hover{background: rgba(249, 218, 59,.3)}
-    }
-    &.pink{
-      background: rgba(255, 130, 160,.1);
-      color: darken(rgba(255, 130, 160,1),20%);
-      &:hover{background: rgba(255, 130, 160,.3)}
-    }
+  &.green{
+    background: rgba(86, 222, 126,.1);
+    color: darken(rgba(86, 222, 126,1),20%);
+    &:hover{background: rgba(86, 222, 126,.3)}
+  }
+  &.purple{
+    background: rgba(96, 115, 251,.1);
+    color: darken(rgba(96, 115, 251,1),20%);
+    &:hover{background: rgba(96, 115, 251,.3) }
+  }
+  &.blue{
+    background: rgba(57, 199, 242,.1);
+    color: darken(rgba(57, 199, 242,1),20%);
+    &:hover{background: rgba(57, 199, 242,.3)}
+  }
+  &.yellow{
+    background: rgba(249, 218, 59,.1);
+    color: darken(rgba(249, 218, 59,1),20%);
+    &:hover{background: rgba(249, 218, 59,.3)}
+  }
+  &.pink{
+    background: rgba(255, 130, 160,.1);
+    color: darken(rgba(255, 130, 160,1),20%);
+    &:hover{background: rgba(255, 130, 160,.3)}
   }
 }
+
 
 .videoNTags {
   display: flex;
   justify-content: space-between;
 }
+
+.SignIn,.NonIntuitUser {
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  h1{ margin-bottom: 40px}
+}
+
+.Publish {
+  padding: 20px;
+  text-align: right;
+}
+
+.Dashboard {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  > div {flex:1}
+}
+
+.Msg {
+  position: absolute;
+  top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  &.error article{ background: #f21c4b}
+  > article {
+    background: #0dcb63;
+    padding: 10px 30px;
+    color: #fff;
+    border-radius: 10px;
+    display: inline-block;
+  }
+}
+
+.Title {
+  &.error {
+    label {color: #f21c4b}
+    input[type="text"] {border-color:#f21c4b}
+  }
+}
+.Stats{
+  border-left:1px solid #e7e7e7;
+  height: inherit;
+  justify-content: flex-start;
+  padding-top: 200px;
+  h1 {margin-bottom: 10px}
+  .addNew{margin-top: 60px}
+}
+
+.Admin {
+  display: flex;
+  max-height: 100vh;
+  > section,
+  > div { flex:1 }
+  > div {
+    height: calc(100vh - 98px);
+    overflow-y: scroll;
+  }
+  table > article {
+    padding: 20px;
+  }
+}
+
+.SearchVideo {
+  padding: 30px 20px;
+  background: #fff;
+  border-bottom: 1px solid #e7e7e7;
+  position: sticky;
+      top:0;
+}
+
