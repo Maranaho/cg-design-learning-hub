@@ -51,8 +51,8 @@ input{
 .btn {
   background: #1185f1;
   border: 1px solid #ddd;
-  padding: 10px 20px;
-  border-radius: 10px;
+  padding: 7px 25px;
+  border-radius: 30px;
   color: #fff;
   font-size: 1.1em;
   display: inline-block;
@@ -129,7 +129,8 @@ input{
 
 
 .AddEdit {
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: scroll;
   position: fixed;
   display: block;
   right: 0;
@@ -160,7 +161,14 @@ input{
       border: none;
     }
 }
-
+.RichEditor-editor{
+  
+  h1 {
+    font-size: 1.8em;
+    margin: 10px 0;
+  }
+  span{font-size: .9em;}
+}
 .Wisiwyg {
   margin-top: 20px;
   .Tools {

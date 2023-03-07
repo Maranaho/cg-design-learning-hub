@@ -58,7 +58,7 @@ const AddEdit = ()=>{
         </div>
         <VideoUploader/>
         <Wisiwyg/>
-        <Publish/>
+        <Publish handleClose={handleClose}/>
       </div>
     </section>
    </div>

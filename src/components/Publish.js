@@ -20,7 +20,7 @@ import {
 
 
 
-const Publish = ()=>{
+const Publish = ({handleClose})=>{
 
   const urls = {}
   const user = useAuth()
@@ -94,10 +94,13 @@ const Publish = ()=>{
   }
 
   const confirmPublish = ()=>{
-    dispatch({type:"CONFIRM_PUBLISH",payload:true})
+    if(editedVideo)handleClose()
+    
     setDisable(true)
-    //handleClose()
-    setTimeout(()=>dispatch({type:"PROGRESS",payload:0}),500)
+    setTimeout(()=>{
+      dispatch({type:"PROGRESS",payload:0})
+      if(!editedVideo)dispatch({type:"CONFIRM_PUBLISH",payload:true})
+    },500)
   }
 
 
@@ -119,7 +122,7 @@ const Publish = ()=>{
   
   return (
     <div className="Publish">
-      <button disabled={disable} onClick={handlePublish} className="btn">{editedVideo?"Update":"Publish"} video</button>
+      <button disabled={disable} onClick={handlePublish} className="btn">{editedVideo?"All set":"Publish video"}</button>
     </div>
   )
 }
