@@ -16,7 +16,7 @@ import NoMatch from './NoMatch'
 
 const Admin = ()=>{
   const videos = useVideos()
-  const { state: { addVideo,editedVideo,searchValue} } = useGalleryState()
+  const { state: { addVideo,editedVideo,searchValue,sortKey} } = useGalleryState()
   const [dbTags,setTags] = useState(null)
 
 
@@ -46,7 +46,26 @@ const Admin = ()=>{
       return acc
     },"").toLowerCase()
     return title.includes(search) || uploader.includes(search) || tags.includes(search)
-  })
+  }).sort((videoIDA,videoIDB)=>{
+      if(sortKey){
+        switch (sortKey) {
+          case "views":{
+            if(videos[videoIDA].views < videos[videoIDB].views) return -1
+            return 1
+          }
+          case "uploader":{
+            if(videos[videoIDA].uploader < videos[videoIDB].uploader) return -1
+            return 1
+          }
+          case "title":{
+            if(videos[videoIDA].title < videos[videoIDB].title) return -1
+            return 1
+          }
+    
+          default: return 0
+        }
+      } else return 0
+    })
   return (
     <section className="Dashboard">
       {(addVideo || editedVideo) && <AddEdit/>}

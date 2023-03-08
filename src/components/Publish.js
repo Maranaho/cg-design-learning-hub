@@ -61,7 +61,8 @@ const Publish = ({handleClose})=>{
       const uploadTask = uploadBytesResumable(storageRef, file)
       const handleProgress = snap => {
         const progress = (snap.bytesTransferred / snap.totalBytes) * 100
-        if(type === "url")dispatch({type:"PROGRESS",payload:Math.round(progress)})
+        if(type === "url" && progress > 0)dispatch({type:"PROGRESS",payload:Math.round(progress)})
+        else dispatch({type:"PROGRESS",payload:1})
       }
 
       const handleError = err => console.error(err)

@@ -12,6 +12,7 @@ let initialGalleryState = {
   editedVideo:null,
   newKey:null,
   user:null,
+  sortKey:null,
   msg:null,
   searchValue:'',
   filters:[],
@@ -37,6 +38,12 @@ const GalleryContext = React.createContext()
 function galleryReducer(state, action) {
   switch (action.type) {
 
+
+    case 'SORT_KEY': {
+      let SORT_KEY = {...state}
+      SORT_KEY.sortKey = action.payload
+      return SORT_KEY
+    }
 
     case 'SEARCH': {
       let SEARCH = {...state}

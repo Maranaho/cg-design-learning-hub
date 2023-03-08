@@ -1,20 +1,19 @@
 import { useState,useEffect } from 'react'
 import chevron from '../assets/icons/chevron.svg'
 import sort from '../assets/icons/sort.svg'
-
-
-
+import { useGalleryState } from '../context/gallery-context'
 
 
 const Admin = ()=>{
-  const [ sortKey,setSortKey ] = useState(null)
+  const { state:{ sortKey },dispatch } = useGalleryState()
+
   const handleSort = key => {
     const newKey = sortKey !== key ? key : null
     window.localStorage.setItem("sortKey",newKey)
-    setSortKey(newKey)
+    dispatch({type:"SORT_KEY",payload:newKey})
   }
 
-  useEffect(()=>setSortKey(window.localStorage.getItem("sortKey")),[])
+  useEffect(()=>dispatch({type:"SORT_KEY",payload:window.localStorage.getItem("sortKey")}),[])
 
   return (
     <thead>
@@ -29,9 +28,8 @@ const Admin = ()=>{
           </div>
         </th>
         <th>
-          <div onClick={()=>handleSort("tags")}>
+          <div>
             <span>Tags</span>
-            <img className={`sortChevron ${sortKey === "tags" ? "active" : ""}`} src={chevron}/>
           </div>
         </th>
         <th>
