@@ -2,8 +2,8 @@ import { useGalleryState } from '../context/gallery-context'
 import { useEffect,useState } from 'react'
 import { db,doc,updateDoc,onSnapshot } from '../utils/firebase'
 import Draft from './Draft'
+
 const Wisiwyg = ()=>{
-  
   
   const { state:{ editedVideo, previewVideoData },dispatch } = useGalleryState()
   const [ DBVideo,setDBVideo ] = useState(null)

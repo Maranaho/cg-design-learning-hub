@@ -32,7 +32,7 @@ const Publish = ({handleClose})=>{
 
     // deleteFile('recap.mov')
     //   return
-
+    setDisable(true)
     if(!editedVideo && (!previewVideoData.videoFile || !previewVideoData.thumbnailFile)){
       dispatch({type:"INCOMPLETE_FORM",payload:true})
       dispatch({type:"CHECK_FORM",payload:true})
