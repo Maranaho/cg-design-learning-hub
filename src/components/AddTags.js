@@ -15,7 +15,7 @@ const AddTags = ()=>{
   const [loaded,setLoaded] = useState(false) 
   const tagsHeightRef = useRef(null)
 
-  const { state:{ editedVideo,previewVideoData },dispatch } = useGalleryState()
+  const { state:{ editedVideo,previewVideoData,user },dispatch } = useGalleryState()
 
   const saveAfterRemove = key => {
     const newRecent = [...recentTags]
@@ -167,6 +167,7 @@ const AddTags = ()=>{
         </div>
         <input
           className="search"
+          disabled={editedVideo && DBVideo ? user.email !== DBVideo.uploader : false}
           onFocus={()=>setFocus("focus")}
           onBlur={()=>{
             if(!recentHover)setFocus("")

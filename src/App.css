@@ -193,6 +193,9 @@ input.search {
 .Wisiwyg {
   margin-top: 20px;
 }
+.Wisiwyg.readOnly {
+  opacity: 0.2;
+}
 .Wisiwyg .Tools {
   border-bottom: none;
   margin-bottom: 0;

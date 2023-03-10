@@ -14,7 +14,7 @@ const VideoUploader = ()=>{
   const [ DBVideo,setDBVideo ] = useState(null)
   const [ videoSrc,setVideoSrc ] = useState(null)
   const [ thumbnail,setThumbnail ] = useState(null)
-  const { state:{ editedVideo,incompleteForm, previewVideoData, formChecked, wrongFormat},dispatch } = useGalleryState()
+  const { state:{ editedVideo,incompleteForm, previewVideoData, formChecked, wrongFormat,user},dispatch } = useGalleryState()
 
   const handleProgress = snap => {
     const progress = (snap.bytesTransferred / snap.totalBytes) * 100
@@ -117,8 +117,14 @@ const VideoUploader = ()=>{
           </label>
       )}
       <div className="btnCtn">
-        {videoSrc&&<label className="btn ghost" htmlFor="video">{videoSrc?"Change video" : "Select a video"}</label>}
-        <label className="btn" htmlFor="thumbnail">{thumbnail?"Change thumbnail" : "Select a thumbnail"}</label>
+        {editedVideo && DBVideo ? user.email !== DBVideo.uploader : videoSrc &&(
+          <label
+            className="btn ghost"
+            htmlFor="video">{videoSrc?"Change video" : "Select a video"}</label>
+        )}
+        {editedVideo && DBVideo ? user.email !== DBVideo.uploader : true && <label
+          className="btn"
+          htmlFor="thumbnail">{thumbnail?"Change thumbnail" : "Select a thumbnail"}</label>}
       </div>
     </div>
 
@@ -126,10 +132,12 @@ const VideoUploader = ()=>{
       <input
         id="thumbnail"
         type="file"
+        disabled={editedVideo && DBVideo ? user.email !== DBVideo.uploader : false}
         onChange={e=>handleFileChange(e,"thumbnail")}/>
       <input
         id="video"
         type="file"
+        disabled={editedVideo && DBVideo ? user.email !== DBVideo.uploader : false}
         onChange={e=>handleFileChange(e,"url")}/>
     </form>
    </div>

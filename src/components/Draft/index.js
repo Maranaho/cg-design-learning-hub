@@ -96,16 +96,17 @@ class Draft extends React.Component {
 
       return (
         <div className="RichEditor-root">
-          <div className="controls">
+          {!this.props.readOnly&&<div className="controls">
             <BlockStyleControls
               editorState={editorState}
               onToggle={this.toggleBlockType} />
             <InlineStyleControls
               editorState={editorState}
               onToggle={this.toggleInlineStyle} />
-          </div>
+          </div>}
           <div className={className} onClick={this.focus}>
             <Editor
+              readOnly={this.props.readOnly}
               blockStyleFn={getBlockStyle}
               customStyleMap={styleMap}
               editorState={editorState}

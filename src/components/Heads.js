@@ -4,7 +4,7 @@ import sort from '../assets/icons/sort.svg'
 import { useGalleryState } from '../context/gallery-context'
 
 
-const Admin = ()=>{
+const Heads = ()=>{
   const { state:{ sortKey },dispatch } = useGalleryState()
 
   const handleSort = key => {
@@ -48,4 +48,4 @@ const Admin = ()=>{
     </thead>
   )
 }
-export default Admin
+export default Heads

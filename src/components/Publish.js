@@ -122,7 +122,10 @@ const Publish = ({handleClose})=>{
   
   return (
     <div className="Publish">
-      <button disabled={disable} onClick={handlePublish} className="btn">{editedVideo?"All set":"Publish video"}</button>
+      <button
+        disabled={editedVideo && DBVideo ? user.email !== DBVideo.uploader : disable}
+        onClick={handlePublish}
+        className="btn">{editedVideo?"All set":"Publish video"}</button>
     </div>
   )
 }

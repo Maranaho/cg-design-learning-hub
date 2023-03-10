@@ -5,10 +5,10 @@ import Draft from './Draft'
 
 const Wisiwyg = ()=>{
   
-  const { state:{ editedVideo, previewVideoData },dispatch } = useGalleryState()
+  const { state:{ editedVideo, previewVideoData,user },dispatch } = useGalleryState()
   const [ DBVideo,setDBVideo ] = useState(null)
   const [ hideWiz,setHideWiz ] = useState(false)
-
+  const readOnly = editedVideo && DBVideo && user.email !== DBVideo.uploader
   const contentToDB = async(richText) => {
     if(editedVideo) {
       const videoToUpdate = {...DBVideo}
@@ -34,14 +34,17 @@ const Wisiwyg = ()=>{
   },[editedVideo])
 
 
-
+  
   return (
-   <div className="Wisiwyg">
+   <div className={`Wisiwyg ${readOnly ?"readOnly":""}`}>
 
-    <label>Description</label>
-    {DBVideo&&!hideWiz&&<Draft
-        contentToDB={contentToDB}
-        DBVideo={DBVideo}/>}
+      <label>Description</label>
+      {DBVideo&&!hideWiz&&(
+      <Draft
+          readOnly={readOnly}
+          contentToDB={contentToDB}
+          DBVideo={DBVideo}/>
+      )}
    </div>
   )
 }
