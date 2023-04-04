@@ -1,20 +1,28 @@
-import { Link } from 'react-router-dom'
-import User from './User'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import logo from '../assets/images/cg-hub-logo.svg';
+import search from '../assets/icons/search_w.svg';
 
-const TopBar = ()=> (
+const TopBar = () => (
   <main className="TopBar">
     <Link to="/" className="logo">
-      <span>Design</span>
-      <strong>HUB</strong>
+      <img src={logo} alt="cg-hub-logo" />
     </Link>
     <article>
-
-      <User/>
-      <Link className="btn primary uploadBtn" to="/admin">
-        <span>Dashboard</span>
-      </Link>
+      <ul>
+        <li>
+          <Link to="/systems">Systems</Link>
+        </li>
+        <li>
+          <Link to="/motion">Motion</Link>
+        </li>
+        <li>
+          <Link to="/admin">Admin</Link>
+        </li>
+      </ul>
+      <img width="20" src={search} alt="search" />
     </article>
   </main>
-)
+);
 
-export default TopBar
+export default TopBar;

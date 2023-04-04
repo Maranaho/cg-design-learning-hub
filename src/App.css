@@ -1,18 +1,33 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap");
 html > canvas {
   display: none;
 }
 
 body {
   margin: 0;
-  font-family: "Roboto";
   font-weight: 400;
   font-size: 14px;
   color: #333;
+  font-family: sans-serif;
+  overscroll-behavior: none;
 }
 
 button {
   cursor: pointer;
+}
+
+.tag {
+  background: #fff;
+  border: 2px solid #393a3d;
+  border-radius: 20px;
+  padding: 5px 10px;
+}
+.tag:hover {
+  background: #8d9096;
+  color: #fff;
+}
+.tag.selected {
+  background: #393a3d;
+  color: #fff;
 }
 
 label:not(.btn, .VideoPlaceholder) {
@@ -23,8 +38,7 @@ label:not(.btn, .VideoPlaceholder) {
 }
 
 h1 {
-  font-weight: 300;
-  font-size: 50px;
+  margin: 0;
 }
 
 h2 {
@@ -33,7 +47,17 @@ h2 {
   margin: 0;
 }
 
-input {
+h4 {
+  font-size: 1.2em;
+  margin: 15px 0 5px;
+}
+
+h5 {
+  font-size: 1em;
+  font-weight: 600;
+}
+
+input:not([type=radio]) {
   padding: 7px 15px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -41,10 +65,10 @@ input {
   min-width: 200px;
   outline: none;
 }
-input:focus {
+input:not([type=radio]):focus {
   border: 1px solid #5294ff;
 }
-input.search {
+input:not([type=radio]).search {
   outline: none;
   border: none;
   transition: 0.7s width;
@@ -101,13 +125,29 @@ input.search {
   top: 0;
   left: 0;
   right: 0;
-  background: #fff;
+  background: #393a3d;
+  color: #fff;
   z-index: 2;
-  padding: 20px 50px;
-  border-bottom: 1px solid #e7e7e7;
+  padding: 5px 50px;
+  height: 80px;
+  box-sizing: border-box;
+}
+.TopBar article > img {
+  margin-left: 20px;
 }
 .TopBar .logo {
-  padding: 20px 0;
+  padding: 0;
+}
+.TopBar ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+}
+.TopBar a {
+  color: #fff;
+  display: inline-block;
+  padding: 10px 20px;
+  text-decoration: none;
 }
 
 .TopBar .User,
@@ -127,18 +167,11 @@ input.search {
 }
 
 .Routes {
-  padding-top: 97px;
-  height: 100vh;
-  box-sizing: border-box;
+  padding-top: 80px;
 }
 
 .Loading {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 2;
   width: 100vw;
-  height: 100vh;
   display: flex;
   justify-content: center;
   box-sizing: border-box;
@@ -157,7 +190,7 @@ input.search {
   width: 40vw;
   height: calc(100vh - 100px);
   top: 80px;
-  padding: 50px;
+  padding: 30px 50px;
   border-radius: 20px;
   box-shadow: 0 40px 40px 0px rgba(0, 0, 0, 0.2);
   box-sizing: border-box;
@@ -180,6 +213,7 @@ input.search {
   right: 20px;
   background: none;
   border: none;
+  z-index: 3;
 }
 
 .RichEditor-editor h1 {
@@ -211,6 +245,15 @@ input.search {
 
 .EditVideo {
   cursor: pointer;
+}
+.EditVideo .thumbs {
+  padding: 10px 20px;
+}
+.EditVideo .thumbnail {
+  width: 150px;
+  border-radius: 10px;
+  height: 86px;
+  background-size: cover;
 }
 .EditVideo .tags > article {
   background: none;
@@ -253,7 +296,7 @@ input.search {
   font-size: 0.7em;
 }
 .EditVideo h3 {
-  font-weight: 400;
+  font-weight: 500;
   margin: 0;
 }
 .EditVideo .edit {
@@ -374,7 +417,8 @@ input.search {
   visibility: hidden;
   position: absolute;
 }
-.VideoUploader video, .VideoUploader .VideoPlaceholder {
+.VideoUploader video,
+.VideoUploader .VideoPlaceholder {
   height: 200px;
   border-radius: 10px;
   margin-bottom: 15px;
@@ -497,20 +541,23 @@ input.search {
   justify-content: space-between;
 }
 
-.SignIn, .NonIntuitUser {
+.SignIn,
+.NonIntuitUser {
   height: 60vh;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
-.SignIn h1, .NonIntuitUser h1 {
+.SignIn h1,
+.NonIntuitUser h1 {
   margin-bottom: 40px;
 }
 
 .Publish {
   padding: 20px;
-  text-align: right;
+  display: flex;
+  justify-content: space-between;
 }
 
 .Dashboard {
@@ -637,47 +684,58 @@ input.search {
   padding: 10px;
 }
 
-.Progress, .Success {
+.Progress,
+.Success {
   display: flex;
   align-items: center;
   flex-direction: column;
   padding-top: 40px;
 }
-.Progress .linkss, .Success .linkss {
+.Progress .linkss,
+.Success .linkss {
   margin-top: 80px;
 }
-.Progress .linkss .btn, .Success .linkss .btn {
+.Progress .linkss .btn,
+.Success .linkss .btn {
   margin-right: 20px;
 }
-.Progress h1, .Success h1 {
+.Progress h1,
+.Success h1 {
   margin: 20px 0 10px;
 }
-.Progress .txt, .Success .txt {
+.Progress .txt,
+.Success .txt {
   text-align: center;
 }
-.Progress .txt p, .Success .txt p {
+.Progress .txt p,
+.Success .txt p {
   margin: 4px 0;
 }
-.Progress .txt button, .Success .txt button {
+.Progress .txt button,
+.Success .txt button {
   margin-top: 30px;
 }
-.Progress .btnCtn, .Success .btnCtn {
+.Progress .btnCtn,
+.Success .btnCtn {
   margin-top: 20px;
   display: flex;
   flex-direction: column;
 }
-.Progress .btnCtn button, .Success .btnCtn button {
+.Progress .btnCtn button,
+.Success .btnCtn button {
   margin-top: 20px;
   min-width: 200px;
 }
-.Progress .progressBar, .Success .progressBar {
+.Progress .progressBar,
+.Success .progressBar {
   height: 2px;
   background: rgba(207, 230, 240, 0.3137254902);
   width: 100%;
   border-radius: 20px;
   margin: 20px;
 }
-.Progress .progressBar > div, .Success .progressBar > div {
+.Progress .progressBar > div,
+.Success .progressBar > div {
   height: 2px;
   background: #3edd8b;
   border-radius: 10px;
@@ -690,7 +748,8 @@ input.search {
   position: relative;
   transform: translateY(22px);
 }
-.Dog img, .Dog .long {
+.Dog img,
+.Dog .long {
   position: absolute;
   transition: 2s cubic-bezier(0.78, 0.01, 0, 1.01);
 }
@@ -709,4 +768,336 @@ input.search {
 .NoMatch {
   padding: 40px;
   text-align: center;
+}
+
+.center {
+  width: 1280px;
+  margin: 0 auto;
+}
+
+.HubTitle {
+  background: #393a3d;
+  color: #fff;
+}
+
+.TrainingList header {
+  height: 460px;
+  display: flex;
+  align-items: center;
+}
+.TrainingList header h1 {
+  display: flex;
+  flex-direction: column;
+  font-size: 7em;
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 0.9em;
+}
+
+.Filters {
+  padding: 40px;
+  position: sticky;
+  top: 80px;
+  background: #fff;
+  z-index: 2;
+}
+.Filters button:not(:last-child) {
+  margin-right: 10px;
+}
+
+.VideoList h3 {
+  z-index: 1;
+  font-size: 1.2em;
+  font-weight: 600;
+  text-transform: uppercase;
+  position: sticky;
+  top: 189px;
+  margin: 0;
+  padding: 30px 0;
+  background: #fff;
+  letter-spacing: 1px;
+  z-index: 2;
+}
+
+.vList {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 36px;
+  padding-bottom: 120px;
+}
+
+.Video {
+  cursor: pointer;
+  position: relative;
+}
+.Video .duration {
+  position: absolute;
+  display: inline-block;
+  background: #fff;
+  top: 190px;
+  right: 14px;
+  border-radius: 20px;
+  padding: 3px 10px;
+  font-weight: 400;
+  z-index: 1;
+}
+.Video .thumbnail {
+  position: relative;
+  background-size: cover;
+  height: 225px;
+  border-radius: 15px;
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.Video .thumbnail video {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 101%;
+  transition: 0.3s ease;
+}
+.Video .thumbnail video:hover {
+  opacity: 1;
+}
+.Video .meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.Video .meta > div > span,
+.Video .meta > div {
+  align-items: center;
+  display: flex;
+}
+.Video .meta > div > span {
+  margin-left: 15px;
+}
+.Video .meta > div > span > span {
+  font-weight: 500;
+  margin-left: 2px;
+}
+.Video .meta > div > span.helpful img {
+  transform: translateY(-2px);
+  z-index: 0;
+}
+
+.CraftChoice div {
+  display: flex;
+  padding: 5px 0;
+}
+.CraftChoice div label {
+  cursor: pointer;
+  margin: 0;
+  font-weight: 400;
+  font-size: 1em;
+}
+
+.PickThumb,
+.ConfirmDelete {
+  background: #fff;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.PickThumb {
+  padding: 50px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.PickThumb h3 {
+  font-weight: 300;
+  font-size: 1.3em;
+  margin: 40px 0 20px;
+}
+.PickThumb .btnCtn {
+  text-align: right;
+}
+.PickThumb > div div {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+}
+.PickThumb .thumb {
+  width: 180px;
+  height: 100px;
+  background-size: cover;
+  cursor: pointer;
+  border-radius: 12px;
+  opacity: 0.5;
+}
+.PickThumb .thumb.selected {
+  opacity: 1;
+}
+.PickThumb .thumb:hover {
+  opacity: 1;
+}
+
+.idx0 {
+  background-image: url("./assets/images/clouds/0.png");
+}
+
+.idx1 {
+  background-image: url("./assets/images/clouds/1.png");
+}
+
+.idx2 {
+  background-image: url("./assets/images/clouds/2.png");
+}
+
+.idx3 {
+  background-image: url("./assets/images/clouds/3.png");
+}
+
+.idx4 {
+  background-image: url("./assets/images/clouds/4.png");
+}
+
+.idx5 {
+  background-image: url("./assets/images/clouds/5.png");
+}
+
+.idx6 {
+  background-image: url("./assets/images/clouds/6.png");
+}
+
+.idx7 {
+  background-image: url("./assets/images/clouds/7.png");
+}
+
+.idx8 {
+  background-image: url("./assets/images/clouds/8.png");
+}
+
+.idx9 {
+  background-image: url("./assets/images/clouds/9.png");
+}
+
+.idx10 {
+  background-image: url("./assets/images/clouds/10.png");
+}
+
+.Footer {
+  background: #eceef1;
+  padding: 80px;
+}
+.Footer ul {
+  padding-left: 30px;
+}
+.Footer h4 img {
+  display: none;
+}
+.Footer h5 {
+  display: flex;
+  flex-direction: column;
+}
+.Footer a {
+  text-decoration: underline;
+  color: #333;
+  display: inline-block;
+  padding: 4px 0;
+  cursor: pointer;
+}
+.Footer a:hover {
+  color: #3492ef;
+}
+
+.footerInner {
+  display: flex;
+  justify-content: space-between;
+}
+
+.loadAdmin {
+  display: flex;
+  flex-direction: column;
+  padding: 180px 20px 0;
+}
+.loadAdmin img {
+  width: 287px;
+  margin-bottom: 20px;
+}
+
+.ConfirmDelete {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 100px;
+}
+.ConfirmDelete h3 {
+  font-size: 3em;
+  margin: 10px 0;
+}
+.ConfirmDelete p {
+  margin-bottom: 80px;
+  width: 60%;
+  text-align: center;
+}
+.ConfirmDelete button {
+  position: relative;
+  overflow: hidden;
+  width: 120px;
+}
+.ConfirmDelete button.noBorder {
+  border: none;
+}
+.ConfirmDelete button.wait:after {
+  transition: 1.7s cubic-bezier(0.8, 0.03, 0.25, 1);
+  width: 100%;
+}
+.ConfirmDelete button:after {
+  content: "Almost...";
+  display: flex;
+  height: 100%;
+  background: #65c889;
+  position: absolute;
+  width: 0%;
+  top: 0;
+  left: 0;
+  align-items: center;
+  overflow: hidden;
+  justify-content: center;
+  transition: 0s ease;
+}
+
+@media screen and (max-width: 1430px) {
+  .center {
+    width: inherit;
+  }
+  .Footer h4 {
+    cursor: pointer;
+    margin: 0;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  .Footer h4 img {
+    display: block;
+    width: 17px;
+  }
+  .Footer ul {
+    padding-left: 13px;
+  }
+  .footerInner {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 50px;
+  }
+  .FooterItm ul {
+    display: none;
+  }
+  .FooterItm a {
+    display: block;
+    padding: 20px 0;
+  }
+  .FooterItm.active ul {
+    display: block;
+  }
 }/*# sourceMappingURL=App.css.map */

@@ -1,3 +1,5 @@
-const NoAssetsFound = ()=> <p>Nothing there :(</p>
+import React from 'react';
 
-export default NoAssetsFound
+const NoAssetsFound = () => <p>Nothing there :(</p>;
+
+export default NoAssetsFound;

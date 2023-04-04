@@ -1,0 +1,77 @@
+[
+  {
+    "title": "Figma libraries",
+    "links": [
+      {
+        "label": "CG Foundations",
+        "url": "https://www.figma.com/file/8FTQg5U7n0zoPImwfNmusr/CG-Foundations?t=I6SVCVf4Jla1CQWr-6"
+      },
+      {
+        "label": "CG Typography",
+        "url": "https://www.figma.com/file/9zL1AeE2UIYA8m3blK84wU/CG-Typography?t=I6SVCVf4Jla1CQWr-6"
+      },
+      {
+        "label": "CG Web Components",
+        "url": "https://www.figma.com/file/xb9rSo0PJtT1ebeZFqrh65/CG-Web-Components?t=I6SVCVf4Jla1CQWr-6"
+      },
+      {
+        "label": "CG Native Components",
+        "url": "https://www.figma.com/file/DobzS54oDpEGFPRY32fe0b/CG-Native-Components"
+      },
+      {
+        "label": "CG View Types",
+        "url": "https://www.figma.com/file/fzc4WRiUBJZHkOfw5VVxU3/CG-View-Types?t=I6SVCVf4Jla1CQWr-6"
+      },
+      {
+        "label": "CG Nav + Shell",
+        "url": "https://www.figma.com/file/4iarLdWTaDlrDOOGKwO7jy/CG-Navigation-%26-Shell?t=I6SVCVf4Jla1CQWr-6"
+      }
+    ]
+  },
+  {
+    "title": "Coded components/assets",
+    "links": [
+      {
+        "label": "Web Storybook",
+        "url": "https://ibp-cicd-core.prod1-ibp.a.intuit.com/design-systems/cgds/latest/index.html?path=/story/getting-started-welcome--page"
+      },
+      {
+        "label": "iOS Storybook",
+        "url": "https://ibp-cicd-core.prod1-ibp.a.intuit.com/design-systems/CGDS-iOS/latest/index.html?path=/story/components-badges--example"
+      },
+      {
+        "label": "Android Storybook",
+        "url": "https://ibp-cicd-core.prod1-ibp.a.intuit.com/design-systems/CGDS-Android/95/index.html?path=/story/badge--example"
+      },
+      {
+        "label": "Player v2 Storybook",
+        "url": "https://ibp-cicd-core.prod1-ibp.a.intuit.com/player-plugins/cg-player-plugin-web/latest/index.html?path=/story/getting-started-welcome--page"
+      },
+      {
+        "label": "Player v1 Kitchen Sink",
+        "url": "https://ibp-cicd-core.prod1-ibp.a.intuit.com/Fuego/Vulcan/latest/host/index.html#/tto?masking=true&filterText="
+      },
+      {
+        "label": "Pyro Standalone - 2019",
+        "url": "https://pyro-intuit.web.app/"
+      },
+      {
+        "label": "Pyro Figma Plugin - 2021",
+        "url": "https://plugin-home.surge.sh/"
+      }
+    ]
+  },
+  {
+    "title": "Documentation",
+    "links": [
+      {
+        "label": "Specs",
+        "url": "https://www.figma.com/files/829493299764478026/project/12376881"
+      },
+      {
+        "label": "CG Web Patterns",
+        "url": "https://www.figma.com/file/5A0U0gUMS8edZ4KPr0rqRD/CG-Web-Patterns?t=I6SVCVf4Jla1CQWr-6"
+      }
+    ]
+  }
+]

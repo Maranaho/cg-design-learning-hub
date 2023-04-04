@@ -1,10 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
-import { GalleryStateProvider } from './context/gallery-context'
+import { HubStateProvider } from './hub-context'
 
 ReactDOM.render(
-  <GalleryStateProvider>
+  <HubStateProvider>
     <App />
-  </GalleryStateProvider>,
+  </HubStateProvider>,
   document.getElementById('hub'))

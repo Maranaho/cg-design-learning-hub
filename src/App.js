@@ -1,52 +1,49 @@
-import { useEffect } from 'react'
-import { useGalleryState } from './context/gallery-context'
+import React, { useEffect } from 'react'
 import useAuth from './hooks/useAuth'
 import useUsers from './hooks/useUsers'
+import { useHubState } from './hub-context'
 import './App.css'
 
 import SignIn from './components/SignIn'
 import NonIntuitUser from './components/NonIntuitUser'
 import Hub from './components/Hub'
-import { db,setDoc,doc } from './utils/firebase'
+import { db, setDoc, doc } from './utils/firebase'
 
-
-const App = ()=>{
-
-    const {
-      state: { isIntuitEmployee,org },
-      dispatch
-    } = useGalleryState()
+const App = () => {
+  const {
+    state: { isIntuitEmployee, org },
+    dispatch,
+  } = useHubState()
 
   const users = useUsers()
   const user = useAuth()
 
-  const getUser = ()=>{
-    if(user){
-      const { displayName,email,photoURL } = user
+  const getUser = () => {
+    if (user) {
+      const { displayName, email, photoURL } = user
       const isFam = email.indexOf(org) !== -1
-      if(isFam !== isIntuitEmployee) dispatch({type:'IS_FAM',payload:isFam})
-      dispatch({type:'USER',payload:{displayName,email,photoURL}})
+      if (isFam !== isIntuitEmployee)
+        dispatch({ type: 'IS_FAM', payload: isFam })
+      dispatch({ type: 'USER', payload: { displayName, email, photoURL } })
 
-      if(users&&!users.hasOwnProperty(email)) {
+      if (users && !users.hasOwnProperty(email)) {
         const newUser = {
           displayName,
           photoURL,
-          preferredName:displayName
+          preferredName: displayName,
         }
-        setDoc(doc(db, "hub/data/users/", email), newUser)
+        setDoc(doc(db, 'hub/data/users/', email), newUser)
       }
-
-    } else dispatch({type:'IS_FAM',payload:false})
+    } else dispatch({ type: 'IS_FAM', payload: false })
   }
 
-  useEffect(getUser,[user,!users])
-  
+  useEffect(getUser, [user, !users])
 
   return (
     <>
-      {user&&!isIntuitEmployee&&<NonIntuitUser/>}
-      {user&&isIntuitEmployee&&<Hub/>}
-      {!user&&<SignIn/>}
+      {user && !isIntuitEmployee && <NonIntuitUser />}
+      {user && isIntuitEmployee && <Hub />}
+      {!user && <SignIn />}
     </>
   )
 }

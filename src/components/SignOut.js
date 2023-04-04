@@ -1,15 +1,16 @@
-import { auth } from '../utils/firebase'
-import logout from '../assets/icons/logout.svg'
+import React from 'react';
+import { auth } from '../utils/firebase';
+import logout from '../assets/icons/logout.svg';
 
-const SignOut = ()=>{
+const SignOut = () => {
   return (
     <main className="SignOut">
-      <button className="btn mini ghost" onClick={()=>auth.signOut()}>
+      <button className="btn mini ghost" onClick={() => auth.signOut()}>
         <span>Sign out</span>
-        {false&&<img width="15" src={logout} alt="logout"/>}
+        {false && <img width="15" src={logout} alt="logout" />}
       </button>
     </main>
-  )
-}
+  );
+};
 
-export default SignOut
+export default SignOut;

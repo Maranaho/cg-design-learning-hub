@@ -1,33 +1,34 @@
-import {
-  HashRouter as Router,
-  Routes,
-  Route
-} from 'react-router-dom'
+import React from 'react'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
 import TopBar from './TopBar'
 import Detail from './Detail'
 import TrainingList from './TrainingList'
 import Admin from './Admin'
+import Footer from './Footer'
 
-const Hub = ()=>{
-
+const Hub = () => {
+  
   return (
-    <main className="DesignHub">
-      <Router>
-        <TopBar/>
+    <BrowserRouter>
+      <main className="DesignHub">
+        <TopBar />
         <div className="Routes">
-          <Routes>
-            <Route index element={<TrainingList/>} />
-            <Route path="training/:videoID" element={<Detail />}/>
-            <Route path="edit/:videoID" element={<Admin />}/>
-            <Route path="admin" element={<Admin />}/>
-            {/* <Route path="edit/:trainingID" element={<Upload edit/>}/> */}
-          </Routes>
+          <Switch>
+            <Route exact path="/" render={() => <TrainingList />} />
+            <Route exact path="/systems" render={() => <TrainingList />} />
+            <Route exact path="/motion" render={() => <TrainingList />} />
+            <Route exact path="/app//" render={() => <TrainingList />} />
+            <Route exact path="/admin" render={() => <Admin />} />
+            <Route exact path="/training/:videoID" render={() => <Detail />} />
+            <Route exact path="/edit/:videoID" render={() => <Admin />} />
+
+            <Route exact path="*" render={() => <p>404</p>} />
+          </Switch>
         </div>
-       
-        
-      </Router>
-    </main>
+        <Footer />
+      </main>
+    </BrowserRouter>
   )
 }
 

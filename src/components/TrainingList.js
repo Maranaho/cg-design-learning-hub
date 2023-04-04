@@ -1,21 +1,16 @@
-import Loading from './Loading'
-import NoAssetsFound from './NoAssetsFound'
-import useVideos from '../hooks/useVideos'
-import { useGalleryState } from '../context/gallery-context'
-import {useEffect} from 'react'
+import React from 'react';
+import HubTitle from './HubTitle';
+import Filters from './Filters';
+import VideoList from './VideoList';
 
-const TrainingList = ()=>{
-  const assets = useVideos()
-  const { state:{ searchValue,bu,user },dispatch } = useGalleryState()
-
-
-
+const TrainingList = () => {
   return (
-    <div className="SignIn">
-      <h1>Learning Hub</h1>
-      <h2>Yay!!</h2>
+    <div className="TrainingList">
+      <HubTitle />
+      <Filters />
+      <VideoList />
     </div>
-  )
-}
+  );
+};
 
-export default TrainingList
+export default TrainingList;

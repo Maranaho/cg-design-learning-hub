@@ -16,6 +16,16 @@ let initialGalleryState = {
   msg:null,
   searchValue:'',
   filters:[],
+  tags:{
+    mv1OnzpI3Z3HL2xQV:"Getting started",
+    kqWMB8W9yLW3L0eL:"Foundations",
+    p57D9POClg0lN68u:"Components",
+    wqDDqbDjEqeMU6Spx:"Workflow",
+    vclIpTAnrpdBzpdUJ3v:"Platform",
+    hpPRurVvDEHXrmDAKrQ:"Tips & tricks",
+    paw2zY28Y76cw21k5:"Native",
+    QMKDQapl3yzCp06H7:"Motion"
+  },
   previewVideoData:{
     title:"",
     description:null,
