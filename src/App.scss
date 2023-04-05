@@ -1058,6 +1058,37 @@ input:not([type='radio']) {
   }
 }
 
+.Detail {
+  padding: 50px 0 50px 50px;
+  display: flex;
+  justify-content: space-between;
+  .RelatedVideos{
+    width: 290px;
+    padding-right: 50px;
+    .duration { top: 125px }
+    .Video {
+      margin-bottom: 50px;
+      .thumbnail{
+        height: 160px;
+      }
+    }
+  }
+}
+
+.DetailContent{
+  flex: 1;
+  box-sizing: border-box;
+  padding-right: 50px;
+  video{
+    width: 100%;
+    border-radius: 15px;
+  }
+}
+
+.dislike {
+  transform: rotate(180deg);
+}
+
 @media screen and (max-width: 1430px) {
   .center {
     width: inherit;

@@ -1,6 +1,6 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import moment from 'moment';
+// import moment from 'moment';
 import viewIcn from '../assets/icons/view.svg';
 import likeIcn from '../assets/icons/helpful.svg';
 
@@ -8,8 +8,7 @@ const Video = ({ video }) => {
   const history = useHistory();
   const videoRef = useRef(null);
   const [duration, setDuration] = useState('');
-  const { thumbnail, views, createdAt, title, helpful, url } = video;
-  const width = window.innerWidth;
+  const { thumbnail, views, title, helpful, url,videoID } = video;
 
   const handleVideoLoaded = () => {
     let s = Math.floor(videoRef.current.duration);
@@ -22,7 +21,7 @@ const Video = ({ video }) => {
   };
 
   return (
-    <article className="Video">
+    <article className="Video" onClick={()=>history.push(`/detail/${videoID}`)}>
       <span className="duration">{duration}</span>
       <div className={`thumbnail idx${thumbnail}`}>
         <video
@@ -49,7 +48,7 @@ const Video = ({ video }) => {
           </span>
         </div>
       </div>
-      <span className="ago">{moment(createdAt.toDate()).fromNow()}</span>
+      {/* <span className="ago">{moment(createdAt.toDate()).fromNow()}</span> */}
     </article>
   );
 };

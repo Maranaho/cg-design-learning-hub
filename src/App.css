@@ -1067,6 +1067,39 @@ input:not([type=radio]).search {
   transition: 0s ease;
 }
 
+.Detail {
+  padding: 50px 0 50px 50px;
+  display: flex;
+  justify-content: space-between;
+}
+.Detail .RelatedVideos {
+  width: 290px;
+  padding-right: 50px;
+}
+.Detail .RelatedVideos .duration {
+  top: 125px;
+}
+.Detail .RelatedVideos .Video {
+  margin-bottom: 50px;
+}
+.Detail .RelatedVideos .Video .thumbnail {
+  height: 160px;
+}
+
+.DetailContent {
+  flex: 1;
+  box-sizing: border-box;
+  padding-right: 50px;
+}
+.DetailContent video {
+  width: 100%;
+  border-radius: 15px;
+}
+
+.dislike {
+  transform: rotate(180deg);
+}
+
 @media screen and (max-width: 1430px) {
   .center {
     width: inherit;

@@ -1,14 +1,11 @@
-import React from 'react';
-import { useParams } from 'react-router-dom';
-import useAsset from '../hooks/useAsset';
-import Loading from './Loading';
+import React from 'react'
+import DetailContent from './DetailContent'
+import RelatedVideos from './RelatedVideos'
 
-const Detail = () => {
-  const { assetID } = useParams();
-  const dbAsset = useAsset(assetID);
-
-  if (!dbAsset) return <Loading />;
-
-  return <p>Detail</p>;
-};
-export default Detail;
+const Detail = () => (
+  <div className="Detail">
+    <DetailContent/>
+    <RelatedVideos/>
+  </div>
+)
+export default Detail

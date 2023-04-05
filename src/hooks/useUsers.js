@@ -24,6 +24,7 @@ const useUsers = ()=>{
     acc[itm.userID] = itm
     return acc
   },{})
+  return
 }
 
 export default useUsers
