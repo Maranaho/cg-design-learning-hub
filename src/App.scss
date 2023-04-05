@@ -800,18 +800,19 @@ input:not([type='radio']) {
   }
 }
 
+h3 {
+  font-size: 1.2em;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 0;
+  background: #fff;
+  letter-spacing: 1px;
+}
 .VideoList {
   h3 {
-    z-index: 1;
-    font-size: 1.2em;
-    font-weight: 600;
-    text-transform: uppercase;
+    padding: 30px 0;
     position: sticky;
     top: 189px;
-    margin: 0;
-    padding: 30px 0;
-    background: #fff;
-    letter-spacing: 1px;
     z-index: 2;
   }
 }
@@ -1062,15 +1063,18 @@ input:not([type='radio']) {
   padding: 50px 0 50px 50px;
   display: flex;
   justify-content: space-between;
-  .RelatedVideos{
-    width: 290px;
-    padding-right: 50px;
-    .duration { top: 125px }
-    .Video {
-      margin-bottom: 50px;
-      .thumbnail{
-        height: 160px;
-      }
+}
+.RelatedVideos{
+  width: 290px;
+  padding-right: 50px;
+  h3 {
+    margin-bottom: 50px;
+  }
+  .duration { top: 125px }
+  .Video {
+    margin-bottom: 50px;
+    .thumbnail{
+      height: 160px;
     }
   }
 }
@@ -1079,14 +1083,64 @@ input:not([type='radio']) {
   flex: 1;
   box-sizing: border-box;
   padding-right: 50px;
+  .btnCtn {
+    display: flex;
+    button {margin-left: 10px}
+    .dislike {
+      transform: translateY(2px) rotate(180deg);
+    }
+  }
+  .btn {
+    background: #ECEEF1;
+    border: none;
+    color: #333;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    img{
+      margin-right: 3px;
+      &:hover{opacity: .5}
+    }
+    &:hover{background: #e1e3e6}
+    > span{margin-right: 15px}
+    &.copy {
+      min-width: 150px;
+      display: flex;
+      justify-content: center;
+      &.copied {
+        background: #333;
+        color: #fff;
+        span{margin: 0}
+      }
+      span{margin-left: 15px}
+    }
+  }
+  .meta {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    h1 {font-size: 1.8em}
+    .views {
+      display: flex;
+      align-items: center;
+      padding: 10px 0;
+      img{margin:0}
+      span {
+        margin-left: 5px;
+        font-size: 1.1em;
+      }
+    }
+  }
   video{
     width: 100%;
     border-radius: 15px;
   }
 }
 
-.dislike {
-  transform: rotate(180deg);
+
+.TagLinks {
+  padding: 20px 0;
+  button {margin-right: 10px}
 }
 
 @media screen and (max-width: 1430px) {

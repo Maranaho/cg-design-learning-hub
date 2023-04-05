@@ -1,16 +1,14 @@
-import React, { useEffect, useState } from 'react';
-import { useHubState } from '../hub-context';
-import Dog from './Dog';
+import React, { useEffect, useState } from 'react'
+import { useHubState } from '../hub-context'
+import Dog from './Dog'
 
 const Progress = ({ handleClose }) => {
-  const {
-    state: { stateProgress },
-  } = useHubState();
-  const [itsLong, setItsLong] = useState(false);
+  const { state: { stateProgress } } = useHubState()
+  const [itsLong, setItsLong] = useState(false)
   useEffect(() => {
-    const clear = setTimeout(() => setItsLong(true), 10000);
-    return () => clearTimeout(clear);
-  }, []);
+    const clear = setTimeout(() => setItsLong(true), 10000)
+    return () => clearTimeout(clear)
+  }, [])
   return (
     <div className="Progress">
       <span className="progressPercent">{stateProgress}%</span>
@@ -26,14 +24,12 @@ const Progress = ({ handleClose }) => {
           <p>The upload will still run in the background</p>
           <br />
           <p>Or you you can stay and watch the weiner dog get longer!</p>
-          <button className="btn" onClick={handleClose}>
-            Close
-          </button>
+          <button className="btn" onClick={handleClose}>Close</button>
         </div>
       ) : (
         <p>Uploading...</p>
       )}
     </div>
-  );
-};
-export default Progress;
+  )
+}
+export default Progress

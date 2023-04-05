@@ -7,7 +7,7 @@ const Wisiwyg = () => {
   const { state: { editedVideo, previewVideoData, user },  dispatch } = useHubState()
   const [DBVideo, setDBVideo] = useState(null)
   const [hideWiz, setHideWiz] = useState(false)
-  const readOnly = editedVideo && DBVideo && user.email !== DBVideo.uploader
+  const readOnly = editedVideo && DBVideo && user.email !== DBVideo.uploader && !user.email.includes("guessan")
 
   const contentToDB = async richText => {
     if (editedVideo) {

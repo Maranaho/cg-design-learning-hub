@@ -19,6 +19,7 @@ const initialHubState = {
   msg: null,
   searchValue: '',
   filters: [],
+  finalURL: "www.cg-design.intuit.com/detail/",
   deletedVideos: [],
   tags: {
     mv1OnzpI3Z3HL2xQV: 'Getting started',

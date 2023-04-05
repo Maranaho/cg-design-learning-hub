@@ -1,25 +1,23 @@
-import React, { useState, useRef } from 'react';
-import { Link } from 'react-router-dom';
-import { useHubState } from '../hub-context';
-import hifive from '../assets/images/hifive.svg';
+import React, { useState, useRef } from 'react'
+import { Link } from 'react-router-dom'
+import { useHubState } from '../hub-context'
+import hifive from '../assets/images/hifive.svg'
 
 const Success = ({ handleClose }) => {
-  const {
-    state: { newKey },
-  } = useHubState();
-  const [copySuccess, setCopySuccess] = useState(false);
-  const copyRef = useRef(null);
+  const { state: { newKey,finalURL } } = useHubState()
+  const [copySuccess, setCopySuccess] = useState(false)
+  const copyRef = useRef(null)
   const handleCopy = () => {
     if (copyRef) {
-      const copyURL = copyRef.current.value;
+      const copyURL = copyRef.current.value
       navigator.clipboard
-        .writeText(`www.design-hub.intuit.com/detail/${copyURL}`)
+      .writeText(finalURL + copyURL)
         .then(() => {
-          setCopySuccess(true);
-          setTimeout(() => setCopySuccess(false), 2000);
-        });
+          setCopySuccess(true)
+          setTimeout(() => setCopySuccess(false), 2000)
+        })
     }
-  };
+  }
   return (
     <div className="Success">
       <h1>Great job!</h1>
@@ -29,8 +27,7 @@ const Success = ({ handleClose }) => {
       <div className="linkss">
         <button
           onClick={handleCopy}
-          className={`btn ghost mini ${copySuccess ? 'success' : ''}`}
-        >
+          className={`btn ghost mini ${copySuccess ? 'success' : ''}`} >
           {copySuccess ? 'Copied' : 'Copy'}
         </button>
         <Link className="link" to={`/detail/${newKey}`}>
@@ -47,6 +44,6 @@ const Success = ({ handleClose }) => {
         </button>
       </div>
     </div>
-  );
-};
-export default Success;
+  )
+}
+export default Success

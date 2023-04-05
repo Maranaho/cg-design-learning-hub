@@ -3,7 +3,7 @@ import DetailContent from './DetailContent'
 import RelatedVideos from './RelatedVideos'
 
 const Detail = () => (
-  <div className="Detail">
+  <div className="Detail center">
     <DetailContent/>
     <RelatedVideos/>
   </div>
