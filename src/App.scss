@@ -125,7 +125,7 @@ input:not([type='radio']) {
   right: 0;
   background: $darkBG;
   color: #fff;
-  z-index: 2;
+  z-index: 4;
   padding: 5px 50px;
   height: 80px;
   box-sizing: border-box;
@@ -326,12 +326,15 @@ input:not([type='radio']) {
 
 .views {
   font-size: 0.8em;
+  display: flex;
+  align-items: center;
   video{
     position: absolute;
     top:0;
     left:0;
     opacity: 0;
     z-index: -1;
+    height: 0px;
   }
   img {
     margin: 0 5px;
@@ -801,7 +804,7 @@ input:not([type='radio']) {
   position: sticky;
   top: 80px;
   background: #fff;
-  z-index: 2;
+  z-index: 3;
   button:not(:last-child) {
     margin-right: 10px;
   }

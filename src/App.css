@@ -127,7 +127,7 @@ input:not([type=radio]).search {
   right: 0;
   background: #393a3d;
   color: #fff;
-  z-index: 2;
+  z-index: 4;
   padding: 5px 50px;
   height: 80px;
   box-sizing: border-box;
@@ -327,6 +327,8 @@ input:not([type=radio]).search {
 
 .views {
   font-size: 0.8em;
+  display: flex;
+  align-items: center;
 }
 .views video {
   position: absolute;
@@ -334,6 +336,7 @@ input:not([type=radio]).search {
   left: 0;
   opacity: 0;
   z-index: -1;
+  height: 0px;
 }
 .views img {
   margin: 0 5px;
@@ -806,7 +809,7 @@ input:not([type=radio]).search {
   position: sticky;
   top: 80px;
   background: #fff;
-  z-index: 2;
+  z-index: 3;
 }
 .Filters button:not(:last-child) {
   margin-right: 10px;
