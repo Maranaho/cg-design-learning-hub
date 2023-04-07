@@ -4,7 +4,7 @@ import RelatedVideos from './RelatedVideos'
 
 const Detail = () => (
   <div className="Detail center">
-    <DetailContent/>x
+    <DetailContent/>
     <RelatedVideos/>
   </div>
 )
