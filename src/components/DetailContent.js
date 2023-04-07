@@ -1,6 +1,6 @@
-import React, { useState, useRef } from 'react'
+import React, { useEffect,useState, useRef } from 'react'
 import { useParams } from 'react-router-dom'
-import useVideo from '../hooks/useVideo'
+import useVideos from '../hooks/useVideos'
 import Loading from './Loading'
 import TagLinks from './TagLinks'
 import Helpful from './Helpful'
@@ -13,23 +13,28 @@ const DetailContent = () => {
   const copyRef = useRef(null)
   const { state: { finalURL } } = useHubState()
   const { videoID } = useParams()
-  const DBVideo = useVideo(videoID)
+  const [DBVideo,setDBVideo] = useState(null)
+  const videos = useVideos()
   const [copySuccess, setCopySuccess] = useState(false)
   const handleCopy = () => {
-      if (copyRef) {
-        const copyURL = copyRef.current.value
-        navigator.clipboard
-          .writeText(finalURL + copyURL)
-          .then(() => {
-            setCopySuccess(true)
-            setTimeout(() => setCopySuccess(false), 2000)
-          })
-      }
+    if (copyRef) {
+      const copyURL = copyRef.current.value
+      navigator.clipboard
+        .writeText(finalURL + copyURL)
+        .then(() => {
+          setCopySuccess(true)
+          setTimeout(() => setCopySuccess(false), 2000)
+        })
     }
+  }
+
+  useEffect(()=>{
+    if(videos)setDBVideo(videos[videoID])
+  },[videos])
 
 
   if (!DBVideo) return <Loading />
-  const {title,url, views, helpful, notHelpful } = DBVideo
+  const {title,url} = DBVideo
   return (
     <section className="DetailContent">
       <video src={url} controls autoPlay loop/>

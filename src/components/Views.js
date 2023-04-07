@@ -26,7 +26,7 @@ const Views = ({count,videoID}) => {
     const clear = setTimeout(updateViews,duration>0?(duration*1000)/minTime:60000)
     return ()=>clearTimeout(clear)
     }
-  },[videos,duration])
+  },[videos,duration,videoID])
 
   
 
