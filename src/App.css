@@ -328,6 +328,13 @@ input:not([type=radio]).search {
 .views {
   font-size: 0.8em;
 }
+.views video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: -1;
+}
 .views img {
   margin: 0 5px;
 }

@@ -28,7 +28,7 @@ const useVideos = ()=>{
     acc[itm.videoID] = itm
     return acc
   },{})
-  return
+  return null
 }
 
 export default useVideos

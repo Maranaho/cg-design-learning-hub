@@ -1,47 +1,40 @@
-import React, { useRef, useState } from 'react';
-import { useHistory } from 'react-router-dom';
-// import moment from 'moment';
-import viewIcn from '../assets/icons/view.svg';
-import likeIcn from '../assets/icons/helpful.svg';
+import React, { useRef, useState } from 'react'
+import { useHistory } from 'react-router-dom'
+import Views from './Views'
+import likeIcn from '../assets/icons/helpful.svg'
 
 const Video = ({ video }) => {
-  const history = useHistory();
-  const videoRef = useRef(null);
-  const [duration, setDuration] = useState('');
-  const { thumbnail, views, title, helpful, url,videoID } = video;
+  const history = useHistory()
+  const videoRef = useRef(null)
+  const [duration, setDuration] = useState('')
+  const { thumbnail, title, helpful, url,videoID } = video
 
   const handleVideoLoaded = () => {
-    let s = Math.floor(videoRef.current.duration);
-    let m = Math.floor(s / 60);
-    m = m >= 10 ? m : `0${m}`;
-    s = Math.floor(s % 60);
-    s = s >= 10 ? s : `0${s}`;
-    setDuration(`${m}:${s}`);
-    videoRef.current.playbackRate = 10;
-  };
+    let s = Math.floor(videoRef.current.duration)
+    let m = Math.floor(s / 60)
+    m = m >= 10 ? m : `0${m}`
+    s = Math.floor(s % 60)
+    s = s >= 10 ? s : `0${s}`
+    setDuration(`${m}:${s}`)
+    videoRef.current.playbackRate = 10
+  }
 
   return (
     <article className="Video" onClick={()=>history.push(`/detail/${videoID}`)}>
       <span className="duration">{duration}</span>
       <div className={`thumbnail idx${thumbnail}`}>
         <video
-          onMouseEnter={(e) => (e.target.currentTime = 0)}
-          muted
-          loop
-          autoPlay
+          onMouseEnter={e => e.target.currentTime = 0}
+          muted loop autoPlay
           ref={videoRef}
           src={url}
-          onLoadedMetadata={handleVideoLoaded}
-        />
+          onLoadedMetadata={handleVideoLoaded}/>
       </div>
 
       <div className="meta">
         <h4>{title}</h4>
         <div>
-          <span>
-            <img width="20" src={viewIcn} />
-            <span>{views}</span>
-          </span>
+          <Views videoID={videoID}/>
           <span className="helpful">
             <img width="18" src={likeIcn} />
             <span>{helpful.length}</span>
@@ -50,6 +43,6 @@ const Video = ({ video }) => {
       </div>
       {/* <span className="ago">{moment(createdAt.toDate()).fromNow()}</span> */}
     </article>
-  );
-};
-export default Video;
+  )
+}
+export default Video

@@ -16,7 +16,7 @@ const useVideo = videoID =>{
   },[])
 
   if(video)return video
-  return
+  return null
 }
 
 export default useVideo

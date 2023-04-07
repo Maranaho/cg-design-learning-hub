@@ -24,7 +24,7 @@ const useUsers = ()=>{
     acc[itm.userID] = itm
     return acc
   },{})
-  return
+  return null
 }
 
 export default useUsers

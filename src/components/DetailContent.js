@@ -3,9 +3,9 @@ import { useParams } from 'react-router-dom'
 import useVideo from '../hooks/useVideo'
 import Loading from './Loading'
 import TagLinks from './TagLinks'
+import Helpful from './Helpful'
 import Description from './Description'
-import viewIcn from '../assets/icons/view.svg'
-import likeIcn from '../assets/icons/helpful.svg'
+import Views from './Views'
 import link from '../assets/icons/link.svg'
 import { useHubState } from '../hub-context'
 
@@ -26,7 +26,6 @@ const DetailContent = () => {
           })
       }
     }
-  
 
 
   if (!DBVideo) return <Loading />
@@ -37,20 +36,11 @@ const DetailContent = () => {
       <div className="meta">
         <div>
           <h1>{title}</h1>
-          <span className="views">
-            <img width="20" src={viewIcn} alt="views"/>
-            <span>{views}</span>
-          </span>
+          <Views count videoID={videoID}/>
         </div>
         <div>
           <div className="btnCtn">
-            <button className="btn">
-              <span>Was this helpful?</span>
-              <img src={likeIcn} alt="likes"/>
-              <span>{helpful.length}</span>
-              <img src={likeIcn} className="dislike" alt="dislikes"/>
-              <span>{notHelpful.length}</span>
-            </button>
+            <Helpful/>
             <button onClick={handleCopy} className={`btn copy ${copySuccess?"copied":""}`}>
               {!copySuccess&&<img src={link} alt="copy to clipboard" />}
               <span>{copySuccess?"Copied":"Copy link"}</span>

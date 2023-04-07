@@ -326,6 +326,13 @@ input:not([type='radio']) {
 
 .views {
   font-size: 0.8em;
+  video{
+    position: absolute;
+    top:0;
+    left:0;
+    opacity: 0;
+    z-index: -1;
+  }
   img {
     margin: 0 5px;
   }
