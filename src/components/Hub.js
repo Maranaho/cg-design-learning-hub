@@ -1,4 +1,4 @@
-import React from 'react'
+import React ,{ useEffect } from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
 import TopBar from './TopBar'
@@ -6,9 +6,14 @@ import Detail from './Detail'
 import TrainingList from './TrainingList'
 import Admin from './Admin'
 import Footer from './Footer'
+import { useHubState } from '../hub-context'
 
 const Hub = () => {
-  
+  const { state: { showSearch } } = useHubState()
+  useEffect(()=>{
+    if(showSearch) document.body.classList.add("noScroll")
+    else document.body.classList.remove("noScroll")
+  },[showSearch])
   return (
     <BrowserRouter>
       <main className="DesignHub">

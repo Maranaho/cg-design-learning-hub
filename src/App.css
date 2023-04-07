@@ -10,6 +10,9 @@ body {
   font-family: sans-serif;
   overscroll-behavior: none;
 }
+body.noScroll {
+  overflow: hidden;
+}
 
 button {
   cursor: pointer;
@@ -135,6 +138,13 @@ input:not([type=radio]).search {
 .TopBar article > img {
   margin-left: 20px;
 }
+.TopBar .search {
+  background: none;
+  border: none;
+}
+.TopBar .search:hover {
+  opacity: 0.6;
+}
 .TopBar .logo {
   padding: 0;
 }
@@ -148,6 +158,9 @@ input:not([type=radio]).search {
   display: inline-block;
   padding: 10px 20px;
   text-decoration: none;
+}
+.TopBar a:hover {
+  opacity: 0.6;
 }
 
 .TopBar .User,
@@ -788,13 +801,11 @@ input:not([type=radio]).search {
 .HubTitle {
   background: #393a3d;
   color: #fff;
-}
-
-.TrainingList header {
   height: 460px;
   display: flex;
   align-items: center;
 }
+
 .TrainingList header h1 {
   display: flex;
   flex-direction: column;
@@ -1183,6 +1194,72 @@ h3 {
 }
 .TagLinks button {
   margin-right: 10px;
+}
+
+.Search {
+  position: absolute;
+  z-index: 4;
+  right: 0;
+  top: 80px;
+  width: 100vw;
+  display: flex;
+  justify-content: flex-end;
+  background: rgba(0, 0, 0, 0);
+  height: calc(100vh - 80px);
+  transition: 1s cubic-bezier(0.56, 0.01, 0, 1.02);
+}
+.Search.show {
+  background: rgba(0, 0, 0, 0.5);
+}
+.Search.show > section {
+  transform: translate(0, -80px);
+  box-shadow: -20px 0 80px rgba(0, 0, 0, 0.3);
+}
+.Search header {
+  padding: 30px 100px;
+}
+.Search header input {
+  background: #F4F5F8;
+  border: none;
+  border-radius: 50px;
+  padding: 20px;
+  width: 100%;
+  border: 1px solid #F4F5F8;
+}
+.Search h3 {
+  padding: 40px 100px 40px;
+}
+.Search .close {
+  background: none;
+  border: none;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+.Search > section {
+  box-sizing: border-box;
+  background: #fff;
+  width: 840px;
+  position: absolute;
+  transition: 1s cubic-bezier(0.56, 0.01, 0, 1.02);
+  transform: translate(840px, -80px);
+  box-shadow: -20px 0 0 rgba(0, 0, 0, 0);
+}
+.Search > section .list {
+  height: calc(100vh - 80px);
+  overflow-y: scroll;
+}
+.Search > section .results {
+  padding: 0 100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 40px;
+}
+.Search > section .results .Video .duration {
+  top: 139px;
+}
+.Search > section .results .Video .thumbnail {
+  height: 175px;
 }
 
 @media screen and (max-width: 1430px) {

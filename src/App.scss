@@ -10,11 +10,10 @@ body {
   color: #333;
   font-family: sans-serif;
   overscroll-behavior: none;
+  &.noScroll{overflow: hidden}
 }
 
-button {
-  cursor: pointer;
-}
+button {cursor: pointer}
 
 .tag {
   background: #fff;
@@ -129,8 +128,11 @@ input:not([type='radio']) {
   padding: 5px 50px;
   height: 80px;
   box-sizing: border-box;
-  article > img {
-    margin-left: 20px;
+  article > img { margin-left: 20px }
+  .search {
+    background: none;
+    border: none;
+    &:hover{opacity:.6}
   }
   .logo {
     padding: 0;
@@ -145,6 +147,7 @@ input:not([type='radio']) {
     display: inline-block;
     padding: 10px 20px;
     text-decoration: none;
+    &:hover{opacity:.6}
   }
 }
 .TopBar .User,
@@ -782,12 +785,13 @@ input:not([type='radio']) {
 .HubTitle {
   background: $darkBG;
   color: #fff;
+  height: 460px;
+  display: flex;
+  align-items: center;
 }
+
 .TrainingList {
   header {
-    height: 460px;
-    display: flex;
-    align-items: center;
     h1 {
       display: flex;
       flex-direction: column;
@@ -1153,6 +1157,70 @@ h3 {
 .TagLinks {
   padding: 20px 0;
   button {margin-right: 10px}
+}
+
+.Search {
+  position: absolute;
+  z-index: 4;
+  right:0;
+  top:80px;
+  width: 100vw;
+  display: flex;
+  justify-content: flex-end;
+  background: rgba(0,0,0,0);
+  height: calc(100vh - 80px);
+  transition: 1s cubic-bezier(0.56, 0.01, 0, 1.02);
+  &.show{
+    background: rgba(0,0,0,.5);
+    > section {
+      transform: translate(0,-80px);
+    box-shadow: -20px 0 80px rgba(0,0,0,.3);
+    }
+  }
+  header{
+    padding: 30px 100px;
+    input {
+      background: #F4F5F8;
+      border: none;
+      border-radius: 50px;
+      padding: 20px;
+      width: 100%;
+      border: 1px solid #F4F5F8;
+    }
+  }
+  h3{padding: 40px 100px 40px}
+  .close {
+    background: none;
+    border: none;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+  >section {
+    box-sizing: border-box;
+    background: #fff;
+    width: 840px;
+    position: absolute;
+    transition: 1s cubic-bezier(0.56, 0.01, 0, 1.02);
+    
+    transform: translate(840px,-80px);
+      box-shadow: -20px 0 0 rgba(0,0,0,0);
+    .list{
+
+      height: calc(100vh - 80px);
+      overflow-y: scroll;
+    }
+    .results {
+      padding: 0 100px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 40px;
+      .Video {
+        .duration {top: 139px}
+        .thumbnail{ height: 175px}
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 1430px) {

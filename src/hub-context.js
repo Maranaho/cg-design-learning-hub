@@ -19,6 +19,8 @@ const initialHubState = {
   msg: null,
   searchValue: '',
   filters: [],
+  showSearch: false,
+  slideSearch:null,
   finalURL: "www.cg-design.intuit.com/detail/",
   deletedVideos: [],
   tags: {
@@ -53,6 +55,19 @@ const HubContext = React.createContext()
 
 function hubReducer(state, action) {
   switch (action.type) {
+    
+    case 'SHOW_SEARCH': {
+      const SHOW_SEARCH = { ...state }
+      SHOW_SEARCH.showSearch = action.payload
+      return SHOW_SEARCH
+    }
+    
+    case 'SLIDE_SEARCH': {
+      const SLIDE_SEARCH = { ...state }
+      SLIDE_SEARCH.slideSearch = action.payload
+      return SLIDE_SEARCH
+    }
+
     case 'HIDE_VIDEO': {
       const HIDE_VIDEO = { ...state }
       HIDE_VIDEO.deletedVideos.push(HIDE_VIDEO.editedVideo)
