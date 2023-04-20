@@ -60,7 +60,8 @@ h5 {
   font-weight: 600;
 }
 
-input:not([type=radio]) {
+input[type=search],
+input[type=text] {
   padding: 7px 15px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -68,10 +69,12 @@ input:not([type=radio]) {
   min-width: 200px;
   outline: none;
 }
-input:not([type=radio]):focus {
+input[type=search]:focus,
+input[type=text]:focus {
   border: 1px solid #5294ff;
 }
-input:not([type=radio]).search {
+input[type=search].search,
+input[type=text].search {
   outline: none;
   border: none;
   transition: 0.7s width;
@@ -311,6 +314,7 @@ input:not([type=radio]).search {
 .EditVideo h3 {
   font-weight: 500;
   margin: 0;
+  text-transform: inherit;
 }
 .EditVideo .edit {
   display: flex;
@@ -804,6 +808,10 @@ input:not([type=radio]).search {
   height: 460px;
   display: flex;
   align-items: center;
+  transition: 0.9s cubic-bezier(0.61, 0.04, 0.1, 1);
+}
+.HubTitle.skinny {
+  height: 320px;
 }
 
 .TrainingList header h1 {
@@ -907,9 +915,17 @@ h3 {
   z-index: 0;
 }
 
+.Featured {
+  margin-top: 20px;
+}
+.Featured label {
+  padding-left: 10px;
+}
+
 .CraftChoice div {
   display: flex;
   padding: 5px 0;
+  align-items: center;
 }
 .CraftChoice div label {
   cursor: pointer;
@@ -1147,6 +1163,7 @@ h3 {
   background: #e1e3e6;
 }
 .DetailContent .btn > span {
+  white-space: nowrap;
   margin-right: 15px;
 }
 .DetailContent .btn.copy {
@@ -1197,7 +1214,7 @@ h3 {
 }
 
 .Search {
-  position: absolute;
+  position: fixed;
   z-index: 4;
   right: 0;
   top: 80px;

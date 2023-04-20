@@ -1,44 +1,42 @@
-import React, { useEffect, useState } from 'react';
-import { useHubState } from '../hub-context';
-import { db, doc, updateDoc, onSnapshot } from '../utils/firebase';
+import React, { useEffect, useState } from 'react'
+import { useHubState } from '../hub-context'
+import { db, doc, updateDoc, onSnapshot } from '../utils/firebase'
 
 const CraftChoice = () => {
-  const [DBVideo, setDBVideo] = useState(null);
+  const [DBVideo, setDBVideo] = useState(null)
   const {
     state: { editedVideo, user, previewVideoData },
-    dispatch,
-  } = useHubState();
+    dispatch
+  } = useHubState()
 
   const disabled =
-    editedVideo && DBVideo ? user.email !== DBVideo.uploader : false;
+    editedVideo && DBVideo ? user.email !== DBVideo.uploader : false
 
-  const handleUpdateData = async (craft) => {
+  const handleUpdateData = async craft => {
     if (!editedVideo)
-      dispatch({ type: 'SET_PREVIEW', payload: { key: 'craft', val: craft } });
+      dispatch({ type: 'SET_PREVIEW', payload: { key: 'craft', val: craft } })
     else {
-      const videoToUpdate = { ...DBVideo };
-      videoToUpdate.craft = craft;
-      const videoRef = doc(db, `hub/data/videos/${editedVideo}`);
-      await updateDoc(videoRef, videoToUpdate);
+      const videoToUpdate = { ...DBVideo }
+      videoToUpdate.craft = craft
+      const videoRef = doc(db, `hub/data/videos/${editedVideo}`)
+      await updateDoc(videoRef, videoToUpdate)
     }
-  };
+  }
 
-  useEffect(() => {
+  useEffect(()=> {
     const unsub = onSnapshot(
       doc(db, `hub/data/videos/${editedVideo}`),
-      (video) => {
-        setDBVideo(video.data());
-      },
-    );
-    return unsub;
-  }, [editedVideo]);
+      video => setDBVideo(video.data())
+    )
+    return unsub
+  }, [editedVideo])
 
   return (
     <div className="CraftChoice">
       <label>Craft</label>
       <div>
         <input
-          onChange={() => handleUpdateData('systems')}
+          onChange={()=> handleUpdateData('systems')}
           checked={
             DBVideo
               ? DBVideo.craft === 'systems'
@@ -67,7 +65,7 @@ const CraftChoice = () => {
         <label htmlFor="motion">Motion</label>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default CraftChoice;
+export default CraftChoice

@@ -12,8 +12,12 @@ const Search = () => {
   const notArchived = video => !video.hasOwnProperty('archived')
 
   const handleCloseSearch = ()=>{
+    
     dispatch({type:"SLIDE_SEARCH",payload:null})
-    setTimeout(()=>dispatch({type:"SHOW_SEARCH",payload:false}),1000)
+    setTimeout(()=>{
+      dispatch({type:"SHOW_SEARCH",payload:false})
+      dispatch({type:"SEARCH",payload:""})
+    },1000)
   }
 
   useEffect(()=>{
@@ -54,13 +58,21 @@ const Search = () => {
         <header>
           <SearchVideo/>
         </header>
-        {!filterdVideos.length && <NoMatch />}
         <div className="list">
-        <h3>{searchValue !== ""?"Search results":"Most recent"}</h3>
+        {searchValue !== ""&&<>
+            <h3>Search results</h3>
+            <div className="results">
+              {filterdVideos.map((videoID) => (
+                <Video key={videoID} video={videos[videoID]} />
+                ))}
+            </div>
+          </>}
+          {!filterdVideos.length && <NoMatch />}
+          <h3>Most recent</h3>
           <div className="results">
-            {filterdVideos.map((videoID) => (
+            {Object.keys(videos).filter(videoID=>!deletedVideos.includes(videoID) && !videos[videoID].hasOwnProperty('archived')).map(videoID => (
               <Video key={videoID} video={videos[videoID]} />
-              ))}
+              )).slice(0,2)}
           </div>
         </div>
       </section>

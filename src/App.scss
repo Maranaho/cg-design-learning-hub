@@ -55,7 +55,9 @@ h5 {
   font-weight: 600;
 }
 
-input:not([type='radio']) {
+
+input[type="search"],
+input[type="text"] {
   padding: 7px 15px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -299,6 +301,7 @@ input:not([type='radio']) {
   h3 {
     font-weight: 500;
     margin: 0;
+    text-transform: inherit;
   }
   .edit {
     display: flex;
@@ -788,6 +791,8 @@ input:not([type='radio']) {
   height: 460px;
   display: flex;
   align-items: center;
+  transition: .9s cubic-bezier(0.61, 0.04, 0.1, 1);
+  &.skinny{height: 320px}
 }
 
 .TrainingList {
@@ -886,7 +891,6 @@ h3 {
     > div > span {
       margin-left: 15px;
       > span {
-        // font-size: 1.1em;
         font-weight: 500;
         margin-left: 2px;
       }
@@ -898,10 +902,16 @@ h3 {
   }
 }
 
+.Featured{
+  margin-top: 20px;
+  label {padding-left: 10px}
+}
+
 .CraftChoice {
   div {
     display: flex;
     padding: 5px 0;
+    align-items: center;
     label {
       cursor: pointer;
       margin: 0;
@@ -1118,7 +1128,10 @@ h3 {
       &:hover{opacity: .5}
     }
     &:hover{background: #e1e3e6}
-    > span{margin-right: 15px}
+    > span{
+      white-space: nowrap;
+      margin-right: 15px;
+    }
     &.copy {
       min-width: 150px;
       display: flex;
@@ -1160,7 +1173,7 @@ h3 {
 }
 
 .Search {
-  position: absolute;
+  position: fixed;
   z-index: 4;
   right:0;
   top:80px;

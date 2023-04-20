@@ -6,7 +6,7 @@ import likeIcn from '../assets/icons/helpful.svg'
 const Video = ({ video }) => {
   const history = useHistory()
   const videoRef = useRef(null)
-  const [duration, setDuration] = useState('')
+  const [duration, setDuration] = useState('00:00')
   const { thumbnail, title, helpful, url,videoID } = video
 
   const handleVideoLoaded = () => {

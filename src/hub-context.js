@@ -10,6 +10,7 @@ const initialHubState = {
   wrongFormat: false,
   publishConfirmed: false,
   deleteVideo: false,
+  path: "/",
   currentTag: null,
   org: '@intuit.com',
   editedVideo: null,
@@ -22,21 +23,84 @@ const initialHubState = {
   showSearch: false,
   slideSearch:null,
   finalURL: "www.cg-design.intuit.com/detail/",
+  contributors:[
+    "laura_huston@intuit.com",
+    "kristen_haas@intuit.com",
+    "alex_johnson@intuit.com",
+    "kelsey_staub@intuit.com",
+    "jess_tsuji@intuit.com",
+    "tina_vu@intuit.com",
+    "wendy_whatley@intuit.com",
+    "sean_serrano@intuit.com",
+    "benjamin_myers@intuit.com",
+    "ethan_miller@intuit.com",
+    "lucia_ferreira@intuit.com",
+    "chloe_walecki@intuit.com",
+    "daviddominick_demarro@intuit.com",
+    "maranaho_nguessan@intuit.com",
+    "maranaho_n'guessan@intuit.com",
+    "maranaho.nguessan@gmail.com"
+  ],
   deletedVideos: [],
   tags: {
-    mv1OnzpI3Z3HL2xQV: 'Getting started',
-    kqWMB8W9yLW3L0eL: 'Foundations',
-    p57D9POClg0lN68u: 'Components',
-    wqDDqbDjEqeMU6Spx: 'Workflow',
-    vclIpTAnrpdBzpdUJ3v: 'Platform',
-    hpPRurVvDEHXrmDAKrQ: 'Tips & tricks',
-    paw2zY28Y76cw21k5: 'Native',
-    QMKDQapl3yzCp06H7: 'Motion',
+    mv1OnzpI3Z3HL2xQV: {
+      label:'Getting started',
+      craft:"systems"
+    },
+    kqWMB8W9yLW3L0eL: {
+      label:'Foundations',
+      craft:"systems"
+    },
+    p57D9POClg0lN68u: {
+      label:'Components',
+      craft:"systems"
+    },
+    wqDDqbDjEqeMU6Spx: {
+      label: 'Workflow',
+      craft: "systems"
+    },
+    vclIpTAnrpdBzpdUJ3v: {
+      label:'Platform',
+      craft: "systems"
+    },
+    vclIsfgbBzpdUJ3v: {
+      label:'Figma tips',
+      craft: "systems"
+    },
+    paw2zY28Y76cw21k5: {
+      label: 'Native',
+      craft: "systems"
+    },
+    hpPRurVvDEHXrmDAKrQ: {
+      label:'Tips & tricks',
+      craft: "motion"
+    },
+    QMKDQapl3yzCp06H7: {
+      label:'How-to',
+      craft: "motion"
+    },
+    QMKDQapl3yzCp06H7: {
+      label:'How-to',
+      craft: "motion"
+    },
+    QMKDQaplfgbCp06H7: {
+      label:'Motion Prep',
+      craft: "motion"
+    },
+    QMKDQaplfgbCp06H7: {
+      label:'Figma Motion',
+      craft: "motion"
+    },
+    QMKDfdfglfgbCp06H7: {
+      label:'Metrics',
+      craft: "motion"
+    },
   },
   previewVideoData: {
     title: '',
     description: null,
     thumbnail: 0,
+    featured:false,
     url: null,
     videoFile: null,
     thumbnailFile: null,
@@ -55,6 +119,12 @@ const HubContext = React.createContext()
 
 function hubReducer(state, action) {
   switch (action.type) {
+    
+    case 'PATH': {
+      const PATH = { ...state }
+      PATH.path = action.payload
+      return PATH
+    }
     
     case 'SHOW_SEARCH': {
       const SHOW_SEARCH = { ...state }
@@ -152,6 +222,7 @@ function hubReducer(state, action) {
       RESET_DEFAULT_VIDEO.previewVideoData = {
         title: '',
         thumbnail: 0,
+        featured:false,
         url: null,
         videoFile: null,
         thumbnailFile: null,

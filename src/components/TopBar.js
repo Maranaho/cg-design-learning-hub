@@ -5,7 +5,7 @@ import search from '../assets/icons/search_w.svg'
 import { useHubState } from '../hub-context'
 
 const TopBar = () => {
-  const { dispatch } = useHubState()
+  const { state:{ contributors,user },dispatch } = useHubState()
   
   return (
     <main className="TopBar">
@@ -16,7 +16,7 @@ const TopBar = () => {
         <ul>
           <li><Link to="/systems">Systems</Link></li>
           <li><Link to="/motion">Motion</Link></li>
-          <li><Link to="/admin">Admin</Link></li>
+          {contributors.includes(user.email)&&<li><Link to="/admin">Admin</Link></li>}
         </ul>
         <button onClick={()=>dispatch({type:"SHOW_SEARCH",payload:true})} className="search"><img width="20" src={search} alt="search" /></button>
       </article>

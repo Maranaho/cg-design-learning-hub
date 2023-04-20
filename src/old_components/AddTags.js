@@ -72,7 +72,7 @@ const AddTags = ()=>{
 
   const filteredRecentTags = recentTags && DBVideo?recentTags
   .filter(tagKey=>editedVideo ? !DBVideo.tags.includes(tagKey) : !previewVideoData.tags.includes(tagKey))
-  .filter(tagKey=>tags[tagKey].toLocaleLowerCase().includes(tagFilter.toLocaleLowerCase())):[]
+  .filter(tagKey=>tags[tagKey].toLowerCase().includes(tagFilter.toLowerCase())):[]
 
   const createNewTag = async()=>{
 

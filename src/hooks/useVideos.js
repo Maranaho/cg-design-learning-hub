@@ -4,9 +4,6 @@ import { db,collection, query, orderBy,onSnapshot } from '../utils/firebase'
 const useVideos = ()=>{
   const [videos,setVideos] = useState(null)
 
-
-
-
   useEffect(()=>{
     
     const dbVideos = []
@@ -24,7 +21,7 @@ const useVideos = ()=>{
     return unsubscribe
   },[])
 
-  if(videos) return videos.reduce((acc,itm)=>{
+  if(videos) return videos.sort((a,b)=>b.createdAt.seconds - a.createdAt.seconds).reduce((acc,itm)=>{
     acc[itm.videoID] = itm
     return acc
   },{})

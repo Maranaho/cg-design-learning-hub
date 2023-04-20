@@ -1,5 +1,5 @@
 import React ,{ useEffect } from 'react'
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { HashRouter, Route, Switch } from 'react-router-dom'
 
 import TopBar from './TopBar'
 import Detail from './Detail'
@@ -15,7 +15,7 @@ const Hub = () => {
     else document.body.classList.remove("noScroll")
   },[showSearch])
   return (
-    <BrowserRouter>
+    <HashRouter>
       <main className="DesignHub">
         <TopBar />
         <div className="Routes">
@@ -33,7 +33,7 @@ const Hub = () => {
         </div>
         <Footer />
       </main>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 

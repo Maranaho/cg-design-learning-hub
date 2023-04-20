@@ -8,6 +8,7 @@ import AddTags from './AddTags'
 import Publish from './Publish'
 import Title from './Title'
 import CraftChoice from './CraftChoice'
+import Featured from './Featured'
 import Msg from './Msg'
 import Progress from './Progress'
 import Success from './Success'
@@ -88,10 +89,12 @@ const AddEdit = () => {
         <div
           className={`uploadForm ${
             stateProgress > 0 || publishConfirmed ? 'loading' : ''
-          }`}
-        >
+          }`}>
           <div className="videoNTags">
-            <Title />
+            <div>
+              <Title />
+              <Featured />
+            </div>
             <AddTags />
           </div>
           <CraftChoice />
