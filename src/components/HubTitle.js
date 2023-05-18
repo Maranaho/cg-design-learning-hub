@@ -1,6 +1,7 @@
 import React ,{ useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import { useHubState } from '../hub-context'
+import {H1} from "@cgds/typography"
 
 const HubTitle = () => {
   const { dispatch} = useHubState()
@@ -21,14 +22,14 @@ const HubTitle = () => {
 }
 
 const Home = ()=> (
-  <h1>
+  <H1>
     <span>Welcome</span>
     <span>to the</span>
     <span>Learning Hub</span>
-  </h1>
+  </H1>
 )
-const Motion = ()=><h1><span>Motion</span></h1>
-const Systems = ()=><h1><span>Systems</span></h1>
+const Motion = ()=><H1><span>Motion</span></H1>
+const Systems = ()=><H1><span>Systems</span></H1>
 
 
 export default HubTitle

@@ -801,7 +801,7 @@ input[type="text"] {
       display: flex;
       flex-direction: column;
       font-size: 7em;
-      font-weight: 900;
+      font-weight: 900 !important;
       text-transform: uppercase;
       line-height: 0.9em;
     }
@@ -839,7 +839,7 @@ h3 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 36px;
-  padding-bottom: 120px;
+  padding-bottom: 70px;
 }
 .Video {
   cursor: pointer;

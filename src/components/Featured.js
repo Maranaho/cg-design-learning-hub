@@ -28,6 +28,7 @@ const Featured = () => {
     return unsub
   },[editedVideo])
 
+  if(!DBVideo)return null
   return (
     <div className="Featured CraftChoice">
       {/* <label>Featured</label> */}

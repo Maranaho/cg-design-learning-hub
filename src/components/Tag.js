@@ -12,7 +12,7 @@ const Tag = ({ tagKey, cb }) => {
   const handleTagClick = () => {
     const isOwner =
       editedVideo && DBVideo
-        ? user.email !== DBVideo.uploader || user.email.includes('guessan')
+        ? user.email === DBVideo.uploader
         : true
     if (cb && isOwner) cb(tagKey)
   };

@@ -35,7 +35,7 @@ const initialHubState = {
     "benjamin_myers@intuit.com",
     "ethan_miller@intuit.com",
     "lucia_ferreira@intuit.com",
-    "chloe_walecki@intuit.com",
+    // "chloe_walecki@intuit.com",
     "daviddominick_demarro@intuit.com",
     "maranaho_nguessan@intuit.com",
     "maranaho_n'guessan@intuit.com",

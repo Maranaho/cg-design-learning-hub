@@ -20,7 +20,7 @@ const TagLinks = ({videoID}) => {
         <button
           onClick={()=>handleTagClick(tagKey)}
           className="tag"
-          key={tagKey}>{tags[tagKey]}</button>
+          key={tagKey}>{tags[tagKey].label}</button>
       ))}
     </div>
     )
