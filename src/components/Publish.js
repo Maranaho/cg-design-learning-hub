@@ -109,24 +109,22 @@ const Publish = ({ handleClose }) => {
     <div className="Publish">
       {editedVideo ? (
         <button
-          disabled={
-            editedVideo && DBVideo ? user.email !== DBVideo.uploader : disable
-          }
+          // disabled={
+          //   editedVideo && DBVideo ? user.email !== DBVideo.uploader : disable
+          // }
           onClick={() => dispatch({ type: 'DELETE_VIDEO', payload: true })}
-          className="btn ghost"
-        >
+          className="btn ghost">
           Delete video
         </button>
       ) : (
         <div />
       )}
       <button
-        disabled={
-          editedVideo && DBVideo ? user.email !== DBVideo.uploader : disable
-        }
+        // disabled={
+        //   editedVideo && DBVideo ? user.email !== DBVideo.uploader : disable
+        // }
         onClick={handlePublish}
-        className="btn"
-      >
+        className="btn">
         {editedVideo ? 'All set' : 'Publish video'}
       </button>
     </div>

@@ -43,7 +43,7 @@ const Featured = () => {
           id="featured"
           type="checkbox"
           name="craft"
-          disabled={disabled}/>
+          disabled={false}/>
         <label htmlFor="featured">Feature this video?</label>
       </div>
     </div>

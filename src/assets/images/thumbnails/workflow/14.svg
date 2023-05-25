@@ -1,0 +1,30 @@
+<svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_3_30)">
+<rect width="1200" height="675" fill="#F4F4EF"/>
+<rect x="830" y="116" width="354" height="562" fill="#FDE68C"/>
+<rect x="209" y="-120" width="468" height="562" fill="#FDE68C"/>
+<path d="M486 359V850H-4L486 359Z" fill="#393A3D"/>
+<path d="M693 57C693 232.074 834.926 374 1010 374C1185.07 374 1327 232.074 1327 57L693 57Z" fill="#FF808C"/>
+<rect x="97.0586" y="116" width="379.144" height="27.666" transform="rotate(45 97.0586 116)" fill="#FF808C"/>
+<rect x="57.9336" y="155.129" width="379.144" height="27.666" transform="rotate(45 57.9336 155.129)" fill="#FF808C"/>
+<rect x="18.8086" y="194.254" width="379.144" height="27.666" transform="rotate(45 18.8086 194.254)" fill="#FF808C"/>
+<rect x="-20.3164" y="233.379" width="379.144" height="27.666" transform="rotate(45 -20.3164 233.379)" fill="#FF808C"/>
+<rect x="-59.4453" y="272.504" width="379.144" height="27.666" transform="rotate(45 -59.4453 272.504)" fill="#FF808C"/>
+<rect x="-98.5703" y="311.629" width="379.144" height="27.666" transform="rotate(45 -98.5703 311.629)" fill="#FF808C"/>
+<rect x="-137.695" y="350.754" width="379.144" height="27.666" transform="rotate(45 -137.695 350.754)" fill="#FF808C"/>
+<rect x="-176.82" y="389.883" width="379.144" height="27.666" transform="rotate(45 -176.82 389.883)" fill="#FF808C"/>
+<rect x="1131" y="189" width="506" height="28" transform="rotate(90 1131 189)" fill="#393A3D"/>
+<rect x="1076" y="189" width="506" height="28" transform="rotate(90 1076 189)" fill="#393A3D"/>
+<rect x="1020" y="189" width="506" height="27" transform="rotate(90 1020 189)" fill="#393A3D"/>
+<rect x="965" y="189" width="506" height="28" transform="rotate(90 965 189)" fill="#393A3D"/>
+<rect x="910" y="189" width="506" height="28" transform="rotate(90 910 189)" fill="#393A3D"/>
+<path d="M765 10C765 145.31 874.69 255 1010 255C1145.31 255 1255 145.31 1255 10H1158.92C1158.92 92.2472 1092.25 158.922 1010 158.922C927.753 158.922 861.078 92.2472 861.078 10H765Z" fill="#B61A37"/>
+<rect x="276" y="127" width="89.2705" height="89.2705" fill="#FF808C"/>
+<rect x="560" y="534" width="89.2705" height="89.2705" fill="#B61A37"/>
+</g>
+<defs>
+<clipPath id="clip0_3_30">
+<rect width="1200" height="675" fill="white"/>
+</clipPath>
+</defs>
+</svg>

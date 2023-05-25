@@ -1,0 +1,38 @@
+<svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_2943)">
+<rect width="1200" height="675" fill="#F4F4EF"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M175.5 602C405.526 602 592 415.526 592 185.5C592 -44.5264 405.526 -231 175.5 -231C-54.5264 -231 -241 -44.5264 -241 185.5C-241 415.526 -54.5264 602 175.5 602ZM175.5 528.5C364.934 528.5 518.5 374.934 518.5 185.5C518.5 -3.93436 364.934 -157.5 175.5 -157.5C-13.9339 -157.5 -167.5 -3.93436 -167.5 185.5C-167.5 374.934 -13.9339 528.5 175.5 528.5Z" fill="#00EEC5"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M175.5 602C405.526 602 592 415.526 592 185.5C592 -44.5264 405.526 -231 175.5 -231C-54.5264 -231 -241 -44.5264 -241 185.5C-241 415.526 -54.5264 602 175.5 602ZM175.5 528.5C364.934 528.5 518.5 374.934 518.5 185.5C518.5 -3.93436 364.934 -157.5 175.5 -157.5C-13.9339 -157.5 -167.5 -3.93436 -167.5 185.5C-167.5 374.934 -13.9339 528.5 175.5 528.5Z" fill="#00EEC5"/>
+<rect x="65" y="49" width="290" height="37.8933" fill="#393A3D"/>
+<rect x="65" y="124.785" width="290" height="37.8933" fill="#00EEC5"/>
+<rect x="65" y="200.574" width="290" height="37.8933" fill="#393A3D"/>
+<rect x="65" y="276.359" width="290" height="37.8933" fill="#393A3D"/>
+<rect x="65" y="352.148" width="290" height="37.8933" fill="#393A3D"/>
+<rect x="65" y="427.934" width="290" height="37.8933" fill="#393A3D"/>
+<rect x="65" y="503.719" width="290" height="37.8933" fill="#393A3D"/>
+<rect x="65" y="579.508" width="290" height="37.8933" fill="#393A3D"/>
+<rect x="958" width="226" height="666" fill="#FFD1E9"/>
+<circle cx="30.2878" cy="30.2878" r="30.2878" transform="matrix(-4.37114e-08 1 1 4.37114e-08 928 67)" fill="#00EEC5"/>
+<circle cx="30.2878" cy="30.2878" r="30.2878" transform="matrix(-4.37114e-08 1 1 4.37114e-08 928 161.23)" fill="#00EEC5"/>
+<circle cx="30.2878" cy="30.2878" r="30.2878" transform="matrix(-4.37114e-08 1 1 4.37114e-08 928 255.457)" fill="#00EEC5"/>
+<circle cx="30.2878" cy="30.2878" r="30.2878" transform="matrix(-4.37114e-08 1 1 4.37114e-08 928 349.688)" fill="#00EEC5"/>
+<circle cx="30.2878" cy="30.2878" r="30.2878" transform="matrix(-4.37114e-08 1 1 4.37114e-08 928 443.914)" fill="#00EEC5"/>
+<circle cx="30.2878" cy="30.2878" r="30.2878" transform="matrix(-4.37114e-08 1 1 4.37114e-08 928 538.145)" fill="#00EEC5"/>
+<mask id="mask0_6_2943" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="958" y="0" width="226" height="666">
+<rect x="958" width="226" height="666" fill="#FFD1E9"/>
+</mask>
+<g mask="url(#mask0_6_2943)">
+<circle cx="30.2878" cy="30.2878" r="30.2878" transform="matrix(-4.37114e-08 1 1 4.37114e-08 928 67)" fill="#006A56"/>
+<circle cx="30.2878" cy="30.2878" r="30.2878" transform="matrix(-4.37114e-08 1 1 4.37114e-08 928 161.23)" fill="#006A56"/>
+<circle cx="30.2878" cy="30.2878" r="30.2878" transform="matrix(-4.37114e-08 1 1 4.37114e-08 928 255.457)" fill="#006A56"/>
+<circle cx="30.2878" cy="30.2878" r="30.2878" transform="matrix(-4.37114e-08 1 1 4.37114e-08 928 349.688)" fill="#006A56"/>
+<circle cx="30.2878" cy="30.2878" r="30.2878" transform="matrix(-4.37114e-08 1 1 4.37114e-08 928 443.914)" fill="#006A56"/>
+<circle cx="30.2878" cy="30.2878" r="30.2878" transform="matrix(-4.37114e-08 1 1 4.37114e-08 928 538.145)" fill="#006A56"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_6_2943">
+<rect width="1200" height="675" fill="white"/>
+</clipPath>
+</defs>
+</svg>

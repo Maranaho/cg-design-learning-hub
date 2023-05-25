@@ -872,6 +872,14 @@ h3 {
   font-weight: 400;
   z-index: 1;
 }
+.Video .cover {
+  height: 225px;
+  width: 399px;
+  overflow: hidden;
+}
+.Video .cover img {
+  height: 100%;
+}
 .Video .thumbnail {
   position: relative;
   background-size: cover;
@@ -944,6 +952,20 @@ h3 {
   left: 0;
   z-index: 2;
 }
+.PickThumb h3,
+.ConfirmDelete h3 {
+  text-transform: none;
+}
+
+.thumbCtn {
+  height: 45px;
+  width: 80px;
+  overflow: hidden;
+  border-radius: 4px;
+}
+.thumbCtn img {
+  height: 100%;
+}
 
 .PickThumb {
   padding: 50px;
@@ -959,19 +981,36 @@ h3 {
 }
 .PickThumb .btnCtn {
   text-align: right;
+  padding-bottom: 40px;
 }
-.PickThumb > div div {
+.PickThumb .grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 20px;
+  grid-gap: 10px;
+  width: 500px;
+}
+.PickThumb h4 {
+  margin: 70px 0 20px;
+  text-transform: capitalize;
+}
+.PickThumb .thumbSprite {
+  width: 160px;
+  height: 90px;
+  border-radius: 5px;
+  opacity: 0.8;
+  overflow: hidden;
+  cursor: pointer;
+}
+.PickThumb .thumbSprite:hover, .PickThumb .thumbSprite.selected {
+  opacity: 1;
 }
 .PickThumb .thumb {
-  width: 180px;
-  height: 100px;
+  width: 160px;
+  height: 90px;
   background-size: cover;
-  cursor: pointer;
   border-radius: 12px;
   opacity: 0.5;
+  cursor: pointer;
 }
 .PickThumb .thumb.selected {
   opacity: 1;

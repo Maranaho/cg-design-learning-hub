@@ -68,14 +68,12 @@ const AddEdit = () => {
       {incompleteForm && formChecked && (
         <Msg
           status="error"
-          msg="Nope, you need at least a title a video and a thumbnail"
-        />
+          msg="Nope, you need at least a title a video and a thumbnail"/>
       )}
       {wrongFormat && (
         <Msg
           status="error"
-          msg="Wrong file type, thumbnail should be an image and video should be a video."
-        />
+          msg="Wrong file type, thumbnail should be an image and video should be a video."/>
       )}
 
       <section>
@@ -86,7 +84,7 @@ const AddEdit = () => {
         {stateProgress > 0 && !publishConfirmed && (
           <Progress handleClose={handleClose} />
         )}
-        <div
+        {!pickThumb&&<div
           className={`uploadForm ${
             stateProgress > 0 || publishConfirmed ? 'loading' : ''
           }`}>
@@ -101,7 +99,7 @@ const AddEdit = () => {
           <VideoUploader />
           <Wisiwyg />
           <Publish handleClose={handleClose} />
-        </div>
+        </div>}
       </section>
     </div>
   )

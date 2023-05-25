@@ -1,0 +1,19 @@
+<svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_3507)">
+<rect width="1200" height="675" fill="#F4F4EF"/>
+<circle cx="400.5" cy="816.5" r="542.5" fill="#BEE3E7"/>
+<circle cx="1176" r="291" fill="#BEE3E7"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M241 1208C540.338 1208 783 965.338 783 666C783 366.662 540.338 124 241 124C-58.3381 124 -301 366.662 -301 666C-301 965.338 -58.3381 1208 241 1208ZM241 1112.35C487.514 1112.35 687.353 912.515 687.353 666C687.353 419.485 487.514 219.647 241 219.647C-5.51418 219.647 -205.353 419.485 -205.353 666C-205.353 912.515 -5.51418 1112.35 241 1112.35Z" fill="#342C4C"/>
+<circle cx="653.078" cy="103.078" r="32.0783" fill="#7264A2"/>
+<circle cx="752.785" cy="103.078" r="32.0783" fill="#393A3D"/>
+<circle cx="852.492" cy="103.078" r="32.0783" fill="#393A3D"/>
+<circle cx="1051.9" cy="103.078" r="32.0783" fill="#393A3D"/>
+<circle cx="952.195" cy="103.078" r="32.0783" fill="#7264A2"/>
+<circle cx="1151.61" cy="103.078" r="32.0783" fill="#393A3D"/>
+</g>
+<defs>
+<clipPath id="clip0_6_3507">
+<rect width="1200" height="675" fill="white"/>
+</clipPath>
+</defs>
+</svg>

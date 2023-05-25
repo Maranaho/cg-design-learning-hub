@@ -38,11 +38,11 @@ const Wisiwyg = () => {
   }, [editedVideo])
 
   return (
-    <div className={`Wisiwyg ${readOnly ? 'readOnly' : ''}`}>
+    <div className="Wisiwyg">
       <label>Description</label>
       {DBVideo && !hideWiz && (
         <Draft
-          readOnly={readOnly}
+          readOnly={false}
           contentToDB={contentToDB}
           DBVideo={DBVideo}
         />

@@ -1,0 +1,12 @@
+<svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="1200" height="675" fill="#F4F4EF"/>
+<line y1="225.672" x2="1184" y2="225.672" stroke="#5DABFF" stroke-width="2.65524"/>
+<line y1="287.017" x2="1184" y2="287.017" stroke="#5DABFF" stroke-width="7.96573"/>
+<line y1="354.362" x2="1184" y2="354.362" stroke="#5DABFF" stroke-width="13.2762"/>
+<line y1="428.707" x2="1184" y2="428.707" stroke="#5DABFF" stroke-width="18.5867"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M591.553 582.107C729.378 582.107 841.107 470.378 841.107 332.553C841.107 194.729 729.378 83 591.553 83C453.729 83 342 194.729 342 332.553C342 470.378 453.729 582.107 591.553 582.107ZM591.553 484.243C675.329 484.243 743.243 416.329 743.243 332.553C743.243 248.778 675.329 180.864 591.553 180.864C507.778 180.864 439.864 248.778 439.864 332.553C439.864 416.329 507.778 484.243 591.553 484.243Z" fill="#17497F"/>
+<rect y="437" width="1184" height="229" fill="#DDECE1"/>
+<circle cx="591.896" cy="475.897" r="23.8972" transform="rotate(90 591.896 475.897)" fill="#5DABFF"/>
+<circle cx="591.896" cy="550.245" r="23.8972" transform="rotate(90 591.896 550.245)" fill="#393A3D"/>
+<circle cx="591.896" cy="624.591" r="23.8972" transform="rotate(90 591.896 624.591)" fill="#5DABFF"/>
+</svg>

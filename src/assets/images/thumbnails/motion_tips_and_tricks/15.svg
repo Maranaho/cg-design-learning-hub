@@ -1,0 +1,37 @@
+<svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_3151)">
+<rect width="1200" height="675" fill="#F4F4EF"/>
+<rect x="383.414" y="666" width="666.531" height="27.839" transform="rotate(-90 383.414 666)" fill="#393A3D"/>
+<rect x="439.094" y="666" width="666.531" height="27.839" transform="rotate(-90 439.094 666)" fill="#393A3D"/>
+<rect x="494.77" y="666" width="666.531" height="27.839" transform="rotate(-90 494.77 666)" fill="#393A3D"/>
+<rect x="550.449" y="666" width="666.531" height="27.839" transform="rotate(-90 550.449 666)" fill="#393A3D"/>
+<rect x="606.125" y="666" width="666.531" height="27.839" transform="rotate(-90 606.125 666)" fill="#393A3D"/>
+<rect x="661.805" y="666" width="666.531" height="27.839" transform="rotate(-90 661.805 666)" fill="#393A3D"/>
+<rect x="717.484" y="666" width="666.531" height="27.839" transform="rotate(-90 717.484 666)" fill="#393A3D"/>
+<rect x="773.16" y="666" width="666.531" height="27.839" transform="rotate(-90 773.16 666)" fill="#393A3D"/>
+<rect y="126" width="211.73" height="27.666" fill="#5BEF76"/>
+<rect y="181.332" width="211.73" height="27.666" fill="#5BEF76"/>
+<rect y="236.664" width="211.73" height="27.666" fill="#5BEF76"/>
+<rect y="291.996" width="211.73" height="27.666" fill="#5BEF76"/>
+<rect y="347.328" width="211.73" height="27.666" fill="#5BEF76"/>
+<rect y="402.66" width="211.73" height="27.666" fill="#5BEF76"/>
+<rect y="457.992" width="211.73" height="27.666" fill="#5BEF76"/>
+<rect y="513.324" width="211.73" height="27.666" fill="#5BEF76"/>
+<rect x="972" y="126" width="211.73" height="27.666" fill="#5BEF76"/>
+<rect x="972" y="181.332" width="211.73" height="27.666" fill="#5BEF76"/>
+<rect x="972" y="236.664" width="211.73" height="27.666" fill="#5BEF76"/>
+<rect x="972" y="291.996" width="211.73" height="27.666" fill="#5BEF76"/>
+<rect x="972" y="347.328" width="211.73" height="27.666" fill="#5BEF76"/>
+<rect x="972" y="402.66" width="211.73" height="27.666" fill="#5BEF76"/>
+<rect x="972" y="457.992" width="211.73" height="27.666" fill="#5BEF76"/>
+<rect x="972" y="513.324" width="211.73" height="27.666" fill="#5BEF76"/>
+<rect x="383" y="126" width="418.454" height="418.454" fill="#A0CFFF"/>
+<path d="M216.375 126C216.375 221.755 294 299.381 389.756 299.381C485.511 299.381 563.136 221.755 563.136 126H495.144C495.144 184.204 447.96 231.388 389.756 231.388C331.551 231.388 284.367 184.204 284.367 126H216.375Z" fill="#006C23"/>
+<path d="M967.691 541.383C967.691 445.627 890.066 368.002 794.311 368.002C698.555 368.002 620.93 445.627 620.93 541.383L688.923 541.383C688.923 483.178 736.106 435.995 794.311 435.995C852.515 435.995 899.699 483.178 899.699 541.383L967.691 541.383Z" fill="#006C23"/>
+</g>
+<defs>
+<clipPath id="clip0_6_3151">
+<rect width="1200" height="675" fill="white"/>
+</clipPath>
+</defs>
+</svg>

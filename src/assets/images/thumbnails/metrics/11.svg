@@ -1,0 +1,33 @@
+<svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_3594)">
+<rect width="1200" height="675" fill="#F4F4EF"/>
+<rect x="475" y="213" width="250" height="250" fill="#BEE3E7"/>
+<rect x="-130" y="208" width="597.5" height="50" fill="#393A3D"/>
+<rect x="-130" y="308" width="597.5" height="50" fill="#7264A2"/>
+<rect x="-130" y="408" width="597.5" height="50" fill="#393A3D"/>
+<rect x="718" y="-389" width="597.5" height="50" transform="rotate(90 718 -389)" fill="#393A3D"/>
+<rect x="618" y="-389" width="597.5" height="50" transform="rotate(90 618 -389)" fill="#7264A2"/>
+<rect x="518" y="-389" width="597.5" height="50" transform="rotate(90 518 -389)" fill="#393A3D"/>
+<rect x="468" y="723.609" width="265.608" height="16.6001" transform="rotate(-90 468 723.609)" fill="#393A3D"/>
+<rect x="501.199" y="723.609" width="265.608" height="16.6001" transform="rotate(-90 501.199 723.609)" fill="#393A3D"/>
+<rect x="534.402" y="723.609" width="265.608" height="16.6001" transform="rotate(-90 534.402 723.609)" fill="#7264A2"/>
+<rect x="567.602" y="723.609" width="265.608" height="16.6001" transform="rotate(-90 567.602 723.609)" fill="#393A3D"/>
+<rect x="600.797" y="723.609" width="265.608" height="16.6001" transform="rotate(-90 600.797 723.609)" fill="#393A3D"/>
+<rect x="634.004" y="723.609" width="265.608" height="16.6001" transform="rotate(-90 634.004 723.609)" fill="#7264A2"/>
+<rect x="667.199" y="723.609" width="265.608" height="16.6001" transform="rotate(-90 667.199 723.609)" fill="#393A3D"/>
+<rect x="700.398" y="723.609" width="265.608" height="16.6001" transform="rotate(-90 700.398 723.609)" fill="#393A3D"/>
+<rect x="717" y="209" width="762.546" height="16.6" fill="#393A3D"/>
+<rect x="717" y="242.199" width="762.546" height="16.6" fill="#393A3D"/>
+<rect x="717" y="275.4" width="762.546" height="16.6" fill="#7264A2"/>
+<rect x="717" y="308.6" width="762.546" height="16.6" fill="#393A3D"/>
+<rect x="717" y="341.801" width="762.546" height="16.6" fill="#393A3D"/>
+<rect x="717" y="374.998" width="762.546" height="16.6" fill="#7264A2"/>
+<rect x="717" y="408.201" width="762.546" height="16.6" fill="#393A3D"/>
+<rect x="717" y="441.4" width="762.546" height="16.6" fill="#393A3D"/>
+</g>
+<defs>
+<clipPath id="clip0_6_3594">
+<rect width="1200" height="675" fill="white"/>
+</clipPath>
+</defs>
+</svg>

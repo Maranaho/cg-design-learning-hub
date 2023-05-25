@@ -1,0 +1,22 @@
+<svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_1520)">
+<rect width="1200" height="675" fill="#D3FA90"/>
+<rect x="592" width="666" height="592" transform="rotate(90 592 0)" fill="#F4F4EF"/>
+<circle cx="-103.103" cy="47.8972" r="148.897" fill="#393A3D"/>
+<circle cx="360.163" cy="-52.1028" r="148.897" fill="#393A3D"/>
+<circle cx="823.374" cy="-52.1028" r="148.897" fill="#393A3D"/>
+<circle cx="1286.64" cy="47.8972" r="148.897" fill="#393A3D"/>
+<circle cx="-103.103" cy="618.897" r="148.897" fill="#393A3D"/>
+<circle cx="360.163" cy="698.897" r="148.897" fill="#393A3D"/>
+<circle cx="823.374" cy="698.897" r="148.897" fill="#393A3D"/>
+<circle cx="1286.64" cy="618.897" r="148.897" fill="#393A3D"/>
+<circle cx="150.264" cy="333.139" r="43.2643" fill="#AC6500"/>
+<ellipse cx="592.5" cy="333" rx="81.5" ry="82" fill="#F9C741"/>
+<circle cx="1034.26" cy="333.139" r="43.2643" fill="#AC6500"/>
+</g>
+<defs>
+<clipPath id="clip0_6_1520">
+<rect width="1200" height="675" fill="white"/>
+</clipPath>
+</defs>
+</svg>

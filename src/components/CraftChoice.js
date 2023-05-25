@@ -9,8 +9,8 @@ const CraftChoice = () => {
     dispatch
   } = useHubState()
 
-  const disabled =
-    editedVideo && DBVideo ? user.email !== DBVideo.uploader : false
+  const disabled = false
+  //editedVideo && DBVideo ? user.email !== DBVideo.uploader : false
 
   const handleUpdateData = async craft => {
     if (!editedVideo)

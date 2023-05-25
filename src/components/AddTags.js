@@ -70,16 +70,16 @@ const AddTags = () => {
     )
   }
 
-  const filteredRecentTags =
-    DBVideo
-      ? DBVideo.tags
-          .filter(tagKey =>
-            editedVideo
-              ? !DBVideo.tags.includes(tagKey)
-              : !previewVideoData.tags.includes(tagKey),
-          )
-          .filter(tagKey => tags[tagKey].toLowerCase().includes(tagFilter.toLowerCase()))
-      : []
+  // const filteredRecentTags =
+  //   DBVideo
+  //     ? DBVideo.tags
+  //         .filter(tagKey =>
+  //           editedVideo
+  //             ? !DBVideo.tags.includes(tagKey)
+  //             : !previewVideoData.tags.includes(tagKey),
+  //         )
+  //         .filter(tagKey => tags[tagKey].toLowerCase().includes(tagFilter.toLowerCase()))
+  //     : []
 
   useEffect(()=> {
     const unsub = onSnapshot(
@@ -124,8 +124,8 @@ const AddTags = () => {
         </div>
         <input
           className="search"
-          disabled={
-            editedVideo && DBVideo ? user.email !== DBVideo.uploader : false
+          disabled={ false
+            //editedVideo && DBVideo ? user.email !== DBVideo.uploader : false
           }
           onFocus={() => setFocus('focus')}
           onBlur={() => {

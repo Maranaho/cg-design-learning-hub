@@ -1,0 +1,26 @@
+<svg width="1184" height="666" viewBox="0 0 1184 666" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_1430)">
+<rect width="1184" height="666" fill="#BEE3E7"/>
+<rect width="590" height="679" fill="#F4F4EF"/>
+<circle cx="184" cy="151" r="69" fill="#393A3D"/>
+<circle cx="184" cy="333" r="69" fill="#006771"/>
+<circle cx="388" cy="515" r="69" fill="#393A3D"/>
+<circle cx="388" cy="333" r="69" fill="#006771"/>
+<circle cx="592" cy="515" r="69" fill="#393A3D"/>
+<circle cx="592" cy="333" r="69" fill="#006771"/>
+<circle cx="796" cy="333" r="69" fill="#006771"/>
+<circle cx="1000" cy="333" r="69" fill="#006771"/>
+<circle cx="796" cy="515" r="69" fill="#393A3D"/>
+<circle cx="1000" cy="515" r="69" fill="#393A3D"/>
+<circle cx="388" cy="151" r="69" fill="#393A3D"/>
+<circle cx="592" cy="151" r="69" fill="#393A3D"/>
+<circle cx="796" cy="151" r="69" fill="#38E8F6"/>
+<circle cx="1000" cy="151" r="69" fill="#393A3D"/>
+<path d="M131 567.395C160.104 596.498 207.291 596.498 236.395 567.395C265.498 538.291 265.498 491.104 236.395 462L131 567.395Z" fill="#38E8F6"/>
+</g>
+<defs>
+<clipPath id="clip0_6_1430">
+<rect width="1184" height="666" fill="white"/>
+</clipPath>
+</defs>
+</svg>

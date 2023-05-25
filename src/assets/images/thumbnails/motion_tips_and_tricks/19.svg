@@ -1,0 +1,36 @@
+<svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_3059)">
+<rect width="1200" height="675" fill="#F4F4EF"/>
+<rect x="246" width="666" height="246" transform="rotate(90 246 0)" fill="#006C23"/>
+<rect x="970" width="214" height="168" fill="#A0CFFF"/>
+<line x1="971.672" y1="666" x2="971.672" y2="94" stroke="#A0CFFF" stroke-width="2.65524"/>
+<line x1="1033.02" y1="666" x2="1033.02" y2="94" stroke="#A0CFFF" stroke-width="7.96573"/>
+<line x1="1100.36" y1="666" x2="1100.36" y2="94" stroke="#A0CFFF" stroke-width="13.2762"/>
+<line x1="1174.71" y1="666" x2="1174.71" y2="94" stroke="#A0CFFF" stroke-width="18.5867"/>
+<rect x="461" width="214" height="168" fill="#A0CFFF"/>
+<line x1="462.672" y1="666" x2="462.672" y2="94" stroke="#A0CFFF" stroke-width="2.65524"/>
+<line x1="524.017" y1="666" x2="524.017" y2="94" stroke="#A0CFFF" stroke-width="7.96573"/>
+<line x1="591.362" y1="666" x2="591.362" y2="94" stroke="#A0CFFF" stroke-width="13.2762"/>
+<line x1="665.707" y1="666" x2="665.707" y2="94" stroke="#A0CFFF" stroke-width="18.5867"/>
+<rect x="460" y="666" width="214" height="168" transform="rotate(180 460 666)" fill="#A0CFFF"/>
+<line x1="458.328" y1="-5.80322e-08" x2="458.328" y2="572" stroke="#A0CFFF" stroke-width="2.65524"/>
+<line x1="396.983" y1="-1.74096e-07" x2="396.983" y2="572" stroke="#A0CFFF" stroke-width="7.96573"/>
+<line x1="329.638" y1="-2.90161e-07" x2="329.638" y2="572" stroke="#A0CFFF" stroke-width="13.2762"/>
+<line x1="255.293" y1="-4.06225e-07" x2="255.293" y2="572" stroke="#A0CFFF" stroke-width="18.5867"/>
+<rect x="970" y="666" width="214" height="168" transform="rotate(180 970 666)" fill="#A0CFFF"/>
+<line x1="968.328" y1="-5.80322e-08" x2="968.328" y2="572" stroke="#A0CFFF" stroke-width="2.65524"/>
+<line x1="906.983" y1="-1.74096e-07" x2="906.983" y2="572" stroke="#A0CFFF" stroke-width="7.96573"/>
+<line x1="839.638" y1="-2.90161e-07" x2="839.638" y2="572" stroke="#A0CFFF" stroke-width="13.2762"/>
+<line x1="765.293" y1="-4.06225e-07" x2="765.293" y2="572" stroke="#A0CFFF" stroke-width="18.5867"/>
+<circle cx="248" cy="168" r="107" fill="#393A3D"/>
+<circle cx="751.453" cy="168.141" r="54.1408" fill="#006C23"/>
+<circle cx="919.895" cy="168.141" r="54.1408" fill="#006C23"/>
+<circle cx="1088.33" cy="168.141" r="54.1408" fill="#006C23"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M247.5 518C441.076 518 598 361.076 598 167.5C598 -26.0757 441.076 -183 247.5 -183C53.9241 -183 -103 -26.0757 -103 167.5C-103 361.076 53.9241 518 247.5 518ZM247.5 380.549C365.164 380.549 460.549 285.164 460.549 167.5C460.549 49.8361 365.164 -45.549 247.5 -45.549C129.836 -45.549 34.451 49.8361 34.451 167.5C34.451 285.164 129.836 380.549 247.5 380.549Z" fill="#5BEF76"/>
+</g>
+<defs>
+<clipPath id="clip0_6_3059">
+<rect width="1200" height="675" fill="white"/>
+</clipPath>
+</defs>
+</svg>
