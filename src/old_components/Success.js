@@ -4,7 +4,7 @@ import { useState,useRef } from 'react'
 import { useGalleryState } from '../context/gallery-context'
 
 const Success = ({handleClose})=>{
-  const { state:{ newKey } } = useGalleryState()
+  const { state:{ newKey,finalUrl } } = useGalleryState()
   const [copySuccess,setCopySuccess] = useState(false)
   const copyRef = useRef(null)
   const handleCopy = ()=>{
@@ -28,7 +28,7 @@ const Success = ({handleClose})=>{
           className={`btn ghost mini ${copySuccess?"success":""}`}>
             {copySuccess ? "Copied" : "Copy"}
         </button>
-        <Link className="link" to={`/detail/${newKey}`}>www.design-hub.intuit.com/detail/{newKey}</Link>
+        <Link className="link" to={`/detail/${newKey}`}>{finalUrl+newKey}</Link>
       </div>
 
       <div className="btnCtn">
