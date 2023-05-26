@@ -36,7 +36,6 @@ const App = () => {
       }
     } else dispatch({ type: 'IS_FAM', payload: false })
   }
-
   useEffect(getUser, [user, !users])
 
   return (
