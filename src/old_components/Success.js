@@ -10,7 +10,7 @@ const Success = ({handleClose})=>{
   const handleCopy = ()=>{
     if(copyRef){
       const copyURL = copyRef.current.value
-      navigator.clipboard.writeText(`www.design-hub.intuit.com/detail/${copyURL}`).then(()=>{
+      navigator.clipboard.writeText(`${finalUrl+copyURL}`).then(()=>{
         setCopySuccess(true)
         setTimeout(()=>setCopySuccess(false),2000)
       })
