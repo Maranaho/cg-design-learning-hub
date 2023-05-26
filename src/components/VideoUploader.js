@@ -130,7 +130,7 @@ const VideoUploader = () => {
           <video controls poster={thumbnail} src={videoSrc} />
         ) : (
           <label htmlFor="video" className="VideoPlaceholder">
-            <img src={uploadImg} />
+            {<img height={previewVideoData.thumbnail?"85%":30} src={previewVideoData.thumbnail?previewVideoData.thumbnail:uploadImg} />}
           </label>
         )}
         <div className="btnCtn">

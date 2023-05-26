@@ -34,13 +34,14 @@ const PickThumb = ({ handleClose }) => {
           val: src
         }
       })
+      handleClose()
     }
   }
 
   useEffect(() => {
     const unsub = onSnapshot(
       doc(db, `hub/data/videos/${editedVideo}`),
-      (video) => setDBVideo(video.data()),
+      video => setDBVideo(video.data()),
     )
     return unsub
   }, [editedVideo])
