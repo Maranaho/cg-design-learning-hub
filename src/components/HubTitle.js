@@ -28,8 +28,8 @@ const Home = ()=> (
     <span>Learning Hub</span>
   </H1>
 )
-const Motion = ()=><H1><span>Motion</span></H1>
-const Systems = ()=><H1><span>Systems</span></H1>
+const Motion = ()=><H1 className="motion"><span>Motion</span></H1>
+const Systems = ()=><H1 className="systems"><span>Systems</span></H1>
 
 
 export default HubTitle

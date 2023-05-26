@@ -821,6 +821,14 @@ input[type=text].search {
   font-weight: 900 !important;
   text-transform: uppercase;
   line-height: 0.9em;
+  color: transparent;
+  background: url("./assets/images/titles/welcome.svg") no-repeat;
+}
+.TrainingList header h1.motion {
+  background: url("./assets/images/titles/motion.svg") no-repeat;
+}
+.TrainingList header h1.systems {
+  background: url("./assets/images/titles/systems.svg") no-repeat;
 }
 
 .Filters {
@@ -977,90 +985,74 @@ h3 {
 .PickThumb h3 {
   font-weight: 300;
   font-size: 1.3em;
-  margin: 40px 0 20px;
+  margin: 70px 0 20px;
+  text-transform: capitalize;
+}
+.PickThumb h4 {
+  margin: 0;
+  cursor: pointer;
 }
 .PickThumb .btnCtn {
   text-align: right;
   padding-bottom: 40px;
 }
-.PickThumb .grid {
+
+.Category {
+  padding: 10px 0px;
+  border-radius: 10px;
+  width: 530px;
+  border: 1px solid #fff;
+}
+.Category h4 {
+  opacity: 0.7;
+  text-transform: capitalize;
+  display: flex;
+  justify-content: space-between;
+}
+.Category h4 img {
+  transform: rotate(-90deg);
+  transition: 0.7s ease;
+}
+.Category h4:hover {
+  opacity: 1;
+}
+.Category .thumbGrid {
+  margin-top: 0;
+}
+.Category.current {
+  width: 500px;
+  padding: 30px;
+  margin: 30px 0;
+  border: 1px solid #f3f3f3;
+}
+.Category.current h4 {
+  opacity: 1;
+}
+.Category.current h4 img {
+  transform: rotate(0deg);
+}
+.Category.current .thumbGrid {
+  margin-top: 20px;
+}
+
+.thumbGrid {
+  transition: 0.7s ease;
+  overflow: hidden;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 10px;
   width: 500px;
 }
-.PickThumb h4 {
-  margin: 70px 0 20px;
-  text-transform: capitalize;
-}
-.PickThumb .thumbSprite {
-  width: 160px;
-  height: 90px;
-  border-radius: 5px;
-  opacity: 0.8;
-  overflow: hidden;
-  cursor: pointer;
-}
-.PickThumb .thumbSprite:hover, .PickThumb .thumbSprite.selected {
-  opacity: 1;
-}
-.PickThumb .thumb {
-  width: 160px;
-  height: 90px;
-  background-size: cover;
+.thumbGrid img {
   border-radius: 12px;
-  opacity: 0.5;
+  opacity: 0.8;
   cursor: pointer;
 }
-.PickThumb .thumb.selected {
+.thumbGrid img.selected {
   opacity: 1;
 }
-.PickThumb .thumb:hover {
+.thumbGrid img:hover {
   opacity: 1;
-}
-
-.idx0 {
-  background-image: url("./assets/images/clouds/0.png");
-}
-
-.idx1 {
-  background-image: url("./assets/images/clouds/1.png");
-}
-
-.idx2 {
-  background-image: url("./assets/images/clouds/2.png");
-}
-
-.idx3 {
-  background-image: url("./assets/images/clouds/3.png");
-}
-
-.idx4 {
-  background-image: url("./assets/images/clouds/4.png");
-}
-
-.idx5 {
-  background-image: url("./assets/images/clouds/5.png");
-}
-
-.idx6 {
-  background-image: url("./assets/images/clouds/6.png");
-}
-
-.idx7 {
-  background-image: url("./assets/images/clouds/7.png");
-}
-
-.idx8 {
-  background-image: url("./assets/images/clouds/8.png");
-}
-
-.idx9 {
-  background-image: url("./assets/images/clouds/9.png");
-}
-
-.idx10 {
-  background-image: url("./assets/images/clouds/10.png");
 }
 
 .Footer {

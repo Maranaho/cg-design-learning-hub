@@ -12,32 +12,7 @@ import {
 } from '../utils/firebase'
 import uploadImg from '../assets/icons/upload_blue.svg'
 
-import components16 from '../assets/images/thumbnails/components16.svg'
-import figma_tips16 from '../assets/images/thumbnails/figma_tips16.svg'
-import foundations24 from '../assets/images/thumbnails/foundations24.svg'
-import getting_started28 from '../assets/images/thumbnails/getting_started28.svg'
-import metrics23 from '../assets/images/thumbnails/metrics23.svg'
-import motion_figma19 from '../assets/images/thumbnails/motion_figma19.svg'
-import motion_how_to20 from '../assets/images/thumbnails/motion_how_to20.svg'
-import motion_prep16 from '../assets/images/thumbnails/motion_prep16.svg'
-import motion_tips_and_tricks21 from '../assets/images/thumbnails/motion_tips_and_tricks_21.svg'
-import native16 from '../assets/images/thumbnails/native16.svg'
-import platform_technology16 from '../assets/images/thumbnails/platform_technology16.svg'
-import workflow16 from '../assets/images/thumbnails/workflow16.svg'
-const categories = {
-  components:components16,
-  figma_tips:figma_tips16,
-  foundations:foundations24,
-  getting_started:getting_started28,
-  metrics:metrics23,
-  motion_figma:motion_figma19,
-  motion_how_to:motion_how_to20,
-  motion_prep:motion_prep16,
-  motion_tips_and_tricks:motion_tips_and_tricks21,
-  native:native16,
-  platform_technology:platform_technology16,
-  workflow:workflow16
-}
+
 
 const VideoUploader = () => {
   const [DBVideo, setDBVideo] = useState(null)
@@ -152,7 +127,7 @@ const VideoUploader = () => {
 
       <div className="videoCtn">
         {videoSrc && thumbnail ? (
-          <video controls poster={categories[thumbnail.category.split(" ").join("_")]} src={videoSrc} />
+          <video controls poster={thumbnail} src={videoSrc} />
         ) : (
           <label htmlFor="video" className="VideoPlaceholder">
             <img src={uploadImg} />
