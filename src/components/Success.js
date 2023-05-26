@@ -31,7 +31,7 @@ const Success = ({ handleClose }) => {
           {copySuccess ? 'Copied' : 'Copy'}
         </button>
         <Link className="link" to={`/detail/${newKey}`}>
-          www.design-hub.intuit.com/detail/{newKey}
+        {finalURL+newKey}
         </Link>
       </div>
 

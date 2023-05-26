@@ -22,7 +22,7 @@ const initialHubState = {
   filters: [],
   showSearch: false,
   slideSearch:null,
-  finalURL: "www.cg-design.intuit.com/detail/",
+  finalURL: "https://cg-design-learning-hub.surge.sh/#/detail/",
   contributors:[
     "laura_huston@intuit.com",
     "kristen_haas@intuit.com",
