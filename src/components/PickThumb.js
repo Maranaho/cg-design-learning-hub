@@ -57,7 +57,10 @@ const PickThumb = ({ handleClose }) => {
           const calculatedHeight = nbOfLines * height + ((nbOfLines - 1) * gridGap)
           return (
             <article key={uuidv4()} className={`Category ${currentCat === catIdx?"current":""}`}>
-              <h4 onClick={()=>setCurrentCat(catIdx)}>
+              <h4 onClick={()=>{
+                if(catIdx !== currentCat)setCurrentCat(catIdx)
+                else setCurrentCat(null)
+              }}>
                 <span>{category.split("_").join(" ")}</span>
                 <img src={chevron}/>
               </h4>
