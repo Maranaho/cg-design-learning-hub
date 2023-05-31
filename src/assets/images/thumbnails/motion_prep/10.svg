@@ -1,15 +1,17 @@
 <svg width="1184" height="666" viewBox="0 0 1184 666" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1_3475)">
 <rect width="1184" height="666" fill="#F4F4EF"/>
-<rect width="443" height="666" fill="#BEE3E7"/>
-<circle cx="445" cy="316" r="176.5" fill="#006771" stroke="#393A3D"/>
-<circle cx="445" cy="141" r="73" fill="#38E8F6"/>
-<circle cx="445" cy="492" r="73" fill="#38E8F6"/>
-<circle cx="620" cy="314" r="73" fill="#38E8F6"/>
-<circle cx="269" cy="314" r="73" fill="#38E8F6"/>
-<circle cx="748.897" cy="313.897" r="23.8972" fill="#38E8F6"/>
-<circle cx="823.245" cy="313.897" r="23.8972" fill="#38E8F6"/>
-<circle cx="897.592" cy="313.897" r="23.8972" fill="#38E8F6"/>
-<circle cx="971.936" cy="313.897" r="23.8972" fill="#38E8F6"/>
-<circle cx="1046.28" cy="313.897" r="23.8972" fill="#38E8F6"/>
-<circle cx="1120.63" cy="313.897" r="23.8972" fill="#393A3D"/>
+<rect width="569" height="679" fill="#BEE3E7"/>
+<circle cx="174" cy="576" r="258" fill="#38E8F6"/>
+<circle cx="510" cy="309" r="96" fill="#38E8F6"/>
+<circle cx="787" cy="603" r="96" fill="#38E8F6"/>
+<circle cx="1040" cy="333" r="42" fill="#393A3D"/>
+<circle cx="44" cy="44" r="44" transform="matrix(1 0 0 -1 130 213)" fill="#006771"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M560 699C634.558 699 695 638.558 695 564C695 489.442 634.558 429 560 429C485.442 429 425 489.442 425 564C425 638.558 485.442 699 560 699ZM560 646.059C605.32 646.059 642.059 609.32 642.059 564C642.059 518.68 605.32 481.941 560 481.941C514.68 481.941 477.941 518.68 477.941 564C477.941 609.32 514.68 646.059 560 646.059Z" fill="#006771"/>
+</g>
+<defs>
+<clipPath id="clip0_1_3475">
+<rect width="1184" height="666" fill="white"/>
+</clipPath>
+</defs>
 </svg>

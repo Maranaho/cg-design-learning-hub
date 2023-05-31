@@ -1,9 +1,16 @@
-<svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="1200" height="675" fill="#F4F4EF"/>
+<svg width="1184" height="666" viewBox="0 0 1184 666" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1_6595)">
+<rect width="1184" height="666" fill="#F4F4EF"/>
 <rect y="254" width="1184" height="411.619" fill="#BEE3E7"/>
 <circle cx="591.5" cy="253.5" r="135.5" fill="#7264A2"/>
 <path d="M167 499V666H0L167 499Z" fill="#393A3D"/>
 <path d="M1017 666L1017 499L1184 499L1017 666Z" fill="#342C4C"/>
 <path d="M334 499V666H167L334 499Z" fill="#342C4C"/>
 <path d="M850 666L850 499L1017 499L850 666Z" fill="#342C4C"/>
+</g>
+<defs>
+<clipPath id="clip0_1_6595">
+<rect width="1184" height="666" fill="white"/>
+</clipPath>
+</defs>
 </svg>

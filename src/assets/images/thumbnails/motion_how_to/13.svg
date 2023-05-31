@@ -1,28 +1,25 @@
-<svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_6_2572)">
-<rect width="1200" height="675" fill="#F4F4EF"/>
-<circle cx="535.553" cy="332.553" r="249.553" fill="#00EEC5"/>
-<rect width="462" height="666" fill="#FFD1E9"/>
-<mask id="mask0_6_2572" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="462" height="666">
-<rect width="462" height="666" fill="#FFD1E9"/>
+<svg width="1184" height="666" viewBox="0 0 1184 666" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1_2368)">
+<rect width="1184" height="666" fill="#F4F4EF"/>
+<rect width="367" height="666" fill="#FFD1E9"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M366.553 582.107C504.378 582.107 616.107 470.378 616.107 332.553C616.107 194.729 504.378 83 366.553 83C228.729 83 117 194.729 117 332.553C117 470.378 228.729 582.107 366.553 582.107ZM366.553 484.243C450.329 484.243 518.243 416.329 518.243 332.553C518.243 248.778 450.329 180.864 366.553 180.864C282.778 180.864 214.864 248.778 214.864 332.553C214.864 416.329 282.778 484.243 366.553 484.243Z" fill="#00EEC5"/>
+<path d="M868 83C729.929 83 618 194.705 618 332.5C618 470.295 729.929 582 868 582L868 83Z" fill="#006A56"/>
+<mask id="mask0_1_2368" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="-59" y="0" width="426" height="666">
+<rect x="-59" width="426" height="666" fill="#FFD1E9"/>
 </mask>
-<g mask="url(#mask0_6_2572)">
-<circle cx="535.553" cy="332.553" r="249.553" fill="#006A56"/>
+<g mask="url(#mask0_1_2368)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M366.553 582.107C504.378 582.107 616.107 470.378 616.107 332.553C616.107 194.729 504.378 83 366.553 83C228.729 83 117 194.729 117 332.553C117 470.378 228.729 582.107 366.553 582.107ZM366.553 484.243C450.329 484.243 518.243 416.329 518.243 332.553C518.243 248.778 450.329 180.864 366.553 180.864C282.778 180.864 214.864 248.778 214.864 332.553C214.864 416.329 282.778 484.243 366.553 484.243Z" fill="#006A56"/>
 </g>
-<rect y="130" width="1244.97" height="27.1021" fill="#393A3D"/>
-<rect y="184.203" width="1244.97" height="27.1021" fill="#393A3D"/>
-<rect y="238.41" width="1244.97" height="27.1021" fill="#393A3D"/>
-<rect y="292.613" width="1244.97" height="27.1021" fill="#393A3D"/>
-<rect y="346.816" width="1244.97" height="27.1021" fill="#393A3D"/>
-<rect y="401.02" width="1244.97" height="27.1021" fill="#393A3D"/>
-<rect y="455.227" width="1244.97" height="27.1021" fill="#393A3D"/>
-<rect y="509.43" width="1244.97" height="27.1021" fill="#393A3D"/>
-<rect y="509.43" width="1244.97" height="27.1021" fill="#393A3D"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M994.5 428C1047.24 428 1090 385.243 1090 332.5C1090 279.757 1047.24 237 994.5 237C941.757 237 899 279.757 899 332.5C899 385.243 941.757 428 994.5 428ZM994.5 390.549C1026.56 390.549 1052.55 364.56 1052.55 332.5C1052.55 300.44 1026.56 274.451 994.5 274.451C962.44 274.451 936.451 300.44 936.451 332.5C936.451 364.56 962.44 390.549 994.5 390.549Z" fill="#00EEC5"/>
+<circle cx="1003.29" cy="113.288" r="28.2885" transform="rotate(90 1003.29 113.288)" fill="#393A3D"/>
+<circle cx="1003.29" cy="201.296" r="28.2885" transform="rotate(90 1003.29 201.296)" fill="#393A3D"/>
+<circle cx="1003.29" cy="289.304" r="28.2885" transform="rotate(90 1003.29 289.304)" fill="#393A3D"/>
+<circle cx="1003.29" cy="377.316" r="28.2885" transform="rotate(90 1003.29 377.316)" fill="#393A3D"/>
+<circle cx="1003.29" cy="465.324" r="28.2885" transform="rotate(90 1003.29 465.324)" fill="#393A3D"/>
+<circle cx="1003.29" cy="553.331" r="28.2885" transform="rotate(90 1003.29 553.331)" fill="#393A3D"/>
 </g>
 <defs>
-<clipPath id="clip0_6_2572">
-<rect width="1200" height="675" fill="white"/>
+<clipPath id="clip0_1_2368">
+<rect width="1184" height="666" fill="white"/>
 </clipPath>
 </defs>
 </svg>

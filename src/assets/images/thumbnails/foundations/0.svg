@@ -1,10 +1,15 @@
-<svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="1200" height="675" rx="12" fill="#F4F4EF"/>
-<rect width="1184" height="334" fill="#C2F5FF"/>
-<rect x="494" y="228.73" width="208.271" height="208.271" fill="#B496FF"/>
-<rect x="778" y="229" width="70" height="208" fill="#6100C2"/>
-<rect x="924" y="229" width="30" height="208" fill="#B496FF"/>
-<rect x="1030" y="229" width="15" height="208" fill="#6100C2"/>
-<rect x="1121" y="229" width="7" height="208" fill="#393A3D"/>
-<rect x="418.453" y="228" width="209.227" height="418.454" transform="rotate(90 418.453 228)" fill="#6100C2"/>
+<svg width="1184" height="666" viewBox="0 0 1184 666" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1_128)">
+<rect width="1184" height="666" fill="#F4F4EF"/>
+<rect width="592" height="674" fill="#C2F5FF"/>
+<path d="M567.454 124V542.454H149L567.454 124Z" fill="#6100C2"/>
+<path d="M616.999 124V542.454H1035.45L616.999 124Z" fill="#B496FF"/>
+<circle cx="1051.5" cy="124.5" r="57.5" fill="#393A3D"/>
+<rect x="617" y="383" width="159" height="159" fill="#6100C2"/>
+</g>
+<defs>
+<clipPath id="clip0_1_128">
+<rect width="1184" height="666" fill="white"/>
+</clipPath>
+</defs>
 </svg>

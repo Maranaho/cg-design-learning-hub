@@ -1,23 +1,21 @@
-<svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_3_210)">
-<rect width="1200" height="675" fill="#FDE68C"/>
-<path d="M155.816 333L399.876 752.521H-88.2438L155.816 333Z" fill="#B61A37"/>
-<path d="M984.816 333L1228.88 752.521H740.756L984.816 333Z" fill="#B61A37"/>
-<path d="M327.908 -104.939L813.254 -106.54L569.194 316.184L327.908 -104.939Z" fill="#FF808C"/>
-<circle cx="570" cy="673" r="40" transform="rotate(-180 570 673)" fill="#393A3D"/>
-<circle cx="570" cy="557" r="36" transform="rotate(-180 570 557)" fill="#393A3D"/>
-<circle cx="570" cy="453" r="28" transform="rotate(-180 570 453)" fill="#393A3D"/>
-<circle cx="570" cy="367" r="18" transform="rotate(-180 570 367)" fill="#393A3D"/>
-<circle cx="147" cy="64" r="36" fill="#393A3D"/>
-<circle cx="147" cy="168" r="28" fill="#393A3D"/>
-<circle cx="147" cy="254" r="18" fill="#393A3D"/>
-<circle cx="985" cy="64" r="36" fill="#393A3D"/>
-<circle cx="985" cy="168" r="28" fill="#393A3D"/>
-<circle cx="985" cy="254" r="18" fill="#393A3D"/>
+<svg width="1184" height="666" viewBox="0 0 1184 666" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1_14182)">
+<rect width="1184" height="666" fill="#F4F4EF"/>
+<rect y="0.46875" width="1244.97" height="27.1021" fill="#B61A37"/>
+<rect y="54.6719" width="1244.97" height="27.1021" fill="#B61A37"/>
+<rect y="108.879" width="1244.97" height="27.1021" fill="#B61A37"/>
+<rect y="163.082" width="1244.97" height="27.1021" fill="#B61A37"/>
+<rect y="217.285" width="1244.97" height="27.1021" fill="#B61A37"/>
+<rect y="271.488" width="1244.97" height="27.1021" fill="#B61A37"/>
+<rect y="325.695" width="1244.97" height="27.1021" fill="#B61A37"/>
+<rect y="379.898" width="1244.97" height="27.1021" fill="#393A3D"/>
+<ellipse cx="592" cy="67" rx="204" ry="204" transform="rotate(-90 592 67)" fill="#FF808C"/>
+<rect y="407" width="1184" height="263" fill="#FDE68C"/>
+<ellipse cx="592" cy="644" rx="204" ry="204" transform="rotate(-90 592 644)" fill="#B61A37"/>
 </g>
 <defs>
-<clipPath id="clip0_3_210">
-<rect width="1200" height="675" fill="white"/>
+<clipPath id="clip0_1_14182">
+<rect width="1184" height="666" fill="white"/>
 </clipPath>
 </defs>
 </svg>

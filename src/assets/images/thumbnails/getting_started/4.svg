@@ -1,13 +1,19 @@
-<svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="1200" height="675" fill="#F4F4EF"/>
-<rect x="2" width="418" height="666" fill="#DDECE1"/>
-<rect x="766" width="418" height="666" fill="#DDECE1"/>
-<rect x="2" width="418" height="27.666" fill="#17497F"/>
-<rect x="2" y="55.332" width="418" height="27.666" fill="#17497F"/>
-<rect x="2" y="110.664" width="418" height="27.666" fill="#17497F"/>
-<rect x="2" y="165.996" width="418" height="27.666" fill="#5DABFF"/>
-<rect x="2" y="221.328" width="418" height="27.666" fill="#5DABFF"/>
-<rect x="766" y="248" width="418.454" height="418.454" fill="#17497F"/>
-<rect width="144" height="144" transform="matrix(-1 0 0 1 766 104)" fill="#5DABFF"/>
-<circle cx="211.141" cy="511.14" r="54.1408" transform="rotate(-90 211.141 511.14)" fill="#5DABFF"/>
+<svg width="1184" height="666" viewBox="0 0 1184 666" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="1184" height="666" fill="#F4F4EF"/>
+<rect x="383" y="123" width="418.454" height="418.454" fill="#17497F"/>
+<path d="M1184 0H0V664L1184 0Z" fill="#DDECE1"/>
+<mask id="mask0_1_4735" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="1184" height="664">
+<path d="M1184 0H0V664L1184 0Z" fill="#DDECE1"/>
+</mask>
+<g mask="url(#mask0_1_4735)">
+<rect x="383" y="123" width="418.454" height="418.454" fill="#5DABFF"/>
+</g>
+<rect x="1184" y="542.115" width="147" height="27.8743" transform="rotate(180 1184 542.115)" fill="#17497F"/>
+<rect x="1184" y="486.365" width="147" height="27.8743" transform="rotate(180 1184 486.365)" fill="#17497F"/>
+<rect x="1184" y="430.615" width="147" height="27.8743" transform="rotate(180 1184 430.615)" fill="#17497F"/>
+<rect x="1184" y="374.869" width="147" height="27.8743" transform="rotate(180 1184 374.869)" fill="#17497F"/>
+<rect x="1184" y="319.119" width="147" height="27.8743" transform="rotate(180 1184 319.119)" fill="#5DABFF"/>
+<rect x="1184" y="263.369" width="147" height="27.8743" transform="rotate(180 1184 263.369)" fill="#17497F"/>
+<rect x="1184" y="207.625" width="147" height="27.8743" transform="rotate(180 1184 207.625)" fill="#17497F"/>
+<rect x="1184" y="151.875" width="147" height="27.8743" transform="rotate(180 1184 151.875)" fill="#17497F"/>
 </svg>

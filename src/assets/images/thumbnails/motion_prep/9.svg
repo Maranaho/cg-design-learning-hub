@@ -1,17 +1,12 @@
 <svg width="1184" height="666" viewBox="0 0 1184 666" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_6_1364)">
-<rect width="1184" height="666" fill="#BEE3E7"/>
-<rect x="667" width="517" height="666" fill="#F4F4EF"/>
-<rect x="2.14453" width="221.618" height="221.618" fill="#38E8F6"/>
-<rect x="223.762" y="221.617" width="221.618" height="221.618" fill="#006771"/>
-<rect x="1073" y="277" width="111" height="111" fill="#393A3D"/>
-<rect x="1018" y="388" width="55" height="55" fill="#006771"/>
-<rect x="1018" y="222" width="55" height="55" fill="#006771"/>
-<rect x="445.383" width="221.618" height="221.618" fill="#38E8F6"/>
-<rect x="445.383" y="443.234" width="221.618" height="221.618" fill="#38E8F6"/>
+<g clip-path="url(#clip0_1_3483)">
+<rect width="1184" height="666" fill="#F4F4EF"/>
+<rect width="590" height="679" fill="#BEE3E7"/>
+<rect x="383" y="124" width="418.454" height="418.454" fill="#006771"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M591.5 429C644.795 429 688 385.795 688 332.5C688 279.205 644.795 236 591.5 236C538.204 236 495 279.205 495 332.5C495 385.795 538.204 429 591.5 429ZM591.5 391.157C623.895 391.157 650.157 364.895 650.157 332.5C650.157 300.105 623.895 273.843 591.5 273.843C559.105 273.843 532.843 300.105 532.843 332.5C532.843 364.895 559.105 391.157 591.5 391.157Z" fill="#38E8F6"/>
 </g>
 <defs>
-<clipPath id="clip0_6_1364">
+<clipPath id="clip0_1_3483">
 <rect width="1184" height="666" fill="white"/>
 </clipPath>
 </defs>

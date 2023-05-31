@@ -1,5 +1,5 @@
 <svg width="1184" height="666" viewBox="0 0 1184 666" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_6_1458)">
+<g clip-path="url(#clip0_1_3682)">
 <rect width="1184" height="666" fill="#BEE3E7"/>
 <ellipse cx="1061" cy="114.5" rx="178" ry="177.5" fill="#F4F4EF"/>
 <circle cx="779" cy="72" r="105" fill="#393A3D"/>
@@ -11,13 +11,13 @@
 <circle cx="269" cy="19" r="105" fill="#F4F4EF"/>
 <rect x="238" y="-44" width="62" height="125" fill="#006771"/>
 <rect x="1004" y="57" width="114" height="115" fill="#F4F4EF"/>
-<rect x="339" y="184.883" width="81.4461" height="81.4461" transform="rotate(-45 339 184.883)" fill="#38E8F6"/>
+<rect x="339" y="184.885" width="81.4461" height="81.4461" transform="rotate(-45 339 184.885)" fill="#38E8F6"/>
 <rect x="731.32" y="361.66" width="65.0539" height="65.0539" transform="rotate(-45 731.32 361.66)" fill="#F4F4EF"/>
 <path fill-rule="evenodd" clip-rule="evenodd" d="M606 532C578.386 532 556 509.614 556 482C556 454.386 578.386 432 606 432C633.614 432 656 454.386 656 482C656 509.614 633.614 532 606 532ZM606 523.176C583.259 523.176 564.824 504.741 564.824 482C564.824 459.259 583.259 440.824 606 440.824C628.741 440.824 647.176 459.259 647.176 482C647.176 504.741 628.741 523.176 606 523.176Z" fill="#F4F4EF"/>
 <path d="M944 418L1000.29 514.75L887.708 514.75L944 418Z" fill="#BEE3E7"/>
 </g>
 <defs>
-<clipPath id="clip0_6_1458">
+<clipPath id="clip0_1_3682">
 <rect width="1184" height="666" fill="white"/>
 </clipPath>
 </defs>

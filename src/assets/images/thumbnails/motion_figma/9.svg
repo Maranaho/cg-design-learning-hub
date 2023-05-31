@@ -1,23 +1,16 @@
-<svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_6_2257)">
-<rect width="1200" height="675" fill="#F4F4EF"/>
-<rect width="1197" height="352" fill="#DFD4D8"/>
-<rect width="142.671" height="18.6423" transform="matrix(-1 0 0 1 665.688 422.98)" fill="#393A3D"/>
-<rect width="142.671" height="18.6423" transform="matrix(-1 0 0 1 665.688 460.266)" fill="#393A3D"/>
-<rect width="142.671" height="18.6423" transform="matrix(-1 0 0 1 665.688 497.547)" fill="#393A3D"/>
-<rect width="142.671" height="18.6423" transform="matrix(-1 0 0 1 665.688 534.836)" fill="#393A3D"/>
-<rect width="142.671" height="18.6423" transform="matrix(-1 0 0 1 665.688 572.121)" fill="#393A3D"/>
-<rect width="142.671" height="18.6423" transform="matrix(-1 0 0 1 665.688 609.402)" fill="#393A3D"/>
-<rect width="142.671" height="18.6423" transform="matrix(-1 0 0 1 665.688 646.688)" fill="#393A3D"/>
-<path d="M606 352.312C606 425.766 664.875 485.313 737.5 485.313C810.125 485.313 869 425.766 869 352.312H606Z" fill="#14324F"/>
-<path d="M562 352.312C562 279.963 502.902 221.312 430 221.312C357.098 221.312 298 279.963 298 352.313L562 352.312Z" fill="#4E82B5"/>
-<path d="M588.766 330.785C659.54 349.749 732.137 308.311 750.916 238.23C769.694 168.149 727.542 95.9637 656.767 76.9997L588.766 330.785Z" fill="#4E82B5"/>
-<path d="M577.32 373.5C507.239 354.722 435.13 396.592 416.258 467.02C397.387 537.448 438.901 609.764 508.982 628.542L577.32 373.5Z" fill="#14324F"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M33.5 141C104.469 141 162 83.4685 162 12.5C162 -58.4685 104.469 -116 33.5 -116C-37.4686 -116 -95 -58.4685 -95 12.5C-95 83.4685 -37.4686 141 33.5 141ZM33.5 90.6078C76.6377 90.6078 111.608 55.6378 111.608 12.5C111.608 -30.6378 76.6377 -65.6078 33.5 -65.6078C-9.63775 -65.6078 -44.6078 -30.6378 -44.6078 12.5C-44.6078 55.6378 -9.63775 90.6078 33.5 90.6078Z" fill="#F4F4EF"/>
+<svg width="1184" height="666" viewBox="0 0 1184 666" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1_5587)">
+<rect width="1184" height="666" fill="#F4F4EF"/>
+<rect width="592" height="666" fill="#DFD4D8"/>
+<path d="M367.3 182.606L441.906 750.728L1010.03 676.122L367.3 182.606Z" fill="#4E82B5"/>
+<path d="M213.564 378.612L313.752 787.517L722.657 687.329L213.564 378.612Z" fill="#4E82B5"/>
+<path d="M1079.1 377.369L984.685 733.051L629.004 638.633L1079.1 377.369Z" fill="#4E82B5"/>
+<path d="M70.9016 503.616L146.323 806.363L449.069 730.942L70.9016 503.616Z" fill="#4E82B5"/>
+<circle cx="74.5" cy="74.5" r="74.5" transform="matrix(-1 0 0 1 928 134)" fill="#14324F"/>
 </g>
 <defs>
-<clipPath id="clip0_6_2257">
-<rect width="1200" height="675" fill="white"/>
+<clipPath id="clip0_1_5587">
+<rect width="1184" height="666" fill="white"/>
 </clipPath>
 </defs>
 </svg>

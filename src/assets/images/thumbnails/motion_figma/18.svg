@@ -1,6 +1,6 @@
-<svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_6_2119)">
-<rect width="1200" height="675" fill="#DFD4D8"/>
+<svg width="1184" height="666" viewBox="0 0 1184 666" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1_5484)">
+<rect width="1184" height="666" fill="#DFD4D8"/>
 <circle cx="591.5" cy="332.5" r="458.5" fill="#F4F4EF"/>
 <circle cx="591.553" cy="665.553" r="249.553" fill="#14324F"/>
 <circle cx="591.553" cy="-0.446625" r="249.553" fill="#393A3D"/>
@@ -8,8 +8,8 @@
 <circle cx="1183.55" cy="332.553" r="249.553" fill="#14324F"/>
 </g>
 <defs>
-<clipPath id="clip0_6_2119">
-<rect width="1200" height="675" fill="white"/>
+<clipPath id="clip0_1_5484">
+<rect width="1184" height="666" fill="white"/>
 </clipPath>
 </defs>
 </svg>

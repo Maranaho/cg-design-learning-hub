@@ -1,14 +1,19 @@
-<svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_6_3751)">
-<rect width="1200" height="675" fill="#F4F4EF"/>
-<rect width="468" height="666" fill="#BEE3E7"/>
-<path d="M223 266.197C290.709 333.907 400.488 333.907 468.197 266.197C535.907 198.488 535.907 88.7093 468.197 21L223 266.197Z" fill="#393A3D"/>
-<path d="M553 596.197C620.709 663.907 730.488 663.907 798.197 596.197C865.907 528.488 865.907 418.709 798.197 351L553 596.197Z" fill="#393A3D"/>
-<rect x="468" y="266" width="208.271" height="208.271" fill="#7264A2"/>
+<svg width="1184" height="666" viewBox="0 0 1184 666" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1_6874)">
+<rect width="1184" height="666" fill="#F4F4EF"/>
+<circle cx="400.5" cy="816.5" r="542.5" fill="#BEE3E7"/>
+<circle cx="1176" r="291" fill="#BEE3E7"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M241 1208C540.338 1208 783 965.338 783 666C783 366.662 540.338 124 241 124C-58.3381 124 -301 366.662 -301 666C-301 965.338 -58.3381 1208 241 1208ZM241 1112.35C487.514 1112.35 687.353 912.515 687.353 666C687.353 419.485 487.514 219.647 241 219.647C-5.51418 219.647 -205.353 419.485 -205.353 666C-205.353 912.515 -5.51418 1112.35 241 1112.35Z" fill="#342C4C"/>
+<circle cx="653.078" cy="103.078" r="32.0783" fill="#7264A2"/>
+<circle cx="752.784" cy="103.078" r="32.0783" fill="#393A3D"/>
+<circle cx="852.49" cy="103.078" r="32.0783" fill="#393A3D"/>
+<circle cx="1051.9" cy="103.078" r="32.0783" fill="#393A3D"/>
+<circle cx="952.197" cy="103.078" r="32.0783" fill="#7264A2"/>
+<circle cx="1151.61" cy="103.078" r="32.0783" fill="#393A3D"/>
 </g>
 <defs>
-<clipPath id="clip0_6_3751">
-<rect width="1200" height="675" fill="white"/>
+<clipPath id="clip0_1_6874">
+<rect width="1184" height="666" fill="white"/>
 </clipPath>
 </defs>
 </svg>
