@@ -23,7 +23,7 @@ const Footer = () => (
                 target="_blank"
                 href="https://app.slack.com/client/T2G8RTHAM/C8AH11MF1"
               >
-                #ask-ids-cg-design
+                #ask-cgds-design
               </a>
               : design questions for components
             </li>

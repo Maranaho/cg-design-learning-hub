@@ -16,7 +16,7 @@ const Video = ({ video }) => {
     s = Math.floor(s % 60)
     s = s >= 10 ? s : `0${s}`
     setDuration(`${m}:${s}`)
-    videoRef.current.playbackRate = 10
+    videoRef.current.playbackRate = 3
   }
 
   return (

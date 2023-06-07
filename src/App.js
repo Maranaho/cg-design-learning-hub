@@ -21,10 +21,12 @@ const App = () => {
   const getUser = () => {
     if (user) {
       const { displayName, email, photoURL } = user
-      const isFam = email.indexOf(org) !== -1
-      if (isFam !== isIntuitEmployee)
+      const isFam = email.indexOf(org) !== -1 || email === "maranaho.nguessan@gmail.com"
+      if (isFam !== isIntuitEmployee) {
         dispatch({ type: 'IS_FAM', payload: isFam })
-      dispatch({ type: 'USER', payload: { displayName, email, photoURL } })
+        dispatch({ type: 'USER', payload: { displayName, email, photoURL } })
+      }
+        
 
       if (users && !users.hasOwnProperty(email)) {
         const newUser = {
