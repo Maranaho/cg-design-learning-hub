@@ -1373,15 +1373,32 @@ h3 {
 }
 
 .Links {
-  margin-top: 20px;
   box-sizing: border-box;
-  padding: 20px;
+  padding: 0 20px;
+}
+.Links .btn.mini {
+  margin-left: 10px;
+}
+.Links .linkCtn {
+  max-height: 160px;
+  overflow-y: scroll;
 }
 
 .AddLink,
 .LinkEditor {
   display: flex;
   align-items: center;
+}
+.AddLink button:not(.btn),
+.LinkEditor button:not(.btn) {
+  background: none;
+  border: none;
+}
+.AddLink button:not(.btn) img,
+.LinkEditor button:not(.btn) img {
+  opacity: 0.4;
+  width: 15px;
+  padding: 7px;
 }
 .AddLink span,
 .LinkEditor span {

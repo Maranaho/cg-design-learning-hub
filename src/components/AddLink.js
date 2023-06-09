@@ -26,7 +26,7 @@ const AddLink = ({handleUpdateData}) =>{
                 value={link.url}
                 placeholder="http://someurl.com"
                 onChange={e=>setLink({label:link.label,url:e.target.value})}/>
-            <button onClick={handleAdd}>Add</button>
+            <button className="btn mini" onClick={handleAdd}>Add</button>
         </div>
     )
 }

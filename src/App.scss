@@ -1321,15 +1321,29 @@ h3 {
 .Wisiwyg,.Links{min-height:160px}
 
 .Links{
-  margin-top: 20px;
   box-sizing: border-box;
-  padding: 20px;
+  padding: 0 20px;
+  .btn.mini{margin-left: 10px}
+  .linkCtn{
+    max-height: 160px;
+    overflow-y: scroll;
+  }
 }
 
 .AddLink,
 .LinkEditor{
   display: flex;
   align-items: center;
+  
+  button:not(.btn) {
+    background: none;
+    border: none;
+    img{
+      opacity: .4;
+      width: 15px;
+      padding: 7px;
+    }
+  }
   span{
     padding: 7px 16px;
     cursor: text;

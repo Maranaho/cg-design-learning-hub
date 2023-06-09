@@ -4,7 +4,7 @@ import { useState } from 'react'
 
 const DescriptionAndLinks = ()=>{
 
-    const [showDescription, setShowDescription] = useState(false)
+    const [showDescription, setShowDescription] = useState(true)
     const handleTabClick = e => {
         if(e.target.nodeName === "LABEL")setShowDescription(e.target.innerText === "Description")
     }

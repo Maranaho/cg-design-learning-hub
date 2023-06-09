@@ -52,14 +52,16 @@ const Links = () => {
   return (
     <div
       className="Links">
-      {Object.keys(DBVideo.links).map(key=>(
-        <LinkEditor
-            handleRemoveLink={handleRemoveLink}
-            handleUpdateData={handleUpdateData}
-            key={key}
-            linkKey={key}
-            link={DBVideo.links[key]}/>
-      ))}
+      <div className="linkCtn">
+        {Object.keys(DBVideo.links).map(key=>(
+            <LinkEditor
+                handleRemoveLink={handleRemoveLink}
+                handleUpdateData={handleUpdateData}
+                key={key}
+                linkKey={key}
+                link={DBVideo.links[key]}/>
+        ))}
+      </div>
       <AddLink handleUpdateData={handleUpdateData}/>
     </div>
   )
