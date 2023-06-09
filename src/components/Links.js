@@ -66,10 +66,3 @@ const Links = () => {
 }
 
 export default Links
-
-
-{/* <input
-        id="label"
-        type="text"
-        value={editedVideo && DBVideo && DBVideo.hasOwnProperty("links") ? DBVideo.links[key].label: previewVideoData.hasOwnProperty("links") ? previewVideoData.links[key].label: ""}
-        onChange={(e) => handleUpdateData('links', e.target.value,"label")}/> */}

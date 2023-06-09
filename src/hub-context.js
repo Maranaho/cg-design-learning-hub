@@ -79,7 +79,7 @@ const initialHubState = {
       label:'How-to',
       craft: "motion"
     },
-    QMKDQapl3yzCp06H7: {
+    QMKDQapssl3yzCp06H7: {
       label:'How-to',
       craft: "motion"
     },
@@ -87,11 +87,11 @@ const initialHubState = {
       label:'Motion Prep',
       craft: "motion"
     },
-    QMKDQaplfgbCp06H7: {
+    QMKDQaplfssgbCp06H7: {
       label:'Figma Motion',
       craft: "motion"
     },
-    QMKDfdfglfgbCp06H7: {
+    QMKDfdfglfgbfgCp06H7: {
       label:'Metrics',
       craft: "motion"
     },

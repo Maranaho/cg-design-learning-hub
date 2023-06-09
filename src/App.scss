@@ -896,7 +896,7 @@ h3 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+    h4{margin: 15px 0}
     > div > span,
     > div {
       align-items: center;
@@ -1128,6 +1128,7 @@ h3 {
   .duration { top: 125px }
   .Video {
     margin-bottom: 50px;
+    .cover{height:165px}
     .thumbnail{
       height: 160px;
     }
@@ -1341,5 +1342,21 @@ h3 {
     font-size: .9em;
     flex:1;
     box-sizing: border-box;
+  }
+}
+
+.FrontLinks {
+  padding-top: 30px;
+  ul {
+    list-style: none;
+    padding: 10px 0 40px;
+    margin: 0;
+    a{
+      display: inline-block;
+      color:$blue;
+      padding: 5px 0;
+      text-decoration: none;
+      &:hover{text-decoration: underline}
+    }
   }
 }

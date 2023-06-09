@@ -921,6 +921,9 @@ h3 {
   justify-content: space-between;
   align-items: center;
 }
+.Video .meta h4 {
+  margin: 15px 0;
+}
 .Video .meta > div > span,
 .Video .meta > div {
   align-items: center;
@@ -1165,6 +1168,9 @@ h3 {
 .RelatedVideos .Video {
   margin-bottom: 50px;
 }
+.RelatedVideos .Video .cover {
+  height: 165px;
+}
 .RelatedVideos .Video .thumbnail {
   height: 160px;
 }
@@ -1395,4 +1401,22 @@ h3 {
   font-size: 0.9em;
   flex: 1;
   box-sizing: border-box;
+}
+
+.FrontLinks {
+  padding-top: 30px;
+}
+.FrontLinks ul {
+  list-style: none;
+  padding: 10px 0 40px;
+  margin: 0;
+}
+.FrontLinks ul a {
+  display: inline-block;
+  color: #3492ef;
+  padding: 5px 0;
+  text-decoration: none;
+}
+.FrontLinks ul a:hover {
+  text-decoration: underline;
 }/*# sourceMappingURL=App.css.map */

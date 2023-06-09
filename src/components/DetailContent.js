@@ -6,6 +6,7 @@ import TagLinks from './TagLinks'
 import Helpful from './Helpful'
 import Description from './Description'
 import Views from './Views'
+import FrontLinks from './FrontLinks'
 import link from '../assets/icons/link.svg'
 import { useHubState } from '../hub-context'
 
@@ -56,6 +57,8 @@ const DetailContent = () => {
       <TagLinks videoID={videoID}/>
       {DBVideo.hasOwnProperty("description")&&<Description des={DBVideo.description}/>}
       <input ref={copyRef} type="hidden" value={videoID} />
+
+      {Object.keys(DBVideo.links).length > 0 &&<FrontLinks videoID={videoID}/>}
     </section>
     )
 }
