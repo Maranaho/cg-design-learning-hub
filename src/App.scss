@@ -1,5 +1,6 @@
 $darkBG: #393a3d;
 $width: 1280px;
+$blue:#3492ef;
 html > canvas {
   display: none;
 }
@@ -56,6 +57,7 @@ h5 {
 }
 
 
+input[type="url"],
 input[type="search"],
 input[type="text"] {
   padding: 7px 15px;
@@ -1048,7 +1050,7 @@ h3 {
     padding: 4px 0;
     cursor: pointer;
     &:hover {
-      color: #3492ef;
+      color: $blue;
     }
   }
 }
@@ -1304,3 +1306,40 @@ h3 {
   }
 }
 
+.DescriptionAndLinks {
+  .tabs {
+    display: flex;
+    label{
+      padding: 8px 20px 4px 20px;
+      cursor: pointer;
+      &:not(.active){opacity: .3}
+    }
+  }
+}
+
+.Wisiwyg,.Links{min-height:160px}
+
+.Links{
+  margin-top: 20px;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+.AddLink,
+.LinkEditor{
+  display: flex;
+  align-items: center;
+  span{
+    padding: 7px 16px;
+    cursor: text;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    &.urlBlur{color: $blue}
+  }
+  span,input{
+    font-size: .9em;
+    flex:1;
+    box-sizing: border-box;
+  }
+}

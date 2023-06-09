@@ -60,6 +60,7 @@ h5 {
   font-weight: 600;
 }
 
+input[type=url],
 input[type=search],
 input[type=text] {
   padding: 7px 15px;
@@ -69,10 +70,12 @@ input[type=text] {
   min-width: 200px;
   outline: none;
 }
+input[type=url]:focus,
 input[type=search]:focus,
 input[type=text]:focus {
   border: 1px solid #5294ff;
 }
+input[type=url].search,
 input[type=search].search,
 input[type=text].search {
   outline: none;
@@ -1347,4 +1350,49 @@ h3 {
   .FooterItm.active ul {
     display: block;
   }
+}
+.DescriptionAndLinks .tabs {
+  display: flex;
+}
+.DescriptionAndLinks .tabs label {
+  padding: 8px 20px 4px 20px;
+  cursor: pointer;
+}
+.DescriptionAndLinks .tabs label:not(.active) {
+  opacity: 0.3;
+}
+
+.Wisiwyg, .Links {
+  min-height: 160px;
+}
+
+.Links {
+  margin-top: 20px;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+.AddLink,
+.LinkEditor {
+  display: flex;
+  align-items: center;
+}
+.AddLink span,
+.LinkEditor span {
+  padding: 7px 16px;
+  cursor: text;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.AddLink span.urlBlur,
+.LinkEditor span.urlBlur {
+  color: #3492ef;
+}
+.AddLink span, .AddLink input,
+.LinkEditor span,
+.LinkEditor input {
+  font-size: 0.9em;
+  flex: 1;
+  box-sizing: border-box;
 }/*# sourceMappingURL=App.css.map */

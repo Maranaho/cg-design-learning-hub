@@ -1,39 +1,39 @@
-import React, { useState, useEffect } from 'react';
-import { useHubState } from '../hub-context';
-import { db, doc, updateDoc, onSnapshot } from '../utils/firebase';
+import React, { useState, useEffect } from 'react'
+import { useHubState } from '../hub-context'
+import { db, doc, updateDoc, onSnapshot } from '../utils/firebase'
 
 const ConfirmDelete = () => {
   const {
     state: { editedVideo },
     dispatch,
-  } = useHubState();
-  const [DBVideo, setDBVideo] = useState(null);
-  const [wait, setWait] = useState(false);
-  const [done, setDone] = useState(false);
+  } = useHubState()
+  const [DBVideo, setDBVideo] = useState(null)
+  const [wait, setWait] = useState(false)
+  const [done, setDone] = useState(false)
 
   const archiveVideo = async () => {
     if (DBVideo) {
-      const videoToUpdate = { ...DBVideo };
-      videoToUpdate.archived = true;
-      const videoRef = doc(db, `hub/data/videos/${editedVideo}`);
-      setWait(true);
-      await updateDoc(videoRef, videoToUpdate);
+      const videoToUpdate = { ...DBVideo }
+      videoToUpdate.archived = true
+      const videoRef = doc(db, `hub/data/videos/${editedVideo}`)
+      setWait(true)
+      await updateDoc(videoRef, videoToUpdate)
       setTimeout(() => {
-        setDone(true);
-        dispatch({ type: 'HIDE_VIDEO', payload: editedVideo });
-      }, 1200);
+        setDone(true)
+        dispatch({ type: 'HIDE_VIDEO', payload: editedVideo })
+      }, 1200)
     }
-  };
+  }
 
   useEffect(() => {
     const unsub = onSnapshot(
       doc(db, `hub/data/videos/${editedVideo}`),
       (video) => setDBVideo(video.data()),
-    );
-    return unsub;
-  }, [editedVideo]);
+    )
+    return unsub
+  }, [editedVideo])
 
-  if (!DBVideo) return null;
+  if (!DBVideo) return null
   if (done)
     return (
       <section className="ConfirmDelete">
@@ -44,7 +44,7 @@ const ConfirmDelete = () => {
         <div>
           <button
             onClick={() => {
-              dispatch({ type: 'DELETED_VIDEO', payload: editedVideo });
+              dispatch({ type: 'DELETED_VIDEO', payload: editedVideo })
             }}
             className="btn ghost"
           >
@@ -52,7 +52,7 @@ const ConfirmDelete = () => {
           </button>
         </div>
       </section>
-    );
+    )
   return (
     <section className="ConfirmDelete">
       <h3>Are you sure?</h3>
@@ -68,6 +68,6 @@ const ConfirmDelete = () => {
         </button>
       </div>
     </section>
-  );
-};
-export default ConfirmDelete;
+  )
+}
+export default ConfirmDelete

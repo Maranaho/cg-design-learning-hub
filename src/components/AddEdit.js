@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import close from '../assets/icons/close.svg'
 import { useHubState } from '../hub-context'
-import Wisiwyg from './Wisiwyg'
+import DescriptionAndLinks from './DescriptionAndLinks'
 import VideoUploader from './VideoUploader'
 import AddTags from './AddTags'
 import Publish from './Publish'
@@ -97,7 +97,7 @@ const AddEdit = () => {
           </div>
           <CraftChoice />
           <VideoUploader />
-          <Wisiwyg />
+          <DescriptionAndLinks/>
           <Publish handleClose={handleClose} />
         </div>}
       </section>

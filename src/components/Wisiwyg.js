@@ -39,7 +39,6 @@ const Wisiwyg = () => {
 
   return (
     <div className="Wisiwyg">
-      <label>Description</label>
       {DBVideo && !hideWiz && (
         <Draft
           readOnly={false}
