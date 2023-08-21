@@ -51,6 +51,8 @@ const Search = () => {
         notArchived(videos[videoKey])
       : notArchived(videos[videoKey])
   )
+
+  
   return (
     <div className={`Search ${slideSearch}`}>
       <section>
@@ -71,7 +73,7 @@ const Search = () => {
           <h3>Most recent</h3>
           <div className="results">
             {Object.keys(videos).filter(videoID=>!deletedVideos.includes(videoID) && !videos[videoID].hasOwnProperty('archived')).map(videoID => (
-              <Video key={videoID} video={videos[videoID]} />
+              <Video handleCloseSearch={handleCloseSearch} key={videoID} video={videos[videoID]} />
               )).slice(0,2)}
           </div>
         </div>

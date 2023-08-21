@@ -4,7 +4,7 @@ import Views from './Views'
 import likeIcn from '../assets/icons/helpful.svg'
 
 
-const Video = ({ video }) => {
+const Video = ({ video,handleCloseSearch }) => {
   const history = useHistory()
   const videoRef = useRef(null)
   const [duration, setDuration] = useState('00:00')
@@ -20,11 +20,18 @@ const Video = ({ video }) => {
   }
 
   return (
-    <article className="Video" onClick={()=>history.push(`/detail/${videoID}`)}>
+    <article className="Video" onClick={()=>{
+      if(handleCloseSearch){
+        handleCloseSearch()
+        setTimeout(() => {
+          history.push(`/detail/${videoID}`)
+        }, 1000)
+      } else history.push(`/detail/${videoID}`)
+    }}>
       <span className="duration">{duration}</span>
       <div className="thumbnail">
         <div className="cover">
-          <img src={thumbnail}/>
+          <img width="400" src={thumbnail}/>
         </div>
         <video
           onMouseEnter={e => e.target.currentTime = 0}

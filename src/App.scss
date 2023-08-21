@@ -563,15 +563,69 @@ input[type="text"] {
   justify-content: space-between;
 }
 
+.SignIn{
+  h1{
+    background: url("./assets/images/learning-hub.svg") no-repeat;
+    color: transparent;
+    font-size: 2.5em;
+    margin: 20px 0 80px;
+  }
+  span{
+    font-weight: 100;
+    font-size: .9em;
+  }
+}
+
+.NonIntuitUser{
+  h1{
+    background: url("./assets/images/oops.svg") no-repeat;
+    color: transparent;
+    font-size: 4.7em;
+    margin: 0 0;
+  }
+  span{
+    font-weight: 100;
+    font-size: 1.2em;
+    margin: 50px 0;
+  }
+  button{
+    margin:0;
+  }
+
+}
+
+@keyframes comin{
+  from{opacity: 0}
+  to{opacity: 1}
+}
 .SignIn,
 .NonIntuitUser {
-  height: 60vh;
+  background: #F4F5F8;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  h1 {
-    margin-bottom: 40px;
+
+  .splash {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color:#fff;
+    width: 650px;
+    height: 650px;
+    background: #393A3D;
+    border-radius: 100%;
+    opacity: 0;
+    animation: comin .4s ease .5s forwards;
+    .logo{width:120px}
+    .btn{
+      background: #fff;
+      border:none;
+      color:#333;
+      margin-bottom: 15px;
+    }
   }
 }
 
@@ -622,7 +676,11 @@ input[type="text"] {
   border-left: 1px solid #e7e7e7;
   height: inherit;
   justify-content: flex-start;
-  padding-top: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
   h1 {
     margin-bottom: 10px;
   }
@@ -812,6 +870,7 @@ input[type="text"] {
       background: url("./assets/images/titles/welcome.svg") no-repeat;
       &.motion{background: url("./assets/images/titles/motion.svg") no-repeat;}
       &.systems{background: url("./assets/images/titles/systems.svg") no-repeat;}
+      &.content{background: url("./assets/images/titles/content.svg") no-repeat;}
     }
   }
 }
@@ -823,7 +882,7 @@ input[type="text"] {
   background: #fff;
   z-index: 3;
   button:not(:last-child) {
-    margin-right: 10px;
+    margin: 0 10px 10px 0;
   }
 }
 
@@ -865,9 +924,9 @@ h3 {
   }
   .cover {
     height: 225px;
-    width: 399px;
+    width: 400px;
     overflow: hidden;
-    img {height: 100%}
+    img {width:400px}
   }
 
   .thumbnail {
@@ -877,7 +936,7 @@ h3 {
     border-radius: 15px;
 
     overflow: hidden;
-    width: 100%;
+    width: 400px;
     display: flex;
     align-items: center;
     video {
@@ -885,7 +944,7 @@ h3 {
       position: absolute;
       top: 0;
       left: 0;
-      width: 101%;
+      width: 400px;
       transition: 0.3s ease;
       &:hover {
         opacity: 1;
@@ -1119,8 +1178,6 @@ h3 {
 }
 .RelatedVideos{
   width: 290px;
-  height: 100vh;
-  overflow-y: scroll;
   padding-right: 50px;
   h3 {
     margin-bottom: 50px;
@@ -1128,9 +1185,18 @@ h3 {
   .duration { top: 125px }
   .Video {
     margin-bottom: 50px;
-    .cover{height:165px}
+    .cover{
+      height:165px;
+      width: 290px;
+      img{
+        height:165px;
+        width: 290px;
+
+      }
+    }
     .thumbnail{
-      height: 160px;
+      height: 165px;
+      width: 290px;
     }
   }
 }
@@ -1249,7 +1315,6 @@ h3 {
     transform: translate(840px,-80px);
       box-shadow: -20px 0 0 rgba(0,0,0,0);
     .list{
-
       height: calc(100vh - 80px);
       overflow-y: scroll;
     }
@@ -1257,10 +1322,32 @@ h3 {
       padding: 0 100px;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      grid-gap: 40px;
+      grid-gap: 20px;
       .Video {
-        .duration {top: 139px}
-        .thumbnail{ height: 175px}
+        height: 225px;
+        width:311px;
+        overflow: hidden;
+        .cover{
+          height: 175px;
+          width:311px;
+          img{
+            height: 175px;
+            width:311px;
+          }
+        }
+        .duration {
+          top: 139px;
+          right: 14px;
+        }
+        .thumbnail{
+          height: 175px;
+          width:311px;
+          video{
+            height: 175px;
+            width:311px;
+
+          }
+        }
       }
     }
   }
@@ -1325,7 +1412,7 @@ h3 {
   padding: 0 20px;
   .btn.mini{margin-left: 10px}
   .linkCtn{
-    max-height: 160px;
+    max-height: 125px;
     overflow-y: scroll;
   }
 }

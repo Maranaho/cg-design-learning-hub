@@ -79,10 +79,6 @@ const initialHubState = {
       label:'How-to',
       craft: "motion"
     },
-    QMKDQapssl3yzCp06H7: {
-      label:'How-to',
-      craft: "motion"
-    },
     QMKDQaplfgbCp06H7: {
       label:'Motion Prep',
       craft: "motion"
@@ -94,6 +90,14 @@ const initialHubState = {
     QMKDfdfglfgbfgCp06H7: {
       label:'Metrics',
       craft: "motion"
+    },
+    QMKDfdfglfgbfgCp7fvefv7H7: {
+      label:'Storytelling',
+      craft: "content"
+    },
+    QMglfgbfgCp7fvefv7H7: {
+      label:'GenAI',
+      craft: "content"
     },
   },
   previewVideoData: {
@@ -107,6 +111,7 @@ const initialHubState = {
     views: 0,
     craft: 'systems',
     likes: [],
+    links:{},
     createdAt: '',
     helpful: [],
     notHelpful: [],
@@ -229,6 +234,7 @@ function hubReducer(state, action) {
         views: 0,
         craft: 'systems',
         likes: [],
+        links:{},
         createdAt: '',
         helpful: [],
         notHelpful: [],

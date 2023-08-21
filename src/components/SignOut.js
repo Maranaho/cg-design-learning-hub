@@ -1,6 +1,5 @@
-import React from 'react';
-import { auth } from '../utils/firebase';
-import logout from '../assets/icons/logout.svg';
+import { auth } from '../utils/firebase'
+import logout from '../assets/icons/logout.svg'
 
 const SignOut = () => {
   return (
@@ -10,7 +9,7 @@ const SignOut = () => {
         {false && <img width="15" src={logout} alt="logout" />}
       </button>
     </main>
-  );
-};
+  )
+}
 
-export default SignOut;
+export default SignOut

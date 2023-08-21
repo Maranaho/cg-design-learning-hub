@@ -15,8 +15,8 @@ const Links = () => {
     const {label,url} = link
     if (!editedVideo){
         let tmpVid = {...previewVideoData}
-        tmpVid.links[key] = {label,url}
-        dispatch({ type: 'SET_PREVIEW', payload: { key:"links", val:tmpVid } })
+        tmpVid.links[key] = link
+        dispatch({ type: 'SET_PREVIEW', payload: { key:"links", val:tmpVid.links } })
     }
     else {
       const videoToUpdate = { ...DBVideo }
@@ -48,18 +48,18 @@ const Links = () => {
     return unsub
   }, [editedVideo])
 
-  if(!DBVideo)return <p>Loading...</p>
+  if(editedVideo&&!DBVideo)return <p>Loading...</p>
   return (
     <div
       className="Links">
       <div className="linkCtn">
-        {Object.keys(DBVideo.links).map(key=>(
+        {Object.keys(editedVideo?DBVideo.links:previewVideoData.links).map(key=>(
             <LinkEditor
                 handleRemoveLink={handleRemoveLink}
                 handleUpdateData={handleUpdateData}
                 key={key}
                 linkKey={key}
-                link={DBVideo.links[key]}/>
+                link={editedVideo?DBVideo.links[key]:previewVideoData.links[key]}/>
         ))}
       </div>
       <AddLink handleUpdateData={handleUpdateData}/>

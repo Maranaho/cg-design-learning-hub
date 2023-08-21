@@ -8,13 +8,12 @@ import SearchVideo from './SearchVideo'
 import { db, onSnapshot, query, collection } from '../utils/firebase'
 import Heads from './Heads'
 import NoMatch from './NoMatch'
+import Search from './Search'
 import loadAdmin from '../assets/images/loadAdmin.svg'
 
 const Admin = () => {
   const videos = useVideos()
-  const {
-    state: { addVideo, editedVideo, searchValue, sortKey, deletedVideos },
-  } = useHubState()
+  const {state: { showSearch,addVideo, editedVideo, searchValue, sortKey, deletedVideos } } = useHubState()
   const [dbTags, setTags] = useState(null)
 
   useEffect(() => {
@@ -81,6 +80,7 @@ const Admin = () => {
     })
   return (
     <section className="Dashboard">
+      {showSearch&&<Search />}
       {(addVideo || editedVideo) && <AddEdit />}
       <div className="Admin">
         <div>

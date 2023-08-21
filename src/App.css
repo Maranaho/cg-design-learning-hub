@@ -574,17 +574,73 @@ input[type=text].search {
   justify-content: space-between;
 }
 
+.SignIn h1 {
+  background: url("./assets/images/learning-hub.svg") no-repeat;
+  color: transparent;
+  font-size: 2.5em;
+  margin: 20px 0 80px;
+}
+.SignIn span {
+  font-weight: 100;
+  font-size: 0.9em;
+}
+
+.NonIntuitUser h1 {
+  background: url("./assets/images/oops.svg") no-repeat;
+  color: transparent;
+  font-size: 4.7em;
+  margin: 0 0;
+}
+.NonIntuitUser span {
+  font-weight: 100;
+  font-size: 1.2em;
+  margin: 50px 0;
+}
+.NonIntuitUser button {
+  margin: 0;
+}
+
+@keyframes comin {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 .SignIn,
 .NonIntuitUser {
-  height: 60vh;
+  background: #F4F5F8;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
-.SignIn h1,
-.NonIntuitUser h1 {
-  margin-bottom: 40px;
+.SignIn .splash,
+.NonIntuitUser .splash {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #fff;
+  width: 650px;
+  height: 650px;
+  background: #393A3D;
+  border-radius: 100%;
+  opacity: 0;
+  animation: comin 0.4s ease 0.5s forwards;
+}
+.SignIn .splash .logo,
+.NonIntuitUser .splash .logo {
+  width: 120px;
+}
+.SignIn .splash .btn,
+.NonIntuitUser .splash .btn {
+  background: #fff;
+  border: none;
+  color: #333;
+  margin-bottom: 15px;
 }
 
 .Publish {
@@ -631,7 +687,10 @@ input[type=text].search {
   border-left: 1px solid #e7e7e7;
   height: inherit;
   justify-content: flex-start;
-  padding-top: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 .Stats h1 {
   margin-bottom: 10px;
@@ -837,6 +896,9 @@ input[type=text].search {
 .TrainingList header h1.systems {
   background: url("./assets/images/titles/systems.svg") no-repeat;
 }
+.TrainingList header h1.content {
+  background: url("./assets/images/titles/content.svg") no-repeat;
+}
 
 .Filters {
   padding: 40px;
@@ -846,7 +908,7 @@ input[type=text].search {
   z-index: 3;
 }
 .Filters button:not(:last-child) {
-  margin-right: 10px;
+  margin: 0 10px 10px 0;
 }
 
 h3 {
@@ -889,11 +951,11 @@ h3 {
 }
 .Video .cover {
   height: 225px;
-  width: 399px;
+  width: 400px;
   overflow: hidden;
 }
 .Video .cover img {
-  height: 100%;
+  width: 400px;
 }
 .Video .thumbnail {
   position: relative;
@@ -901,7 +963,7 @@ h3 {
   height: 225px;
   border-radius: 15px;
   overflow: hidden;
-  width: 100%;
+  width: 400px;
   display: flex;
   align-items: center;
 }
@@ -910,7 +972,7 @@ h3 {
   position: absolute;
   top: 0;
   left: 0;
-  width: 101%;
+  width: 400px;
   transition: 0.3s ease;
 }
 .Video .thumbnail video:hover {
@@ -1155,8 +1217,6 @@ h3 {
 
 .RelatedVideos {
   width: 290px;
-  height: 100vh;
-  overflow-y: scroll;
   padding-right: 50px;
 }
 .RelatedVideos h3 {
@@ -1170,9 +1230,15 @@ h3 {
 }
 .RelatedVideos .Video .cover {
   height: 165px;
+  width: 290px;
+}
+.RelatedVideos .Video .cover img {
+  height: 165px;
+  width: 290px;
 }
 .RelatedVideos .Video .thumbnail {
-  height: 160px;
+  height: 165px;
+  width: 290px;
 }
 
 .DetailContent {
@@ -1314,13 +1380,32 @@ h3 {
   padding: 0 100px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 40px;
+  grid-gap: 20px;
+}
+.Search > section .results .Video {
+  height: 225px;
+  width: 311px;
+  overflow: hidden;
+}
+.Search > section .results .Video .cover {
+  height: 175px;
+  width: 311px;
+}
+.Search > section .results .Video .cover img {
+  height: 175px;
+  width: 311px;
 }
 .Search > section .results .Video .duration {
   top: 139px;
+  right: 14px;
 }
 .Search > section .results .Video .thumbnail {
   height: 175px;
+  width: 311px;
+}
+.Search > section .results .Video .thumbnail video {
+  height: 175px;
+  width: 311px;
 }
 
 @media screen and (max-width: 1430px) {
@@ -1380,7 +1465,7 @@ h3 {
   margin-left: 10px;
 }
 .Links .linkCtn {
-  max-height: 160px;
+  max-height: 125px;
   overflow-y: scroll;
 }
 

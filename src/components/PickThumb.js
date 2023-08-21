@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { useHubState } from '../hub-context'
 import { db, doc, updateDoc, onSnapshot } from '../utils/firebase'
 import uuidv4 from "uuid/v4"

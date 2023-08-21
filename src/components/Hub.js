@@ -23,7 +23,7 @@ const Hub = () => {
             <Route exact path="/" render={() => <TrainingList />} />
             <Route exact path="/systems" render={() => <TrainingList />} />
             <Route exact path="/motion" render={() => <TrainingList />} />
-            <Route exact path="/app//" render={() => <TrainingList />} />
+            <Route exact path="/content" render={() => <TrainingList />} />
             <Route exact path="/admin" render={() => <Admin />} />
             <Route exact path="/detail/:videoID" render={() => <Detail />} />
             <Route exact path="/edit/:videoID" render={() => <Admin />} />

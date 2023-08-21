@@ -229,6 +229,10 @@ import workflow12 from "../assets/images/thumbnails/workflow/12.svg"
 import workflow13 from "../assets/images/thumbnails/workflow/13.svg" 
 import workflow14 from "../assets/images/thumbnails/workflow/14.svg"
 import workflow15 from "../assets/images/thumbnails/workflow/15.svg"
+import content0 from "../assets/images/thumbnails/content/0.svg" 
+import content1 from "../assets/images/thumbnails/content/1.svg" 
+import content2 from "../assets/images/thumbnails/content/2.svg" 
+import content3 from "../assets/images/thumbnails/content/3.svg" 
 
 
 
@@ -353,6 +357,14 @@ const thumbz = {
         metrics20,
         metrics21,
         metrics22
+    ],
+
+
+    content:[
+        content0,
+        content1,
+        content2,
+        content3
     ],
 
     motion_figma:[
@@ -505,6 +517,8 @@ const thumbz = {
         workflow14,
         workflow15
     ]
+
+
 
 }
 export default thumbz

@@ -13,7 +13,7 @@ const Footer = () => (
           </h4>
           <h5>
             <span>Office hours every Thursday 11:05am PST</span>
-            <a target="_blank" href="https://intuit.zoom.us/j/96903608926">
+            <a target="_blank" href="https://intuit.zoom.us/j/97835534436?from=addon">
               Zoom link
             </a>
           </h5>
@@ -41,7 +41,7 @@ const Footer = () => (
                 target="_blank"
                 href="https://app.slack.com/client/T2G8RTHAM/C01F1NTPYNP"
               >
-                #cg-motion
+                #ask-cg-motion
               </a>
               : questions for motion/animations
             </li>

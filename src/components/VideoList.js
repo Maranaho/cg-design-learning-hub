@@ -1,29 +1,31 @@
-import React from 'react';
-import { useLocation } from 'react-router-dom';
-import useVideos from '../hooks/useVideos';
-import VideoLoading from './VideoLoading';
-import Video from './Video';
-import NoMatch from './NoMatch';
-import { useHubState } from '../hub-context';
+import React from 'react'
+import { useLocation } from 'react-router-dom'
+import useVideos from '../hooks/useVideos'
+import VideoLoading from './VideoLoading'
+import Video from './Video'
+import NoMatch from './NoMatch'
+import { useHubState } from '../hub-context'
 
 const VideoList = () => {
   const {
     state: { currentTag },
-  } = useHubState();
-  const videos = useVideos();
+  } = useHubState()
+  const videos = useVideos()
   const notArchived = (video) =>
-    !Object.getOwnPropertyDescriptor(video, 'archived');
-  const location = useLocation().pathname;
+    !Object.getOwnPropertyDescriptor(video, 'archived')
+  const location = useLocation().pathname
 
-  if (!videos || !Object.keys(videos).length) return <VideoLoading />;
+  const limitLength = currentTag ? 100 : 3
+
+  if (!videos || !Object.keys(videos).length) return <VideoLoading />
   const filterdVideos = Object.keys(videos).filter((videoKey) =>
     currentTag
       ? videos[videoKey].tags.includes(currentTag) &&
         notArchived(videos[videoKey])
       : notArchived(videos[videoKey]),
-  );
-  const craftVideo = (craft) =>
-    filterdVideos.filter((videoKey) => videos[videoKey].craft === craft);
+  )
+  const craftVideo = craft => filterdVideos.filter(videoKey => videos[videoKey].craft === craft)
+    
   return (
     <section className="VideoList center">
       {!filterdVideos.length && <NoMatch />}
@@ -35,27 +37,37 @@ const VideoList = () => {
             .slice(0, 3)}
         </div>
       )}
-      {craftVideo('systems').length > 0 && !location.includes('motion') && (
+      {craftVideo('systems').length > 0 && (location.includes('systems') || location === '/')&& (
         <h3>Systems</h3>
       )}
-      {!location.includes('motion') && (
+      { (location.includes('systems') || location === '/') && (
         <div className="vList">
           {craftVideo('systems')
             .map((videoID) => <Video key={videoID} video={videos[videoID]} />)
-            .slice(0, location === '/' ? 3 : 100)}
+            .slice(0, location === '/' ? limitLength : 100)}
         </div>
       )}
-      {craftVideo('motion').length > 0 && !location.includes('systems') && (
+      {craftVideo('motion').length > 0 &&  (location.includes('motion') || location === '/') && (
         <h3>Motion</h3>
       )}
-      {!location.includes('systems') && (
+      { (location.includes('motion') || location === '/')  && (
         <div className="vList">
           {craftVideo('motion')
             .map((videoID) => <Video key={videoID} video={videos[videoID]} />)
-            .slice(0, location === '/' ? 3 : 100)}
+            .slice(0, location === '/' ? limitLength : 100)}
+        </div>
+      )}
+      {craftVideo('content').length > 0 &&  (location.includes('content') || location === '/')  && (
+        <h3>Content</h3>
+      )}
+      { (location.includes('content') || location === '/')  && (
+        <div className="vList">
+          {craftVideo('content')
+            .map((videoID) => <Video key={videoID} video={videos[videoID]} />)
+            .slice(0, location === '/' ? limitLength : 100)}
         </div>
       )}
     </section>
-  );
-};
-export default VideoList;
+  )
+}
+export default VideoList

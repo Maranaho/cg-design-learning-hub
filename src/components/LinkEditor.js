@@ -1,13 +1,20 @@
 import trash from '../assets/icons/trash.svg'
 import { useState } from "react"
+import { useHubState } from '../hub-context'
 
 const LinkEditor = ({
     handleUpdateData,
     link,
     linkKey,
     handleRemoveLink}) => {
-        const [labelFocus,setLabelFocus] = useState(false)
-        const [urlFocus,setUrlFocus] = useState(false)
+        const {
+           state: { editedVideo, previewVideoData },
+           dispatch,
+         } = useHubState()
+
+    const [labelFocus,setLabelFocus] = useState(false)
+    const [urlFocus,setUrlFocus] = useState(false)
+    
     const handleLinkEdit = (isLabel,val) =>{
         const tmpLink = {...link}
         tmpLink[isLabel?"label":"url"] = val

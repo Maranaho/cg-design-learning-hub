@@ -18,6 +18,8 @@ const DetailContent = () => {
   const videos = useVideos()
   const [copySuccess, setCopySuccess] = useState(false)
   const handleCopy = () => {
+    console.log({navigator});
+    console.log({navigatorHasClipboard:navigator.clipboard})
     if (copyRef) {
       const copyURL = copyRef.current.value
       navigator.clipboard

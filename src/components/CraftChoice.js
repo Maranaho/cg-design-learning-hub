@@ -5,12 +5,11 @@ import { db, doc, updateDoc, onSnapshot } from '../utils/firebase'
 const CraftChoice = () => {
   const [DBVideo, setDBVideo] = useState(null)
   const {
-    state: { editedVideo, user, previewVideoData },
+    state: { editedVideo, previewVideoData },
     dispatch
   } = useHubState()
 
   const disabled = false
-  //editedVideo && DBVideo ? user.email !== DBVideo.uploader : false
 
   const handleUpdateData = async craft => {
     if (!editedVideo)
@@ -43,7 +42,7 @@ const CraftChoice = () => {
               : previewVideoData.craft === 'systems'
           }
           id="systems"
-          type="radio"
+          type="checkbox"
           name="craft"
           disabled={disabled}
         />
@@ -58,11 +57,25 @@ const CraftChoice = () => {
               : previewVideoData.craft === 'motion'
           }
           id="motion"
-          type="radio"
+          type="checkbox"
+          name="craft"
+          disabled={disabled} />
+        <label htmlFor="motion">Motion</label>
+      </div>
+      <div>
+        <input
+          onChange={() => handleUpdateData('content')}
+          checked={
+            DBVideo
+              ? DBVideo.craft === 'content'
+              : previewVideoData.craft === 'content'
+          }
+          id="content"
+          type="checkbox"
           name="craft"
           disabled={disabled}
         />
-        <label htmlFor="motion">Motion</label>
+        <label htmlFor="content">Content</label>
       </div>
     </div>
   )
