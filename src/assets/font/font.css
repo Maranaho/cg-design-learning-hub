@@ -1,0 +1,68 @@
+@font-face {
+    font-family: 'avenirThin';
+    src: url('AvenirNextforINTUIT-Thin.woff2') format('woff2'),
+        url('AvenirNextforINTUIT-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: 'avenirItalic';
+    src: url('AvenirNextforINTUIT-Italic.woff2') format('woff2'),
+        url('AvenirNextforINTUIT-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: 'avenirRegular';
+    src: url('AvenirNextforINTUIT-Regular.woff2') format('woff2'),
+        url('AvenirNextforINTUIT-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'avenirMedium';
+    src: url('AvenirNextforINTUIT-Medium.woff2') format('woff2'),
+        url('AvenirNextforINTUIT-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: 'avenirDemi';
+    src: url('AvenirNextforINTUIT-Demi.woff2') format('woff2'),
+        url('AvenirNextforINTUIT-Demi.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'avenirBold';
+    src: url('AvenirNextforINTUIT-Bold.woff2') format('woff2'),
+        url('AvenirNextforINTUIT-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+@font-face {
+    font-family: 'avenirHeavy';
+    src: url('AvenirNextforINTUIT-Heavy.woff2') format('woff2'),
+        url('AvenirNextforINTUIT-Heavy.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+

@@ -1,3 +1,5 @@
+@import './assets/font/font.css';
+
 $darkBG: #393a3d;
 $width: 1280px;
 $blue:#3492ef;
@@ -9,12 +11,15 @@ body {
   font-weight: 400;
   font-size: 14px;
   color: #333;
-  font-family: sans-serif;
+  font-family: avenirRegular;
   overscroll-behavior: none;
   &.noScroll{overflow: hidden}
 }
 
-button {cursor: pointer}
+button {
+  font-family: avenirMedium;
+  cursor: pointer;
+}
 
 .tag {
   background: #fff;
@@ -887,14 +892,15 @@ input[type="text"] {
 }
 
 h3 {
+  font-family: avenirDemi;
   font-size: 1.2em;
-  font-weight: 600;
   text-transform: uppercase;
   margin: 0;
   letter-spacing: 1px;
 }
 .VideoList {
   h3 {
+    font-family: avenirDemi;
     padding: 30px 0;
     position: sticky;
     top: 189px;

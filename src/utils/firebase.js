@@ -19,7 +19,6 @@ import { getAuth, signInWithPopup, GoogleAuthProvider,onAuthStateChanged } from 
 import { initializeApp } from "firebase/app"
 import { getStorage, ref, uploadBytesResumable, getDownloadURL,deleteObject } from "firebase/storage"
 
-
 const FireBaseInit = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
   authDomain: "pyro-intuit.firebaseapp.com",

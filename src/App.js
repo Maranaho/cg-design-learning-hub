@@ -40,6 +40,7 @@ const App = () => {
   }
   useEffect(getUser, [user, !users])
 
+  
   return (
     <>
       {user && !isIntuitEmployee && <NonIntuitUser />}
